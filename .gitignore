@@ -1,0 +1,32 @@
+# AFN Next.js
+afn-nextjs/.next/
+afn-nextjs/node_modules/
+afn-nextjs/.env*.local
+
+# Diğer projeler (ayrı repo'lar)
+AfnCrm.Web/
+AfnTekliflerApp/
+AfnNotificationService/
+TeklifMail/
+AfnBackup/
+publish/
+temp-bakiye-check/
+tmp-publish-test/
+tmp-wolvox-inspect/
+istanbuldesignfactory/
+.claude/
+
+# Geçici dosyalar
+*.txt
+*.log
+*.xlsx
+*.pdf
+*.sql
+*.ps1
+*.bat
+*.php
+*.html
+app_output.txt
+bass*.txt
+debug_out.txt
+publish_log.txt
