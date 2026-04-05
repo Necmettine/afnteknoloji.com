@@ -471,6 +471,10 @@ export default function Header() {
             style={{ display: "block", marginTop: 20, padding: "14px", background: "#F5A623", color: "#000", fontWeight: 700, textAlign: "center", borderRadius: 12, textDecoration: "none", fontSize: 16 }}>
             {isEn ? "Contact / Get Quote" : "Iletisim / Teklif Al"}
           </a>
+
+          <div style={{ marginTop: 16, paddingBottom: 8, display: "flex", justifyContent: "center" }}>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </>
