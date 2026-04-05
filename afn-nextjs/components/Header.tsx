@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -115,11 +115,23 @@ type MegaKey = keyof typeof megaMenus;
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<MegaKey | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Dışarı tıklayınca mega menüyü kapat
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setActiveMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Mobil menü için açık/kapalı gruplar
@@ -143,7 +155,6 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-[999] transition-colors duration-300 ${
           scrolled ? "bg-[#0A0E1A] border-b border-white/10 shadow-lg" : "bg-[#0A0E1A]/90"
         }`}
-        onMouseLeave={() => setActiveMenu(null)}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -160,7 +171,7 @@ export default function Header() {
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            <nav ref={navRef} className="hidden lg:flex items-center gap-0.5">
 
               {/* Anasayfa */}
               <a href="/"
@@ -174,19 +185,27 @@ export default function Header() {
                 const isActive = activeMenu === key;
                 const colCount = menu.cols.length;
                 return (
-                  <div key={key} className="relative" onMouseEnter={() => setActiveMenu(key)}>
-                    <a href={menu.href}
-                      className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg whitespace-nowrap ${
+                  <div
+                    key={key}
+                    className="relative"
+                    onMouseEnter={() => setActiveMenu(key)}
+                    onMouseLeave={() => setActiveMenu(null)}
+                  >
+                    {/* Tıkla VEYA hover ile menü açılır */}
+                    <button
+                      onClick={() => setActiveMenu(isActive ? null : key)}
+                      className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg whitespace-nowrap cursor-pointer ${
                         isActive ? "text-[#F5A623] bg-white/5" : "text-gray-300 hover:text-[#F5A623] hover:bg-white/5"
-                      }`}>
+                      }`}
+                    >
                       {menu.label}
                       <ChevronDown className={`w-3 h-3 opacity-60 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`} />
-                    </a>
+                    </button>
 
                     {/* Mega dropdown */}
                     {isActive && (
                       <div
-                        className="absolute top-full mt-1 bg-[#0D1220] border border-white/10 rounded-2xl shadow-2xl z-50 p-5"
+                        className="absolute top-full mt-0 bg-[#0D1220] border border-white/10 rounded-2xl shadow-2xl z-[1000] p-5"
                         style={{
                           left: "50%",
                           transform: "translateX(-50%)",
@@ -194,10 +213,17 @@ export default function Header() {
                           minWidth: colCount === 1 ? 180 : undefined,
                         }}
                       >
-                        <div className={`grid gap-6`} style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}>
+                        {/* Başlık sayfasına git linki */}
+                        <a
+                          href={menu.href}
+                          className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#F5A623] mb-3 transition-colors"
+                        >
+                          Tüm {menu.label} →
+                        </a>
+                        <div className="grid gap-6" style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}>
                           {menu.cols.map((col) => (
                             <div key={col.title}>
-                              <div className="text-xs font-bold text-[#F5A623] tracking-widest uppercase mb-3 pb-2 border-b border-white/8">
+                              <div className="text-xs font-bold text-[#F5A623] tracking-widest uppercase mb-3 pb-2 border-b border-white/10">
                                 {col.title}
                               </div>
                               <ul className="space-y-0.5">
