@@ -43,6 +43,9 @@ export default function DestekPage() {
         body: JSON.stringify(form),
       });
       if (res.ok) {
+        if (typeof window !== "undefined" && (window as any).dataLayer) {
+          (window as any).dataLayer.push({ event: "contact_form_submit", form_type: "destek" });
+        }
         setStatus("success");
         setForm({ name: "", email: "", phone: "", company: "", category: "", priority: "medium", subject: "", description: "" });
       } else {

@@ -37,6 +37,9 @@ export default function ContactForm() {
       }
 
       setForm(emptyForm);
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "contact_form_submit", form_type: "iletisim" });
+      }
       setStatus("success");
     } catch {
       setStatus("error");

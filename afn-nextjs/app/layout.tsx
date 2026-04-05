@@ -8,11 +8,11 @@ const GTM_ID = "GTM-PQ4Q42NH";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://afnteknoloji.com"),
-  title: "AFN Teknoloji | BT Destek ve Danismanlik Hizmetleri",
+  title: "AFN Teknoloji | BT Destek ve Danışmanlık Hizmetleri",
   description:
-    "Kurumsal BT altyapisi, sistem guvenligi, Microsoft, Huawei, VMware, Veeam ve Fortinet cozumleri icin uzman danismanlik ve destek hizmetleri.",
+    "Kurumsal BT altyapısı, sistem güvenliği, Microsoft, Huawei, VMware, Veeam ve Fortinet çözümleri için uzman danışmanlık ve destek hizmetleri.",
   keywords:
-    "AFN Teknoloji, BT destek, sistem danismanligi, Microsoft partner, Huawei partner, VMware, Veeam, Fortinet, ag guvenligi",
+    "AFN Teknoloji, BT destek, sistem danışmanlığı, Microsoft partner, Huawei partner, VMware, Veeam, Fortinet, ağ güvenliği",
   verification: {
     google: "YR6nYotIr_Y8s4AONKXqLpH363XcM3CS1jM1VZp8dTA",
     other: {
@@ -21,17 +21,19 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFN Teknoloji | BT Destek ve Danismanlik",
-    description: "Kurumsal BT altyapisi, guvenlik, yedekleme ve operasyon surekliligi hizmetleri.",
+    title: "AFN Teknoloji | BT Destek ve Danışmanlık",
+    description: "Kurumsal BT altyapısı, güvenlik, yedekleme ve operasyon sürekliliği hizmetleri.",
     url: "https://afnteknoloji.com",
     siteName: "AFN Teknoloji",
     locale: "tr_TR",
     type: "website",
+    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "AFN Teknoloji" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AFN Teknoloji",
-    description: "Kurumsal BT altyapisi, guvenlik ve destek hizmetleri.",
+    description: "Kurumsal BT altyapısı, güvenlik ve destek hizmetleri.",
+    images: ["/logo.png"],
   },
 };
 

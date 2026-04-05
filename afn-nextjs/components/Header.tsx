@@ -197,18 +197,18 @@ const megaMenusEn = {
       {
         title: "Security",
         items: [
-          { label: "Fortinet", href: "/fortinet", icon: "🔴" },
+          { label: "Fortinet", href: "/en/fortinet", icon: "🔴" },
           { label: "Kaspersky / Bitdefender", href: "/en/guvenlik-yazilimlari", icon: "🛡️" },
         ],
       },
       {
         title: "Infrastructure & Cloud",
         items: [
-          { label: "Huawei", href: "/huawei", icon: "🔴" },
-          { label: "VMware", href: "/vmware", icon: "🌐" },
-          { label: "Veeam", href: "/veeam", icon: "💚" },
+          { label: "Huawei", href: "/en/huawei", icon: "🔴" },
+          { label: "VMware", href: "/en/vmware", icon: "🌐" },
+          { label: "Veeam", href: "/en/veeam", icon: "💚" },
           { label: "Microsoft 365", href: "/en/microsoft-365", icon: "🪟" },
-          { label: "Zimbra", href: "/zimbra", icon: "📧" },
+          { label: "Zimbra", href: "/en/zimbra", icon: "📧" },
         ],
       },
     ],
