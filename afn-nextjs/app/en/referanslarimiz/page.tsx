@@ -2,58 +2,58 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ClipboardList, ShieldCheck, Timer, Wrench } from "lucide-react";
 
-export const metadata = { title: "Referanslarimiz | AFN Teknoloji" };
+export const metadata = { title: "References | AFN Technology" };
 
 const sectors = [
-  { name: "Finans & Bankacilik", count: "50+" },
-  { name: "Saglik", count: "40+" },
-  { name: "Uretim & Sanayi", count: "80+" },
-  { name: "Perakende & E-ticaret", count: "60+" },
-  { name: "Kamu & Belediye", count: "30+" },
-  { name: "Egitim", count: "45+" },
-  { name: "Lojistik", count: "35+" },
-  { name: "Hizmet Sektoru", count: "100+" },
+  { name: "Finance & Banking", count: "50+" },
+  { name: "Healthcare", count: "40+" },
+  { name: "Manufacturing & Industry", count: "80+" },
+  { name: "Retail & E-commerce", count: "60+" },
+  { name: "Public Sector & Municipalities", count: "30+" },
+  { name: "Education", count: "45+" },
+  { name: "Logistics", count: "35+" },
+  { name: "Services", count: "100+" },
 ];
 
 const caseStudies = [
   {
-    title: "Uretim sektorunde felaket kurtarma kurulum projesi",
-    challenge: "Kesinti riskini azaltmak ve RTO hedeflerini dusurmek",
-    solution: "Veeam tabanli yedekleme + ikincil lokasyon replikasyon",
-    result: "Kurtarma sureleri saatlerden dakikalara indirildi",
+    title: "Disaster recovery deployment for a manufacturing company",
+    challenge: "Reduce downtime risk and improve RTO targets",
+    solution: "Veeam-based backup with secondary site replication",
+    result: "Recovery time reduced from hours to minutes",
   },
   {
-    title: "Finans kurumunda guvenlik mimarisi donusumu",
-    challenge: "Firewall kurallarinda performans ve gorunurluk problemleri",
-    solution: "Fortinet NGFW segmentasyon + merkezi log yonetimi",
-    result: "Guvenlik olaylari daha erken tespit edilebilir hale geldi",
+    title: "Security architecture transformation for a finance institution",
+    challenge: "Performance and visibility issues in firewall rules",
+    solution: "Fortinet NGFW segmentation and centralized log management",
+    result: "Security incidents became detectable earlier",
   },
   {
-    title: "Cok lokasyonlu sirkette uzaktan erisim standardizasyonu",
-    challenge: "Farkli VPN cozumleri ve daginik kimlik altyapisi",
-    solution: "Merkezi kimlik yonetimi + guvenli uzak erisim modeli",
-    result: "Kullanici deneyimi ve operasyonel kontrol tek noktada toplandi",
+    title: "Remote access standardization for a multi-site organization",
+    challenge: "Multiple VPN solutions and fragmented identity infrastructure",
+    solution: "Centralized identity management with secure remote access model",
+    result: "User experience and operational control consolidated in one place",
   },
 ];
 
 const processSteps = [
-  { icon: ClipboardList, title: "Kesif", text: "Mevcut altyapi, risk ve hedeflerin netlestirilmesi" },
-  { icon: Wrench, title: "Tasarim ve Uygulama", text: "Mimari, planlama, kurulum ve dokumantasyon" },
-  { icon: ShieldCheck, title: "Guvenlik ve Uyum", text: "Politika, loglama, yedekleme ve surec kontrolu" },
-  { icon: Timer, title: "Surdurulebilir Destek", text: "SLA, ticket yonetimi ve surekli iyilestirme" },
+  { icon: ClipboardList, title: "Discovery", text: "Clarifying current infrastructure, risks, and goals" },
+  { icon: Wrench, title: "Design and Implementation", text: "Architecture, planning, deployment, and documentation" },
+  { icon: ShieldCheck, title: "Security and Compliance", text: "Policies, logging, backup, and process control" },
+  { icon: Timer, title: "Sustainable Support", text: "SLA, ticket management, and continuous improvement" },
 ];
 
-export default function ReferanslarimizPage() {
+export default function EnglishReferences() {
   return (
     <main>
       <Header />
       <section className="pt-32 pb-20 bg-[#0A0E1A] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Musterilerimiz</span>
-            <h1 className="text-4xl font-extrabold mt-3 mb-4">Referanslarimiz</h1>
+            <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Our Customers</span>
+            <h1 className="text-4xl font-extrabold mt-3 mb-4">References</h1>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              500+ kurumsal musteri deneyimimizle altyapi, guvenlik ve operasyon surekliligi alanlarinda kalici cozumler sunuyoruz.
+              With 500+ enterprise customer experience, we deliver lasting solutions across infrastructure, security, and operational continuity.
             </p>
           </div>
 
@@ -71,16 +71,16 @@ export default function ReferanslarimizPage() {
               <div key={item.title} className="glass rounded-2xl p-6 border border-white/10">
                 <h2 className="text-lg font-bold text-white mb-3">{item.title}</h2>
                 <p className="text-sm text-gray-400 mb-2">
-                  <span className="text-gray-300 font-semibold">Zorluk:</span> {item.challenge}
+                  <span className="text-gray-300 font-semibold">Challenge:</span> {item.challenge}
                 </p>
                 <p className="text-sm text-gray-400 mb-2">
-                  <span className="text-gray-300 font-semibold">Cozum:</span> {item.solution}
+                  <span className="text-gray-300 font-semibold">Solution:</span> {item.solution}
                 </p>
                 <p className="text-sm text-gray-400">
-                  <span className="text-gray-300 font-semibold">Sonuc:</span> {item.result}
+                  <span className="text-gray-300 font-semibold">Result:</span> {item.result}
                 </p>
                 <div className="mt-4 text-xs text-gray-500">
-                  Kurumsal gizlilik geregi firma isimleri paylasilmamaktadir.
+                  Company names are not shared due to confidentiality.
                 </div>
               </div>
             ))}
@@ -99,15 +99,15 @@ export default function ReferanslarimizPage() {
           </div>
 
           <div className="glass rounded-2xl p-10 text-center">
-            <h2 className="text-2xl font-bold mb-3">Siz de referanslarimiz arasina katilin</h2>
+            <h2 className="text-2xl font-bold mb-3">Join our reference list</h2>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              Ihtiyaclarinizi birlikte netlestirelim, size ozel yol haritasi ve teklifimizi paylasalim.
+              Let's clarify your needs together and share a tailored roadmap and proposal.
             </p>
             <a
-              href="/iletisim"
+              href="/en/iletisim"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#F5A623] text-black font-bold rounded-xl hover:bg-[#e6951a] transition-all"
             >
-              Iletisime gec
+              Contact Us
             </a>
           </div>
         </div>

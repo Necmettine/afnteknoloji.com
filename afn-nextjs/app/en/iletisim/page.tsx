@@ -1,51 +1,51 @@
 import Header from "@/components/Header";
-import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import EnglishContactForm from "@/components/EnglishContactForm";
 import { MapPin, Phone, Mail } from "lucide-react";
 
-export const metadata = { title: "Iletisim | AFN Teknoloji" };
+export const metadata = { title: "Contact | AFN Technology" };
 
 const contacts = [
   {
     icon: MapPin,
-    title: "Merkez Ofis",
+    title: "Head Office",
     lines: ["Zumrut Evler Mah. Hanimeli Cad.", "Tuna Is Merkezi No:13 K:3 D:6", "Maltepe / Istanbul 34852"],
   },
   {
     icon: MapPin,
-    title: "2. Sube",
+    title: "Branch Office",
     lines: ["Kavakli Mahallesi / Istanbul Caddesi", "No: 21 Beylikduzu / Istanbul"],
   },
   {
     icon: Phone,
-    title: "Telefon",
+    title: "Phone",
     lines: ["+90 216 572 50 40"],
     href: "tel:+902165725040",
   },
   {
     icon: Mail,
-    title: "E-posta",
+    title: "Email",
     lines: ["info@afnteknoloji.com", "destek@afnteknoloji.com", "satis@afnteknoloji.com"],
     href: "mailto:info@afnteknoloji.com",
   },
 ];
 
-export default function IletisimPage() {
+export default function EnglishContact() {
   return (
     <main>
       <Header />
       <section className="pt-32 pb-20 bg-[#0A0E1A] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Bize Ulasin</span>
-            <h1 className="text-4xl font-extrabold mt-3 mb-4">Iletisim</h1>
+            <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Contact us</span>
+            <h1 className="text-4xl font-extrabold mt-3 mb-4">Contact</h1>
             <p className="text-gray-400 max-w-lg mx-auto">
-              Sorulariniz veya teklif talebiniz icin formu doldurun, en kisa surede geri donelim.
+              Fill out the form for your questions or proposal request, and we will get back to you shortly.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <ContactForm />
+            <EnglishContactForm />
 
             <div className="space-y-5">
               {contacts.map((c) => (
@@ -75,7 +75,7 @@ export default function IletisimPage() {
           <div className="mt-12">
             <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <MapPin className="w-5 h-5 text-[#F5A623]" />
-              Konumumuz
+              Our Location
             </h2>
             <div className="rounded-2xl overflow-hidden border border-white/10" style={{ height: 400 }}>
               <iframe
@@ -86,7 +86,7 @@ export default function IletisimPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="AFN Teknoloji Konum"
+                title="AFN Technology Location"
               />
             </div>
           </div>

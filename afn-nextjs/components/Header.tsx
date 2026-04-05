@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-// ─── MEGA MENU YAPISI ───────────────────────────────────────
-const megaMenus = {
+const megaMenusTr = {
   kurumsal: {
     label: "Kurumsal",
     href: "/hakkimizda",
@@ -13,9 +13,9 @@ const megaMenus = {
       {
         title: "Biz Kimiz",
         items: [
-          { label: "Hakkımızda", href: "/hakkimizda", icon: "🏢" },
-          { label: "İş Ortaklarımız", href: "/is-ortaklarimiz", icon: "🤝" },
-          { label: "Referanslarımız", href: "/referanslarimiz", icon: "⭐" },
+          { label: "Hakkimizda", href: "/hakkimizda", icon: "🏢" },
+          { label: "Is Ortaklarimiz", href: "/is-ortaklarimiz", icon: "🤝" },
+          { label: "Referanslarimiz", href: "/referanslarimiz", icon: "⭐" },
           { label: "Blog", href: "/blog", icon: "📝" },
         ],
       },
@@ -26,50 +26,50 @@ const megaMenus = {
     href: "/hizmetlerimiz",
     cols: [
       {
-        title: "Danışmanlık",
+        title: "Danismanlik",
         items: [
-          { label: "Sistem Danışmanlığı", href: "/hizmetlerimiz/sistem-danismanligi", icon: "⚙️" },
-          { label: "Ağ ve Güvenlik Danışmanlığı", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi", icon: "🌐" },
-          { label: "Olağanüstü Durum Danışmanlığı", href: "/hizmetlerimiz/olaganustu-durum-danismanligi", icon: "🚨" },
-          { label: "İşletim ve Yönetim", href: "/hizmetlerimiz/isletim-ve-yonetim-hizmetleri", icon: "📊" },
+          { label: "Sistem Danismanligi", href: "/hizmetlerimiz/sistem-danismanligi", icon: "⚙️" },
+          { label: "Ag ve Guvenlik Danismanligi", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi", icon: "🌐" },
+          { label: "Olaganustu Durum Danismanligi", href: "/hizmetlerimiz/olaganustu-durum-danismanligi", icon: "🚨" },
+          { label: "Isletim ve Yonetim", href: "/hizmetlerimiz/isletim-ve-yonetim-hizmetleri", icon: "📊" },
         ],
       },
       {
-        title: "Destek & Güvenlik",
+        title: "Destek & Guvenlik",
         items: [
-          { label: "BT Güvenlik Bakım Destek", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek", icon: "🛡️" },
-          { label: "PC-Sunucu Bakım Destek", href: "/hizmetlerimiz/pc-sunucu-bakim-destek", icon: "🖥️" },
-          { label: "Ağ Bakım Destek", href: "/hizmetlerimiz/ag-bakim-destek", icon: "🔌" },
-          { label: "Yazılım Bakım Destek", href: "/hizmetlerimiz/yazilim-bakim-destek", icon: "💻" },
-          { label: "Yardım Masası", href: "/hizmetlerimiz/yardim-masasi", icon: "📞" },
-          { label: "Virüs Koruma / EDR & XDR", href: "/guvenlik-yazilimlari", icon: "🔒" },
+          { label: "BT Guvenlik Bakim Destek", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek", icon: "🛡️" },
+          { label: "PC-Sunucu Bakim Destek", href: "/hizmetlerimiz/pc-sunucu-bakim-destek", icon: "🖥️" },
+          { label: "Ag Bakim Destek", href: "/hizmetlerimiz/ag-bakim-destek", icon: "🔌" },
+          { label: "Yazilim Bakim Destek", href: "/hizmetlerimiz/yazilim-bakim-destek", icon: "💻" },
+          { label: "Yardim Masasi", href: "/hizmetlerimiz/yardim-masasi", icon: "📞" },
+          { label: "Virus Koruma / EDR & XDR", href: "/guvenlik-yazilimlari", icon: "🔒" },
         ],
       },
     ],
   },
   cozumlerimiz: {
-    label: "Çözümlerimiz",
+    label: "Cozumlerimiz",
     href: "/cozumlerimiz",
     cols: [
       {
-        title: "Altyapı",
+        title: "Altyapi",
         items: [
-          { label: "Sanallaştırma", href: "/cozumlerimiz/sanallastirma", icon: "☁️" },
-          { label: "Sunucu Kurulum ve Bakım", href: "/cozumlerimiz/sunucu-kurulum-ve-bakim", icon: "🖥️" },
-          { label: "Yerel Alan Ağları (LAN)", href: "/cozumlerimiz/yerel-alan-aglari-lan", icon: "🔗" },
-          { label: "Geniş Alan Ağları (WAN)", href: "/cozumlerimiz/genis-alan-aglari-wan", icon: "🌍" },
-          { label: "Yapısal Kablolama", href: "/cozumlerimiz/yapisal-kablolama", icon: "🔌" },
-          { label: "Mobil Çözümler", href: "/cozumlerimiz/mobil-cozumler", icon: "📱" },
+          { label: "Sanallastirma", href: "/cozumlerimiz/sanallastirma", icon: "☁️" },
+          { label: "Sunucu Kurulum ve Bakim", href: "/cozumlerimiz/sunucu-kurulum-ve-bakim", icon: "🖥️" },
+          { label: "Yerel Alan Aglar (LAN)", href: "/cozumlerimiz/yerel-alan-aglari-lan", icon: "🧩" },
+          { label: "Genis Alan Aglar (WAN)", href: "/cozumlerimiz/genis-alan-aglari-wan", icon: "🌍" },
+          { label: "Yapisal Kablolama", href: "/cozumlerimiz/yapisal-kablolama", icon: "🔌" },
+          { label: "Mobil Cozumler", href: "/cozumlerimiz/mobil-cozumler", icon: "📱" },
         ],
       },
       {
-        title: "Güvenlik & Uyumluluk",
+        title: "Guvenlik & Uyumluluk",
         items: [
-          { label: "Ağ ve İnternet Güvenliği", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri", icon: "🔒" },
-          { label: "Uzak Erişim Çözümleri", href: "/cozumlerimiz/uzak-erisim-cozumleri", icon: "🔑" },
+          { label: "Ag ve Internet Guvenligi", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri", icon: "🔒" },
+          { label: "Uzak Erisim Cozumleri", href: "/cozumlerimiz/uzak-erisim-cozumleri", icon: "🔑" },
           { label: "Felaket Koruma", href: "/cozumlerimiz/felaket-koruma-senaryolari", icon: "🚨" },
           { label: "5651 Loglama", href: "/cozumlerimiz/5651-loglama", icon: "📋" },
-          { label: "Arşivleme", href: "/cozumlerimiz/arsivleme", icon: "📁" },
+          { label: "Arsivleme", href: "/cozumlerimiz/arsivleme", icon: "📁" },
         ],
       },
       {
@@ -77,10 +77,10 @@ const megaMenus = {
         items: [
           { label: "Veri Yedekleme", href: "/cozumlerimiz/veri-yedekleme-cozumleri", icon: "💾" },
           { label: "Veri Depolama", href: "/cozumlerimiz/veri-depolama-cozumleri", icon: "🗄️" },
-          { label: "Veri Tekilleştirme", href: "/cozumlerimiz/veri-tekillestirme", icon: "🔂" },
+          { label: "Veri Tekillestirme", href: "/cozumlerimiz/veri-tekillestirme", icon: "🔂" },
           { label: "Microsoft 365", href: "/microsoft-365", icon: "🪟" },
           { label: "Video Konferans", href: "/cozumlerimiz/video-konferans-cozumleri", icon: "📹" },
-          { label: "Zimbra Türkiye", href: "/zimbra", icon: "📧" },
+          { label: "Zimbra Turkiye", href: "/zimbra", icon: "📧" },
         ],
       },
     ],
@@ -90,14 +90,14 @@ const megaMenus = {
     href: "/is-ortaklarimiz",
     cols: [
       {
-        title: "Güvenlik",
+        title: "Guvenlik",
         items: [
           { label: "Fortinet", href: "/fortinet", icon: "🔴" },
           { label: "Kaspersky / Bitdefender", href: "/guvenlik-yazilimlari", icon: "🛡️" },
         ],
       },
       {
-        title: "Altyapı & Bulut",
+        title: "Altyapi & Bulut",
         items: [
           { label: "Huawei", href: "/huawei", icon: "🔴" },
           { label: "VMware", href: "/vmware", icon: "🌐" },
@@ -110,12 +110,122 @@ const megaMenus = {
   },
 };
 
-type MegaKey = keyof typeof megaMenus;
+const megaMenusEn = {
+  kurumsal: {
+    label: "Corporate",
+    href: "/en/hakkimizda",
+    cols: [
+      {
+        title: "Who We Are",
+        items: [
+          { label: "About Us", href: "/en/hakkimizda", icon: "🏢" },
+          { label: "Partners", href: "/is-ortaklarimiz", icon: "🤝" },
+          { label: "References", href: "/en/referanslarimiz", icon: "⭐" },
+          { label: "Blog", href: "/blog", icon: "📝" },
+        ],
+      },
+    ],
+  },
+  hizmetlerimiz: {
+    label: "Services",
+    href: "/en/hizmetlerimiz",
+    cols: [
+      {
+        title: "Consulting",
+        items: [
+          { label: "System Consulting", href: "/en/hizmetlerimiz/sistem-danismanligi", icon: "⚙️" },
+          { label: "Network & Security Consulting", href: "/en/hizmetlerimiz/ag-ve-guvenlik-danismanligi", icon: "🌐" },
+          { label: "Disaster Recovery Consulting", href: "/en/hizmetlerimiz/olaganustu-durum-danismanligi", icon: "🚨" },
+          { label: "Operations & Management", href: "/en/hizmetlerimiz/isletim-ve-yonetim-hizmetleri", icon: "📊" },
+        ],
+      },
+      {
+        title: "Support & Security",
+        items: [
+          { label: "IT Security Maintenance", href: "/en/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek", icon: "🛡️" },
+          { label: "PC-Server Support", href: "/en/hizmetlerimiz/pc-sunucu-bakim-destek", icon: "🖥️" },
+          { label: "Network Maintenance", href: "/en/hizmetlerimiz/ag-bakim-destek", icon: "🔌" },
+          { label: "Software Maintenance", href: "/en/hizmetlerimiz/yazilim-bakim-destek", icon: "💻" },
+          { label: "Help Desk", href: "/en/hizmetlerimiz/yardim-masasi", icon: "📞" },
+          { label: "Antivirus / EDR & XDR", href: "/en/guvenlik-yazilimlari", icon: "🔒" },
+        ],
+      },
+    ],
+  },
+  cozumlerimiz: {
+    label: "Solutions",
+    href: "/en/cozumlerimiz",
+    cols: [
+      {
+        title: "Infrastructure",
+        items: [
+          { label: "Virtualization", href: "/en/cozumlerimiz/sanallastirma", icon: "☁️" },
+          { label: "Server Installation & Maintenance", href: "/en/cozumlerimiz/sunucu-kurulum-ve-bakim", icon: "🖥️" },
+          { label: "Local Area Networks (LAN)", href: "/en/cozumlerimiz/yerel-alan-aglari-lan", icon: "🧩" },
+          { label: "Wide Area Networks (WAN)", href: "/en/cozumlerimiz/genis-alan-aglari-wan", icon: "🌍" },
+          { label: "Structured Cabling", href: "/en/cozumlerimiz/yapisal-kablolama", icon: "🔌" },
+          { label: "Mobile Solutions", href: "/en/cozumlerimiz/mobil-cozumler", icon: "📱" },
+        ],
+      },
+      {
+        title: "Security & Compliance",
+        items: [
+          { label: "Network & Internet Security", href: "/en/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri", icon: "🔒" },
+          { label: "Remote Access Solutions", href: "/en/cozumlerimiz/uzak-erisim-cozumleri", icon: "🔑" },
+          { label: "Disaster Protection", href: "/en/cozumlerimiz/felaket-koruma-senaryolari", icon: "🚨" },
+          { label: "5651 Logging", href: "/en/cozumlerimiz/5651-loglama", icon: "📋" },
+          { label: "Archiving", href: "/en/cozumlerimiz/arsivleme", icon: "📁" },
+        ],
+      },
+      {
+        title: "Cloud & Data",
+        items: [
+          { label: "Data Backup", href: "/en/cozumlerimiz/veri-yedekleme-cozumleri", icon: "💾" },
+          { label: "Data Storage", href: "/en/cozumlerimiz/veri-depolama-cozumleri", icon: "🗄️" },
+          { label: "Data Deduplication", href: "/en/cozumlerimiz/veri-tekillestirme", icon: "🔂" },
+          { label: "Microsoft 365", href: "/en/microsoft-365", icon: "🪟" },
+          { label: "Video Conferencing", href: "/en/cozumlerimiz/video-konferans-cozumleri", icon: "📹" },
+          { label: "Zimbra Turkey", href: "/zimbra", icon: "📧" },
+        ],
+      },
+    ],
+  },
+  markalar: {
+    label: "Brands",
+    href: "/is-ortaklarimiz",
+    cols: [
+      {
+        title: "Security",
+        items: [
+          { label: "Fortinet", href: "/fortinet", icon: "🔴" },
+          { label: "Kaspersky / Bitdefender", href: "/en/guvenlik-yazilimlari", icon: "🛡️" },
+        ],
+      },
+      {
+        title: "Infrastructure & Cloud",
+        items: [
+          { label: "Huawei", href: "/huawei", icon: "🔴" },
+          { label: "VMware", href: "/vmware", icon: "🌐" },
+          { label: "Veeam", href: "/veeam", icon: "💚" },
+          { label: "Microsoft 365", href: "/en/microsoft-365", icon: "🪟" },
+          { label: "Zimbra", href: "/zimbra", icon: "📧" },
+        ],
+      },
+    ],
+  },
+};
+
+type MegaKey = keyof typeof megaMenusTr;
 
 export default function Header() {
+  const pathname = usePathname() || "/";
+  const isEn = pathname.startsWith("/en");
+  const megaMenus = isEn ? megaMenusEn : megaMenusTr;
+
   const [activeMenu, setActiveMenu] = useState<MegaKey | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -123,19 +233,56 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Dışarı tıklayınca mega menüyü kapat
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setActiveMenu(null);
       }
     };
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveMenu(null);
+      }
+    };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
-  // Mobil menü için açık/kapalı gruplar
   const mobileGroups = Object.values(megaMenus);
+  const homeHref = isEn ? "/en" : "/";
+  const contactHref = isEn ? "/en/iletisim" : "/iletisim";
+  const supportHref = "/destek";
+  const allLabel = isEn ? "All" : "Tum";
+
+  const openMenu = (key: MegaKey) => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setActiveMenu(key);
+  };
+
+  const scheduleClose = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+    }
+    closeTimerRef.current = setTimeout(() => {
+      setActiveMenu(null);
+      closeTimerRef.current = null;
+    }, 160);
+  };
 
   return (
     <>
@@ -158,9 +305,7 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-
-            {/* Logo */}
-            <a href="/" className="flex-shrink-0">
+            <a href={homeHref} className="flex-shrink-0">
               <Image
                 src="https://afnteknoloji.com/wp-content/uploads/2023/01/logo.png"
                 alt="AFN Teknoloji Logo"
@@ -170,16 +315,12 @@ export default function Header() {
               />
             </a>
 
-            {/* Desktop Nav */}
             <nav ref={navRef} className="hidden lg:flex items-center gap-0.5">
-
-              {/* Anasayfa */}
-              <a href="/"
+              <a href={homeHref}
                 className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-[#F5A623] transition-colors rounded-lg hover:bg-white/5 whitespace-nowrap">
-                Anasayfa
+                {isEn ? "Home" : "Anasayfa"}
               </a>
 
-              {/* Mega menu grupları */}
               {(Object.keys(megaMenus) as MegaKey[]).map((key) => {
                 const menu = megaMenus[key];
                 const isActive = activeMenu === key;
@@ -188,12 +329,14 @@ export default function Header() {
                   <div
                     key={key}
                     className="relative"
-                    onMouseEnter={() => setActiveMenu(key)}
-                    onMouseLeave={() => setActiveMenu(null)}
+                    onMouseEnter={() => openMenu(key)}
+                    onMouseLeave={scheduleClose}
                   >
-                    {/* Tıkla VEYA hover ile menü açılır */}
                     <button
-                      onClick={() => setActiveMenu(isActive ? null : key)}
+                      type="button"
+                      onClick={() => openMenu(key)}
+                      aria-expanded={isActive}
+                      aria-haspopup="true"
                       className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg whitespace-nowrap cursor-pointer ${
                         isActive ? "text-[#F5A623] bg-white/5" : "text-gray-300 hover:text-[#F5A623] hover:bg-white/5"
                       }`}
@@ -202,7 +345,6 @@ export default function Header() {
                       <ChevronDown className={`w-3 h-3 opacity-60 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`} />
                     </button>
 
-                    {/* Mega dropdown */}
                     {isActive && (
                       <div
                         className="absolute top-full mt-0 bg-[#0D1220] border border-white/10 rounded-2xl shadow-2xl z-[1000] p-5"
@@ -213,12 +355,11 @@ export default function Header() {
                           minWidth: colCount === 1 ? 180 : undefined,
                         }}
                       >
-                        {/* Başlık sayfasına git linki */}
                         <a
                           href={menu.href}
                           className="flex items-center gap-1 text-xs text-gray-500 hover:text-[#F5A623] mb-3 transition-colors"
                         >
-                          Tüm {menu.label} →
+                          {allLabel} {menu.label} →
                         </a>
                         <div className="grid gap-6" style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}>
                           {menu.cols.map((col) => (
@@ -246,25 +387,21 @@ export default function Header() {
                 );
               })}
 
-              {/* Destek */}
-              <a href="/destek"
+              <a href={supportHref}
                 className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-[#F5A623] transition-colors rounded-lg hover:bg-white/5 whitespace-nowrap">
-                Destek
+                {isEn ? "Support" : "Destek"}
               </a>
 
-              {/* Teklif Al */}
-              <a href="/iletisim"
+              <a href={contactHref}
                 className="ml-2 px-5 py-2 bg-[#F5A623] text-black text-sm font-bold rounded-lg hover:bg-[#e6951a] transition-all whitespace-nowrap">
-                İletişim
+                {isEn ? "Contact" : "Iletisim"}
               </a>
 
-              {/* Dil seçici */}
               <div className="ml-2">
                 <LanguageSwitcher />
               </div>
             </nav>
 
-            {/* Hamburger */}
             <label
               htmlFor="hmb-toggle"
               className="hmb-label"
@@ -276,7 +413,7 @@ export default function Header() {
                 borderRadius: 10, cursor: "pointer", color: "#fff",
                 WebkitTapHighlightColor: "transparent",
               }}
-              aria-label="Menü"
+              aria-label="Menu"
             >
               <span className="hmb-open">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -296,12 +433,10 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobil menü */}
       <div className="mobile-nav-css">
         <div style={{ padding: "16px 20px" }}>
-
-          <a href="/" style={{ display: "block", padding: "14px 0", color: "#fff", fontWeight: 700, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
-            🏠 Anasayfa
+          <a href={homeHref} style={{ display: "block", padding: "14px 0", color: "#fff", fontWeight: 700, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
+            🏠 {isEn ? "Home" : "Anasayfa"}
           </a>
 
           {mobileGroups.map((menu) => (
@@ -328,13 +463,13 @@ export default function Header() {
             </div>
           ))}
 
-          <a href="/destek" style={{ display: "block", padding: "14px 0", color: "#d1d5db", fontWeight: 600, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
-            🎧 Destek Talebi
+          <a href={supportHref} style={{ display: "block", padding: "14px 0", color: "#d1d5db", fontWeight: 600, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
+            🎧 {isEn ? "Support Request" : "Destek Talebi"}
           </a>
 
-          <a href="/iletisim"
+          <a href={contactHref}
             style={{ display: "block", marginTop: 20, padding: "14px", background: "#F5A623", color: "#000", fontWeight: 700, textAlign: "center", borderRadius: 12, textDecoration: "none", fontSize: 16 }}>
-            İletişim / Teklif Al
+            {isEn ? "Contact / Get Quote" : "Iletisim / Teklif Al"}
           </a>
         </div>
       </div>

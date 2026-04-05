@@ -4,6 +4,7 @@ import PartnerCards from "@/components/PartnerCards";
 import MicrosoftServices from "@/components/MicrosoftServices";
 import VideoSection from "@/components/VideoSection";
 import ServicesAccordion from "@/components/ServicesAccordion";
+import TrustSection from "@/components/TrustSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <MicrosoftServices />
       <VideoSection />
       <ServicesAccordion />
+      <TrustSection />
       <LogoCarousel />
       <CTASection />
       <Footer />
