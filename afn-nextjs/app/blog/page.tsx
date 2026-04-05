@@ -1,61 +1,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, ArrowRight, Tag } from "lucide-react";
+import { getAllPosts } from "@/lib/blog";
 
-const posts = [
-  {
-    slug: "kurumsal-bt-altyapisi-nasil-planlanir",
-    title: "Kurumsal BT Altyapısı Nasıl Planlanır?",
-    excerpt: "Küçük ve orta ölçekli işletmelerden büyük kurumlara kadar doğru BT altyapısı planlaması için dikkat edilmesi gereken kritik adımlar.",
-    category: "BT Yönetimi",
-    date: "15 Mart 2024",
-    readTime: "5 dk",
-  },
-  {
-    slug: "zero-trust-guvenlik-modeli",
-    title: "Zero Trust Güvenlik Modeli Nedir?",
-    excerpt: "Geleneksel ağ güvenliği anlayışını kökten değiştiren Zero Trust yaklaşımı ve kurumunuzda nasıl uygulayabileceğiniz.",
-    category: "Siber Güvenlik",
-    date: "28 Şubat 2024",
-    readTime: "7 dk",
-  },
-  {
-    slug: "microsoft-365-kurumsal-kullanim-ipuclari",
-    title: "Microsoft 365 Kurumsal Kullanım İpuçları",
-    excerpt: "Microsoft 365'in gücünü tam anlamıyla kullanmak için Teams, SharePoint ve OneDrive entegrasyon stratejileri.",
-    category: "Microsoft",
-    date: "10 Şubat 2024",
-    readTime: "6 dk",
-  },
-  {
-    slug: "veeam-ile-felaket-kurtarma-stratejisi",
-    title: "Veeam ile Felaket Kurtarma Stratejisi Oluşturma",
-    excerpt: "Veri kaybını önlemek ve iş sürekliliğini sağlamak için kapsamlı bir felaket kurtarma planı nasıl hazırlanır.",
-    category: "Yedekleme",
-    date: "25 Ocak 2024",
-    readTime: "8 dk",
-  },
-  {
-    slug: "5651-kanunu-log-yonetimi",
-    title: "5651 Sayılı Kanun ve Log Yönetimi",
-    excerpt: "İnternet ortamındaki hukuki yükümlülüklerinizi yerine getirmek için 5651 log kayıt ve saklama gereksinimleri rehberi.",
-    category: "Uyumluluk",
-    date: "12 Ocak 2024",
-    readTime: "6 dk",
-  },
-  {
-    slug: "vmware-vsphere-best-practices",
-    title: "VMware vSphere Best Practices",
-    excerpt: "Sanallaştırma ortamınızın performansını ve güvenilirliğini artırmak için VMware vSphere yapılandırma önerileri.",
-    category: "Sanallaştırma",
-    date: "5 Ocak 2024",
-    readTime: "9 dk",
-  },
-];
+export const dynamic = "force-dynamic"; // Make.com'dan gelen yeni yazılar hemen görünsün
 
-const categories = ["Tümü", "BT Yönetimi", "Siber Güvenlik", "Microsoft", "Yedekleme", "Uyumluluk", "Sanallaştırma"];
+const categories = ["Tümü", "BT Yönetimi", "Siber Güvenlik", "Microsoft", "Yedekleme", "Uyumluluk", "Sanallaştırma", "Genel"];
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <main className="bg-[#0A0E1A] min-h-screen">
       <Header />
@@ -80,13 +34,13 @@ export default function BlogPage() {
       <section className="px-4 mb-12">
         <div className="max-w-5xl mx-auto flex flex-wrap gap-2 justify-center">
           {categories.map((cat) => (
-            <button key={cat} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            <span key={cat} className={`px-4 py-2 rounded-full text-sm font-medium cursor-default ${
               cat === "Tümü"
                 ? "bg-[#F5A623] text-black"
-                : "bg-white/5 text-gray-400 border border-white/10 hover:border-[#F5A623]/40 hover:text-[#F5A623]"
+                : "bg-white/5 text-gray-400 border border-white/10"
             }`}>
               {cat}
-            </button>
+            </span>
           ))}
         </div>
       </section>
@@ -95,10 +49,9 @@ export default function BlogPage() {
       <section className="py-8 px-4 pb-24">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
-            <article key={post.slug} className="bg-white/3 border border-white/8 rounded-2xl overflow-hidden hover:border-[#F5A623]/30 transition-all group">
-              {/* Placeholder image area */}
+            <article key={post.slug} className="bg-white/3 border border-white/8 rounded-2xl overflow-hidden hover:border-[#F5A623]/30 transition-all group hover:-translate-y-1">
               <div className="h-44 bg-gradient-to-br from-[#F5A623]/10 to-[#0A0E1A] flex items-center justify-center">
-                <span className="text-4xl opacity-30">📝</span>
+                <span className="text-5xl opacity-20">📝</span>
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
@@ -107,7 +60,7 @@ export default function BlogPage() {
                 <h2 className="text-white font-bold text-lg mb-2 group-hover:text-[#F5A623] transition-colors leading-snug">
                   {post.title}
                 </h2>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3 text-gray-500 text-xs">
                     <span className="flex items-center gap-1"><Calendar className="w-3 h-3" />{post.date}</span>

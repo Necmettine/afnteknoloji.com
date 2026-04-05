@@ -8,8 +8,8 @@ const partners = [
     color: "#EE3124",
     desc: "Firewall, VPN ve ağ güvenliği çözümlerinde Fortinet yetkili çözüm ortağı.",
     logo: "/logos/fortinet.svg",
-    href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi",
-    logoClass: "h-10 w-auto",
+    href: "/fortinet",
+    logoClass: "h-7 w-auto max-w-[120px]",
   },
   {
     name: "Huawei",
@@ -17,7 +17,7 @@ const partners = [
     color: "#CF0A2C",
     desc: "Cloud, hesaplama ve depolama çözümlerinde Huawei Elite iş ortağı.",
     logo: "/logos/huawei.svg",
-    href: "/is-ortaklarimiz",
+    href: "/huawei",
     logoClass: "h-12 w-auto",
   },
   {
@@ -26,7 +26,7 @@ const partners = [
     color: "#607078",
     desc: "Sanallaştırma ve bulut altyapısı çözümlerinde VMware Enterprise ortağı.",
     logo: "/logos/vmware.svg",
-    href: "/cozumlerimiz/sanallastirma",
+    href: "/vmware",
     logoClass: "h-10 w-auto",
   },
   {

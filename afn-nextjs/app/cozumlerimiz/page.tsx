@@ -5,6 +5,14 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata = { title: "Çözümlerimiz | AFN Teknoloji" };
 
+// Bazı çözümler kendi ayrı sayfasına yönlendirir
+const customLinks: Record<string, string> = {
+  "microsoft-365": "/microsoft-365",
+  "guvenlik-yazilimlari": "/guvenlik-yazilimlari",
+  "veri-tekillestirme": "/cozumlerimiz/veri-tekillestirme",
+  "mobil-cozumler": "/cozumlerimiz/mobil-cozumler",
+};
+
 export default function CozumlerPage() {
   return (
     <main>
@@ -17,17 +25,20 @@ export default function CozumlerPage() {
             <p className="text-gray-400 max-w-xl mx-auto">Ağ güvenliğinden veri yedeklemeye, sanallaştırmadan arşivlemeye geniş çözüm portföyümüz.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Object.entries(cozumler).map(([slug, item]) => (
-              <a key={slug} href={`/cozumlerimiz/${slug}`}
-                className="gradient-border rounded-2xl p-6 hover:border-[#F5A623]/50 transition-all hover:-translate-y-1 group">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h2 className="font-bold text-white mb-2 group-hover:text-[#F5A623] transition-colors">{item.title}</h2>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.desc}</p>
-                <span className="flex items-center gap-1 text-[#F5A623] text-sm font-semibold">
-                  Detaylar <ArrowRight className="w-4 h-4" />
-                </span>
-              </a>
-            ))}
+            {Object.entries(cozumler).map(([slug, item]) => {
+              const href = customLinks[slug] ?? `/cozumlerimiz/${slug}`;
+              return (
+                <a key={slug} href={href}
+                  className="gradient-border rounded-2xl p-6 hover:border-[#F5A623]/50 transition-all hover:-translate-y-1 group">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h2 className="font-bold text-white mb-2 group-hover:text-[#F5A623] transition-colors">{item.title}</h2>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.desc}</p>
+                  <span className="flex items-center gap-1 text-[#F5A623] text-sm font-semibold">
+                    Detaylar <ArrowRight className="w-4 h-4" />
+                  </span>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

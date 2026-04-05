@@ -117,4 +117,24 @@ export const cozumler: Record<string, { title: string; desc: string; content: st
     desc: "Zimbra kurumsal e-posta çözümlerinde Türkiye yetkili distribütörü.",
     content: "AFN Teknoloji olarak Zimbra'nın Türkiye yetkili distribütörüyüz. Zimbra Collaboration Suite ile kurumsal e-posta, takvim, kişi yönetimi ve anlık mesajlaşma çözümleri sunuyoruz.",
   },
+  "veri-tekillestirme": {
+    title: "Veri Tekilleştirme", icon: "🔂",
+    desc: "Tekrarlayan veri bloklarını tespit ederek %60-95 oranında depolama tasarrufu sağlayan deduplication çözümleri.",
+    content: "Kurumsal depolama ortamlarında tekrarlayan veri bloklarını otomatik olarak tespit eden ve tek kopya halinde saklayan veri tekilleştirme teknolojisiyle hem yedekleme hem birincil depolama maliyetlerinizi önemli ölçüde düşürüyoruz.",
+  },
+  "mobil-cozumler": {
+    title: "Mobil Çözümler", icon: "📱",
+    desc: "MDM, MAM ve mobil VPN ile kurumsal mobil cihaz yönetimi ve güvenliği.",
+    content: "Microsoft Intune başta olmak üzere kurumsal MDM/MAM platformlarıyla iOS, Android ve Windows mobil cihazlarınızı merkezi yönetin. BYOD, COPE ve COBO senaryolarında güvenli mobil iş gücü sağlıyoruz.",
+  },
+  "microsoft-365": {
+    title: "Microsoft 365", icon: "🪟",
+    desc: "Microsoft Silver Partner olarak kurumsal Microsoft 365 lisans, kurulum ve destek hizmetleri.",
+    content: "AFN Teknoloji, Microsoft Silver Partner sıfatıyla Teams, OneDrive, SharePoint, Exchange Online ve Azure Active Directory dahil tüm Microsoft 365 ürün ailesinin lisans satışı, kurulum, yapılandırma ve 7/24 teknik destek hizmetlerini sunmaktadır.",
+  },
+  "guvenlik-yazilimlari": {
+    title: "Virüs Koruma / EDR & XDR", icon: "🛡️",
+    desc: "Kaspersky ve Bitdefender yetkili satış ortağı olarak EDR ve XDR çözümleri.",
+    content: "Kaspersky XDR/EDR ve Bitdefender GravityZone EDR/XDR ürünlerinin yetkili satış ve destek ortağıyız. Uç nokta korumasından genişletilmiş tehdit tespitine kadar kapsamlı siber güvenlik çözümleri sunuyoruz.",
+  },
 };

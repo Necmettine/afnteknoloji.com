@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords: "AFN Teknoloji, BT destek, sistem danışmanlığı, Microsoft partner, Huawei partner, VMware, Veeam, Fortinet, ağ güvenliği",
   verification: {
     google: "YR6nYotIr_Y8s4AONKXqLpH363XcM3CS1jM1VZp8dTA",
+    other: {
+      "msvalidate.01": "40d49c55206d4cd5803fb74c6874224e",
+      "yandex-verification": "31371aa12ddb503f",
+    },
   },
   openGraph: {
     title: "AFN Teknoloji | BT Destek ve Danışmanlık",

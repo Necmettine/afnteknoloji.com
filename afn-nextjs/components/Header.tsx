@@ -2,51 +2,118 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navItems = [
-  { label: "Anasayfa", href: "/" },
-  { label: "Hakkımızda", href: "/hakkimizda" },
-  {
-    label: "Hizmetlerimiz", href: "/hizmetlerimiz",
-    sub: [
-      { label: "Sistem Danışmanlığı", href: "/hizmetlerimiz/sistem-danismanligi" },
-      { label: "BT Güvenlik Bakım Destek", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek" },
-      { label: "PC-Sunucu Bakım Destek", href: "/hizmetlerimiz/pc-sunucu-bakim-destek" },
-      { label: "Yardım Masası", href: "/hizmetlerimiz/yardim-masasi" },
-      { label: "Ağ ve Güvenlik Danışmanlığı", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi" },
-      { label: "Ağ Bakım Destek", href: "/hizmetlerimiz/ag-bakim-destek" },
-      { label: "Yazılım Bakım Destek", href: "/hizmetlerimiz/yazilim-bakim-destek" },
-      { label: "Olağanüstü Durum Danışmanlığı", href: "/hizmetlerimiz/olaganustu-durum-danismanligi" },
-      { label: "İşletim ve Yönetim Hizmetleri", href: "/hizmetlerimiz/isletim-ve-yonetim-hizmetleri" },
+// ─── MEGA MENU YAPISI ───────────────────────────────────────
+const megaMenus = {
+  kurumsal: {
+    label: "Kurumsal",
+    href: "/hakkimizda",
+    cols: [
+      {
+        title: "Biz Kimiz",
+        items: [
+          { label: "Hakkımızda", href: "/hakkimizda", icon: "🏢" },
+          { label: "İş Ortaklarımız", href: "/is-ortaklarimiz", icon: "🤝" },
+          { label: "Referanslarımız", href: "/referanslarimiz", icon: "⭐" },
+          { label: "Blog", href: "/blog", icon: "📝" },
+        ],
+      },
     ],
   },
-  {
-    label: "Çözümlerimiz", href: "/cozumlerimiz",
-    sub: [
-      { label: "Sanallaştırma", href: "/cozumlerimiz/sanallastirma" },
-      { label: "Veri Yedekleme", href: "/cozumlerimiz/veri-yedekleme-cozumleri" },
-      { label: "Veri Depolama", href: "/cozumlerimiz/veri-depolama-cozumleri" },
-      { label: "Ağ ve İnternet Güvenliği", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri" },
-      { label: "Uzak Erişim Çözümleri", href: "/cozumlerimiz/uzak-erisim-cozumleri" },
-      { label: "Video Konferans", href: "/cozumlerimiz/video-konferans-cozumleri" },
-      { label: "Sunucu Kurulum ve Bakım", href: "/cozumlerimiz/sunucu-kurulum-ve-bakim" },
-      { label: "Yerel Alan Ağları (LAN)", href: "/cozumlerimiz/yerel-alan-aglari-lan" },
-      { label: "Geniş Alan Ağları (WAN)", href: "/cozumlerimiz/genis-alan-aglari-wan" },
-      { label: "Felaket Koruma", href: "/cozumlerimiz/felaket-koruma-senaryolari" },
-      { label: "Arşivleme", href: "/cozumlerimiz/arsivleme" },
-      { label: "5651 Loglama", href: "/cozumlerimiz/5651-loglama" },
-      { label: "Yapısal Kablolama", href: "/cozumlerimiz/yapisal-kablolama" },
-      { label: "Zimbra Türkiye", href: "/cozumlerimiz/zimbra-turkiye" },
+  hizmetlerimiz: {
+    label: "Hizmetlerimiz",
+    href: "/hizmetlerimiz",
+    cols: [
+      {
+        title: "Danışmanlık",
+        items: [
+          { label: "Sistem Danışmanlığı", href: "/hizmetlerimiz/sistem-danismanligi", icon: "⚙️" },
+          { label: "Ağ ve Güvenlik Danışmanlığı", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi", icon: "🌐" },
+          { label: "Olağanüstü Durum Danışmanlığı", href: "/hizmetlerimiz/olaganustu-durum-danismanligi", icon: "🚨" },
+          { label: "İşletim ve Yönetim", href: "/hizmetlerimiz/isletim-ve-yonetim-hizmetleri", icon: "📊" },
+        ],
+      },
+      {
+        title: "Destek & Güvenlik",
+        items: [
+          { label: "BT Güvenlik Bakım Destek", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek", icon: "🛡️" },
+          { label: "PC-Sunucu Bakım Destek", href: "/hizmetlerimiz/pc-sunucu-bakim-destek", icon: "🖥️" },
+          { label: "Ağ Bakım Destek", href: "/hizmetlerimiz/ag-bakim-destek", icon: "🔌" },
+          { label: "Yazılım Bakım Destek", href: "/hizmetlerimiz/yazilim-bakim-destek", icon: "💻" },
+          { label: "Yardım Masası", href: "/hizmetlerimiz/yardim-masasi", icon: "📞" },
+          { label: "Virüs Koruma / EDR & XDR", href: "/guvenlik-yazilimlari", icon: "🔒" },
+        ],
+      },
     ],
   },
-  { label: "İş Ortaklarımız", href: "/is-ortaklarimiz" },
-  { label: "Zimbra Türkiye", href: "/zimbra" },
-  { label: "Referanslarımız", href: "/referanslarimiz" },
-  { label: "İletişim", href: "/iletisim" },
-];
+  cozumlerimiz: {
+    label: "Çözümlerimiz",
+    href: "/cozumlerimiz",
+    cols: [
+      {
+        title: "Altyapı",
+        items: [
+          { label: "Sanallaştırma", href: "/cozumlerimiz/sanallastirma", icon: "☁️" },
+          { label: "Sunucu Kurulum ve Bakım", href: "/cozumlerimiz/sunucu-kurulum-ve-bakim", icon: "🖥️" },
+          { label: "Yerel Alan Ağları (LAN)", href: "/cozumlerimiz/yerel-alan-aglari-lan", icon: "🔗" },
+          { label: "Geniş Alan Ağları (WAN)", href: "/cozumlerimiz/genis-alan-aglari-wan", icon: "🌍" },
+          { label: "Yapısal Kablolama", href: "/cozumlerimiz/yapisal-kablolama", icon: "🔌" },
+          { label: "Mobil Çözümler", href: "/cozumlerimiz/mobil-cozumler", icon: "📱" },
+        ],
+      },
+      {
+        title: "Güvenlik & Uyumluluk",
+        items: [
+          { label: "Ağ ve İnternet Güvenliği", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri", icon: "🔒" },
+          { label: "Uzak Erişim Çözümleri", href: "/cozumlerimiz/uzak-erisim-cozumleri", icon: "🔑" },
+          { label: "Felaket Koruma", href: "/cozumlerimiz/felaket-koruma-senaryolari", icon: "🚨" },
+          { label: "5651 Loglama", href: "/cozumlerimiz/5651-loglama", icon: "📋" },
+          { label: "Arşivleme", href: "/cozumlerimiz/arsivleme", icon: "📁" },
+        ],
+      },
+      {
+        title: "Bulut & Veri",
+        items: [
+          { label: "Veri Yedekleme", href: "/cozumlerimiz/veri-yedekleme-cozumleri", icon: "💾" },
+          { label: "Veri Depolama", href: "/cozumlerimiz/veri-depolama-cozumleri", icon: "🗄️" },
+          { label: "Veri Tekilleştirme", href: "/cozumlerimiz/veri-tekillestirme", icon: "🔂" },
+          { label: "Microsoft 365", href: "/microsoft-365", icon: "🪟" },
+          { label: "Video Konferans", href: "/cozumlerimiz/video-konferans-cozumleri", icon: "📹" },
+          { label: "Zimbra Türkiye", href: "/zimbra", icon: "📧" },
+        ],
+      },
+    ],
+  },
+  markalar: {
+    label: "Markalar",
+    href: "/is-ortaklarimiz",
+    cols: [
+      {
+        title: "Güvenlik",
+        items: [
+          { label: "Fortinet", href: "/fortinet", icon: "🔴" },
+          { label: "Kaspersky / Bitdefender", href: "/guvenlik-yazilimlari", icon: "🛡️" },
+        ],
+      },
+      {
+        title: "Altyapı & Bulut",
+        items: [
+          { label: "Huawei", href: "/huawei", icon: "🔴" },
+          { label: "VMware", href: "/vmware", icon: "🌐" },
+          { label: "Veeam", href: "/veeam", icon: "💚" },
+          { label: "Microsoft 365", href: "/microsoft-365", icon: "🪟" },
+          { label: "Zimbra", href: "/zimbra", icon: "📧" },
+        ],
+      },
+    ],
+  },
+};
+
+type MegaKey = keyof typeof megaMenus;
 
 export default function Header() {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<MegaKey | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -55,9 +122,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Mobil menü için açık/kapalı gruplar
+  const mobileGroups = Object.values(megaMenus);
+
   return (
     <>
-      {/* CSS-only hamburger trick — JavaScript gerekmez, iOS dahil her cihazda çalışır */}
       <style>{`
         #hmb-toggle { display: none; }
         .hmb-close { display: none; }
@@ -68,14 +137,18 @@ export default function Header() {
         @media (min-width: 1024px) { .hmb-label { display: none !important; } .mobile-nav-css { display: none !important; } }
       `}</style>
 
-      {/* Checkbox — hiçbir zaman görünmez, label aracılığıyla toggle edilir */}
       <input type="checkbox" id="hmb-toggle" />
 
-      <header className={`fixed top-0 left-0 right-0 z-[999] transition-colors duration-300 ${
-        scrolled ? "bg-[#0A0E1A] border-b border-white/10 shadow-lg" : "bg-[#0A0E1A]/90"
-      }`}>
+      <header
+        className={`fixed top-0 left-0 right-0 z-[999] transition-colors duration-300 ${
+          scrolled ? "bg-[#0A0E1A] border-b border-white/10 shadow-lg" : "bg-[#0A0E1A]/90"
+        }`}
+        onMouseLeave={() => setActiveMenu(null)}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
+
+            {/* Logo */}
             <a href="/" className="flex-shrink-0">
               <Image
                 src="https://afnteknoloji.com/wp-content/uploads/2023/01/logo.png"
@@ -87,48 +160,94 @@ export default function Header() {
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <div key={item.label} className="relative"
-                  onMouseEnter={() => item.sub && setActiveMenu(item.label)}
-                  onMouseLeave={() => setActiveMenu(null)}>
-                  <a href={item.href}
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-gray-300 hover:text-[#F5A623] transition-colors rounded-lg hover:bg-white/5 whitespace-nowrap">
-                    {item.label}
-                    {item.sub && <ChevronDown className="w-3 h-3 opacity-60" />}
-                  </a>
-                  {item.sub && activeMenu === item.label && (
-                    <div className="absolute top-full left-0 mt-1 w-60 bg-[#0D1220] border border-white/10 rounded-xl py-2 shadow-xl z-50">
-                      {item.sub.map((s) => (
-                        <a key={s.href} href={s.href}
-                          className="block px-4 py-2 text-sm text-gray-300 hover:text-[#F5A623] hover:bg-white/5 transition-colors">
-                          {s.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <a href="/iletisim" className="ml-2 px-5 py-2 bg-[#F5A623] text-black text-sm font-bold rounded-lg hover:bg-[#e6951a] transition-all whitespace-nowrap">
-                Teklif Al
+            <nav className="hidden lg:flex items-center gap-0.5">
+
+              {/* Anasayfa */}
+              <a href="/"
+                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-[#F5A623] transition-colors rounded-lg hover:bg-white/5 whitespace-nowrap">
+                Anasayfa
               </a>
+
+              {/* Mega menu grupları */}
+              {(Object.keys(megaMenus) as MegaKey[]).map((key) => {
+                const menu = megaMenus[key];
+                const isActive = activeMenu === key;
+                const colCount = menu.cols.length;
+                return (
+                  <div key={key} className="relative" onMouseEnter={() => setActiveMenu(key)}>
+                    <a href={menu.href}
+                      className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg whitespace-nowrap ${
+                        isActive ? "text-[#F5A623] bg-white/5" : "text-gray-300 hover:text-[#F5A623] hover:bg-white/5"
+                      }`}>
+                      {menu.label}
+                      <ChevronDown className={`w-3 h-3 opacity-60 transition-transform duration-200 ${isActive ? "rotate-180" : ""}`} />
+                    </a>
+
+                    {/* Mega dropdown */}
+                    {isActive && (
+                      <div
+                        className="absolute top-full mt-1 bg-[#0D1220] border border-white/10 rounded-2xl shadow-2xl z-50 p-5"
+                        style={{
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          width: colCount === 1 ? 220 : colCount === 2 ? 460 : 680,
+                          minWidth: colCount === 1 ? 180 : undefined,
+                        }}
+                      >
+                        <div className={`grid gap-6`} style={{ gridTemplateColumns: `repeat(${colCount}, 1fr)` }}>
+                          {menu.cols.map((col) => (
+                            <div key={col.title}>
+                              <div className="text-xs font-bold text-[#F5A623] tracking-widest uppercase mb-3 pb-2 border-b border-white/8">
+                                {col.title}
+                              </div>
+                              <ul className="space-y-0.5">
+                                {col.items.map((item) => (
+                                  <li key={item.href}>
+                                    <a href={item.href}
+                                      className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-gray-300 hover:text-[#F5A623] hover:bg-white/5 transition-colors group">
+                                      <span className="text-base leading-none">{item.icon}</span>
+                                      <span>{item.label}</span>
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              {/* Destek */}
+              <a href="/destek"
+                className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-[#F5A623] transition-colors rounded-lg hover:bg-white/5 whitespace-nowrap">
+                Destek
+              </a>
+
+              {/* Teklif Al */}
+              <a href="/iletisim"
+                className="ml-2 px-5 py-2 bg-[#F5A623] text-black text-sm font-bold rounded-lg hover:bg-[#e6951a] transition-all whitespace-nowrap">
+                İletişim
+              </a>
+
+              {/* Dil seçici */}
+              <div className="ml-2">
+                <LanguageSwitcher />
+              </div>
             </nav>
 
-            {/* Hamburger label — label for checkbox, JavaScript yok */}
+            {/* Hamburger */}
             <label
               htmlFor="hmb-toggle"
               className="hmb-label"
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 52,
-                height: 52,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                width: 52, height: 52,
                 background: "rgba(255,255,255,0.08)",
                 border: "1px solid rgba(255,255,255,0.15)",
-                borderRadius: 10,
-                cursor: "pointer",
-                color: "#fff",
+                borderRadius: 10, cursor: "pointer", color: "#fff",
                 WebkitTapHighlightColor: "transparent",
               }}
               aria-label="Menü"
@@ -151,32 +270,45 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobil menü — CSS ile kontrol edilir */}
+      {/* Mobil menü */}
       <div className="mobile-nav-css">
         <div style={{ padding: "16px 20px" }}>
-          {navItems.map((item) => (
-            <div key={item.label}>
-              <a
-                href={item.href}
-                style={{ display: "block", padding: "14px 0", color: "#d1d5db", fontWeight: 600, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}
-              >
-                {item.label}
+
+          <a href="/" style={{ display: "block", padding: "14px 0", color: "#fff", fontWeight: 700, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
+            🏠 Anasayfa
+          </a>
+
+          {mobileGroups.map((menu) => (
+            <div key={menu.label}>
+              <a href={menu.href} style={{ display: "block", padding: "14px 0", color: "#F5A623", fontWeight: 700, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
+                {menu.label}
               </a>
-              {item.sub && (
-                <div style={{ paddingLeft: 16, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                  {item.sub.map((s) => (
-                    <a key={s.href} href={s.href}
-                      style={{ display: "block", padding: "10px 0", color: "#9ca3af", fontSize: 14, textDecoration: "none" }}>
-                      › {s.label}
-                    </a>
-                  ))}
-                </div>
-              )}
+              <div style={{ paddingLeft: 12, borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+                {menu.cols.map((col) => (
+                  <div key={col.title}>
+                    <div style={{ padding: "8px 0 4px", color: "#6b7280", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                      {col.title}
+                    </div>
+                    {col.items.map((item) => (
+                      <a key={item.href} href={item.href}
+                        style={{ display: "flex", alignItems: "center", gap: 8, padding: "9px 0", color: "#d1d5db", fontSize: 14, textDecoration: "none" }}>
+                        <span>{item.icon}</span>
+                        <span>{item.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
+
+          <a href="/destek" style={{ display: "block", padding: "14px 0", color: "#d1d5db", fontWeight: 600, fontSize: 16, borderBottom: "1px solid rgba(255,255,255,0.06)", textDecoration: "none" }}>
+            🎧 Destek Talebi
+          </a>
+
           <a href="/iletisim"
-            style={{ display: "block", marginTop: 20, padding: "14px", background: "#F5A623", color: "#000", fontWeight: 700, textAlign: "center", borderRadius: 12, textDecoration: "none" }}>
-            Teklif Al
+            style={{ display: "block", marginTop: 20, padding: "14px", background: "#F5A623", color: "#000", fontWeight: 700, textAlign: "center", borderRadius: 12, textDecoration: "none", fontSize: 16 }}>
+            İletişim / Teklif Al
           </a>
         </div>
       </div>
