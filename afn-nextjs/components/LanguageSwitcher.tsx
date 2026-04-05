@@ -84,8 +84,12 @@ export default function LanguageSwitcher() {
       return;
     }
 
-    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-      window.alert("Google Translate cannot access localhost. English preview is available at /en.");
+    const isProd =
+      window.location.hostname === "afnteknoloji.com" ||
+      window.location.hostname === "www.afnteknoloji.com";
+
+    if (!isProd) {
+      window.alert(`${lang.label} dil desteği yalnızca canlı sitede (afnteknoloji.com) çalışır.`);
       return;
     }
 
