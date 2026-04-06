@@ -56,7 +56,7 @@ export default function HeroSection() {
             {/* Stats */}
             <div className="flex gap-8 mb-10">
               <div><div className="text-3xl font-black text-[#F5A623]">500+</div><div className="text-sm text-gray-400 mt-1">Mutlu Müşteri</div></div>
-              <div><div className="text-3xl font-black text-[#F5A623]">15+</div><div className="text-sm text-gray-400 mt-1">Yıl Deneyim</div></div>
+              <div><div className="text-3xl font-black text-[#F5A623]">10+</div><div className="text-sm text-gray-400 mt-1">Yıl Deneyim</div></div>
               <div><div className="text-3xl font-black text-[#F5A623]">7/24</div><div className="text-sm text-gray-400 mt-1">Teknik Destek</div></div>
             </div>
 

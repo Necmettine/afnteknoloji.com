@@ -307,11 +307,11 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             <a href={homeHref} className="flex-shrink-0">
               <Image
-                src="https://afnteknoloji.com/wp-content/uploads/2023/01/logo.png"
+                src="/logo.png"
                 alt="AFN Teknoloji Logo"
                 width={160} height={60}
                 className="h-12 w-auto object-contain"
-                priority unoptimized
+                priority
               />
             </a>
 
@@ -402,7 +402,9 @@ export default function Header() {
               </div>
             </nav>
 
-            <label
+            <div className="flex items-center gap-2 lg:hidden">
+              <LanguageSwitcher />
+              <label
               htmlFor="hmb-toggle"
               className="hmb-label"
               style={{
@@ -429,6 +431,7 @@ export default function Header() {
                 </svg>
               </span>
             </label>
+            </div>
           </div>
         </div>
       </header>
@@ -472,9 +475,6 @@ export default function Header() {
             {isEn ? "Contact / Get Quote" : "Iletisim / Teklif Al"}
           </a>
 
-          <div style={{ marginTop: 16, paddingBottom: 8, display: "flex", justifyContent: "center" }}>
-            <LanguageSwitcher />
-          </div>
         </div>
       </div>
     </>

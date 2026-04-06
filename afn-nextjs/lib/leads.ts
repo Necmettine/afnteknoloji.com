@@ -25,11 +25,15 @@ function readLeads(): LeadRecord[] {
 }
 
 function writeLeads(leads: LeadRecord[]) {
-  if (!existsSync(DATA_DIR)) {
-    mkdirSync(DATA_DIR, { recursive: true });
-  }
+  try {
+    if (!existsSync(DATA_DIR)) {
+      mkdirSync(DATA_DIR, { recursive: true });
+    }
 
-  writeFileSync(LEADS_PATH, JSON.stringify(leads, null, 2), "utf-8");
+    writeFileSync(LEADS_PATH, JSON.stringify(leads, null, 2), "utf-8");
+  } catch {
+    // Vercel gibi ortamlarda dosya sistemi yazimi kapali olabilir.
+  }
 }
 
 export function storeLead(lead: Omit<LeadRecord, "id" | "createdAt">) {
@@ -39,9 +43,13 @@ export function storeLead(lead: Omit<LeadRecord, "id" | "createdAt">) {
     createdAt: new Date().toISOString(),
   };
 
-  const leads = readLeads();
-  leads.unshift(record);
-  writeLeads(leads);
+  try {
+    const leads = readLeads();
+    leads.unshift(record);
+    writeLeads(leads);
+  } catch {
+    // Dosya sistemi yazimi basarisiz olsa bile webhook tarafini aksatma.
+  }
 
   return record;
 }

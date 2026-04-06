@@ -37,7 +37,9 @@ export default function DestekPage() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/destek", {
+      const webhookUrl = process.env.NEXT_PUBLIC_SUPPORT_WEBHOOK_URL;
+      if (!webhookUrl) throw new Error("Webhook URL tanımlı değil");
+      const res = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

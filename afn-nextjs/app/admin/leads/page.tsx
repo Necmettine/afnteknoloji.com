@@ -1,5 +1,4 @@
 export const dynamic = "force-dynamic";
-
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 import type { LeadRecord } from "@/lib/leads";

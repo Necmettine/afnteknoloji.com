@@ -43,7 +43,7 @@ export default function ServicesAccordion() {
             <p className="text-gray-400 leading-relaxed mb-8">Kurumsal BT altyapınızı güçlendirmek ve dijital dönüşüm yolculuğunuzda yanınızda olmak için kapsamlı hizmetler sunuyoruz.</p>
             <div className="flex gap-8">
               <div><div className="text-3xl font-black text-[#F5A623]">500+</div><div className="text-sm text-gray-400 mt-1">Mutlu Müşteri</div></div>
-              <div><div className="text-3xl font-black text-[#F5A623]">15+</div><div className="text-sm text-gray-400 mt-1">Yıl Deneyim</div></div>
+              <div><div className="text-3xl font-black text-[#F5A623]">10+</div><div className="text-sm text-gray-400 mt-1">Yıl Deneyim</div></div>
               <div><div className="text-3xl font-black text-[#F5A623]">7/24</div><div className="text-sm text-gray-400 mt-1">Teknik Destek</div></div>
             </div>
           </div>

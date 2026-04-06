@@ -6,7 +6,7 @@ import { Shield, Users, Award, Clock } from "lucide-react";
 export const metadata = { title: "Hakkımızda | AFN Teknoloji" };
 
 const values = [
-  { icon: Shield, title: "Güvenilirlik", desc: "15 yılı aşkın deneyimimizle müşteri memnuniyeti odaklı hizmet anlayışı." },
+  { icon: Shield, title: "Güvenilirlik", desc: "10+ yıllık deneyimimizle müşteri memnuniyeti odaklı hizmet anlayışı." },
   { icon: Users, title: "Uzman Ekip", desc: "Sertifikalı mühendisler ve teknik uzmanlardan oluşan deneyimli kadro." },
   { icon: Award, title: "Partner Sertifikaları", desc: "Microsoft, Huawei, Vmware, Veeam, Fortinet yetkili çözüm ortaklıkları." },
   { icon: Clock, title: "7/24 Destek", desc: "Kesintisiz teknik destek ile iş sürekliliğinizi güvence altına alıyoruz." },

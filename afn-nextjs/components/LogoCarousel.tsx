@@ -1,9 +1,21 @@
 "use client";
 
 const logos = [
-  "Adobe","Apple","Autodesk","Azure","Canon","Dell","Fortinet","Hikvision",
-  "HP","Kaspersky","Kingston","Lenovo","Logitech","Microsoft","Qnap",
-  "Samsung","Seagate","Sophos","Symantec","Trend Micro","Veeam","Vmware","WD","ZyXEL",
+  { name: "Fortinet",    src: "/logos/fortinet.svg",    local: true,  bg: true  },
+  { name: "Huawei",      src: "/logos/huawei.svg",      local: true,  bg: true  },
+  { name: "VMware",      src: "/logos/vmware.svg",      local: true,  bg: true  },
+  { name: "Veeam",       src: "/logos/veeam.svg",       local: true,  bg: true  },
+  { name: "Microsoft",   src: "https://cdn.simpleicons.org/microsoft/ffffff", local: false, bg: false },
+  { name: "Kaspersky",   src: "https://cdn.simpleicons.org/kaspersky/ffffff", local: false, bg: false },
+  { name: "Dell",        src: "https://cdn.simpleicons.org/dell/ffffff",       local: false, bg: false },
+  { name: "HP",          src: "https://cdn.simpleicons.org/hp/ffffff",         local: false, bg: false },
+  { name: "Lenovo",      src: "https://cdn.simpleicons.org/lenovo/ffffff",     local: false, bg: false },
+  { name: "Samsung",     src: "https://cdn.simpleicons.org/samsung/ffffff",    local: false, bg: false },
+  { name: "Sophos",      src: "https://cdn.simpleicons.org/sophos/ffffff",     local: false, bg: false },
+  { name: "Cisco",       src: "https://cdn.simpleicons.org/cisco/ffffff",      local: false, bg: false },
+  { name: "Seagate",     src: "https://cdn.simpleicons.org/seagate/ffffff",    local: false, bg: false },
+  { name: "Adobe",       src: "https://cdn.simpleicons.org/adobe/ffffff",      local: false, bg: false },
+  { name: "Apple",       src: "https://cdn.simpleicons.org/apple/ffffff",      local: false, bg: false },
 ];
 
 export default function LogoCarousel() {
@@ -18,13 +30,23 @@ export default function LogoCarousel() {
       <div className="relative">
         <div className="flex animate-scroll gap-8 w-max">
           {doubled.map((logo, i) => (
-            <div key={i}
-              className="flex-shrink-0 w-36 h-20 glass rounded-xl flex items-center justify-center hover:border-[#F5A623]/40 transition-all group cursor-default">
-              <span className="text-sm font-semibold text-gray-400 group-hover:text-[#F5A623] transition-colors text-center px-2">{logo}</span>
+            <div
+              key={i}
+              className="flex-shrink-0 w-36 h-20 glass rounded-xl flex flex-col items-center justify-center gap-2 hover:border-[#F5A623]/40 transition-all group cursor-default px-3"
+            >
+              <div className={`flex items-center justify-center ${logo.bg ? "bg-white rounded-lg px-2 py-1" : ""}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  loading="lazy"
+                  className={logo.bg ? "h-7 w-auto max-w-[90px] object-contain" : "h-6 w-auto max-w-[80px] object-contain opacity-50 group-hover:opacity-80 transition-opacity"}
+                />
+              </div>
+              <span className="text-[10px] font-medium text-gray-300 group-hover:text-white transition-colors">{logo.name}</span>
             </div>
           ))}
         </div>
-        {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#080C18] to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#080C18] to-transparent pointer-events-none" />
       </div>

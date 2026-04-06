@@ -101,6 +101,8 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative" style={{ zIndex: 1001 }}>
       <button
         type="button"
+        aria-label="Dil seçici"
+        aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-[#F5A623]/30 transition-all text-sm text-gray-300 hover:text-white cursor-pointer"
       >

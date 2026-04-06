@@ -9,7 +9,7 @@ const values = [
   {
     icon: Shield,
     title: "Reliability",
-    desc: "A customer-first service mindset backed by more than 15 years of experience.",
+    desc: "A customer-first service mindset backed by more than 10+ years of experience.",
   },
   {
     icon: Users,

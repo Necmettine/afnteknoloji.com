@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const webhookUrl = process.env.SUPPORT_WEBHOOK_URL;
+    const webhookUrl = process.env.SUPPORT_WEBHOOK_URL || process.env.NEXT_PUBLIC_SUPPORT_WEBHOOK_URL;
     if (webhookUrl) {
       await fetch(webhookUrl, {
         method: "POST",

@@ -76,7 +76,7 @@ BT yatırımlarını iş değeriyle ilişkilendirin:
 
 ## Profesyonel Destek Alın
 
-Doğru BT altyapısı planlaması uzmanlık gerektiren bir süreçtir. AFN Teknoloji olarak 15+ yıllık deneyimimizle işletmenizin ihtiyaçlarını analiz ediyor, bütçenize ve büyüme hedeflerinize uygun altyapı çözümleri tasarlıyoruz.
+Doğru BT altyapısı planlaması uzmanlık gerektiren bir süreçtir. AFN Teknoloji olarak 10+ yıllık deneyimimizle işletmenizin ihtiyaçlarını analiz ediyor, bütçenize ve büyüme hedeflerinize uygun altyapı çözümleri tasarlıyoruz.
     `,
   },
   "zero-trust-guvenlik-modeli": {
