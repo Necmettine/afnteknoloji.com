@@ -3,6 +3,13 @@ afn-nextjs/.next/
 afn-nextjs/node_modules/
 afn-nextjs/.env*.local
 
+# afnteknoloji.com (Next.js)
+afnteknoloji.com/.next/
+afnteknoloji.com/node_modules/
+afnteknoloji.com/.vercel/
+afnteknoloji.com/.env*.local
+afnteknoloji.com/dev-server.log
+
 # Diğer projeler (ayrı repo'lar)
 AfnCrm.Web/
 AfnTekliflerApp/

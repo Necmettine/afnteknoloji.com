@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0E1A;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .gradient-border {
+    background: linear-gradient(135deg, rgba(245,166,35,0.15), rgba(245,166,35,0.02));
+    border: 1px solid rgba(245,166,35,0.2);
+  }
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #F5A623, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Teknolojik hareketli arka plan */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes data-flow {
+  0% { transform: translateY(-10px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(calc(100vh + 10px)); opacity: 0; }
+}
+.tech-bg {
+  position: relative;
+  overflow: hidden;
+}
+.tech-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-move 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.tech-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(245,166,35,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, transparent, #F5A623, transparent);
+  animation: data-flow linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HERO TECH BACKGROUND ─────────────────────────────────── */
+.hero-tech {
+  background-color: #0A0E1A;
+  position: relative;
+}
+
+/* Devre kartı grid */
+.hero-tech::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.07) 1px, transparent 1px),
+    linear-gradient(rgba(245,166,35,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.03) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  animation: hero-grid 12s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Tarama çizgisi (scanline) */
+.hero-tech::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(245,166,35,0.04) 50%,
+    transparent 100%
+  );
+  background-size: 100% 8px;
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Parlayan köşe ışıkları */
+.hero-tech .hero-glow-tr {
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 65%);
+  animation: glow-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+.hero-tech .hero-glow-bl {
+  position: absolute;
+  bottom: -120px; left: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 65%);
+  animation: glow-pulse 7s ease-in-out infinite 2s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Hareketli ağ noktaları */
+.hero-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #F5A623;
+  pointer-events: none;
+  z-index: 4;
+}
+.hero-dot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.35) 0%, transparent 70%);
+}
+
+/* Devre kartı yatay çizgiler */
+.hero-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(245,166,35,0.5), transparent);
+  pointer-events: none;
+  z-index: 4;
+  animation: line-travel 6s linear infinite;
+}
+.hero-line-v {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(245,166,35,0.5), transparent);
+  pointer-events: none;
+  z-index: 4;
+  animation: line-travel-v 8s linear infinite;
+}
+
+@keyframes hero-grid {
+  0%   { background-position: 0 0, 0 0, 0 0, 0 0; }
+  100% { background-position: 80px 80px, 80px 80px, 20px 20px, 20px 20px; }
+}
+@keyframes scanline {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 200px; }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes line-travel {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+@keyframes line-travel-v {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+@keyframes dot-float {
+  0%, 100% { transform: translate(0, 0);    opacity: 0.7; }
+  25%       { transform: translate(8px, -12px);  opacity: 1; }
+  50%       { transform: translate(15px, 4px);   opacity: 0.8; }
+  75%       { transform: translate(-6px, 10px);  opacity: 1; }
+}
+
+/* ── HERO TECH BACKGROUND END ──────────────────────────────── */
+
+/* Carousel animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
