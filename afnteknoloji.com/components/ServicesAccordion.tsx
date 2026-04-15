@@ -19,6 +19,10 @@ const items = [
     title: "Ağ ve Güvenlik Danışmanlığı",
     content: "Sürekli gelişen ağ teknolojileri için mimari tasarım, güvenlik duvarı yapılandırması, VPN kurulumu ve ağ optimizasyon hizmetleri sunuyoruz.",
   },
+  {
+    title: "Yedekleme & Felaket Kurtarma",
+    content: "Veeam, Huawei ve bulut tabanlı çözümlerle 3-2-1 yedekleme stratejisi uygulayarak iş sürekliliğini ve veri güvenliğini en üst düzeyde sağlıyoruz.",
+  },
 ];
 
 export default function ServicesAccordion() {
@@ -36,20 +40,24 @@ export default function ServicesAccordion() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Neler Yapıyoruz?</span>
-            <h2 className="text-4xl font-extrabold mt-3 mb-6">Destek ve <span className="text-gradient">Hizmetlerimiz</span></h2>
-            <p className="text-gray-400 leading-relaxed mb-8">Kurumsal BT altyapınızı güçlendirmek ve dijital dönüşüm yolculuğunuzda yanınızda olmak için kapsamlı hizmetler sunuyoruz.</p>
-            <div className="flex gap-8">
-              <div><div className="text-3xl font-black text-[#F5A623]">500+</div><div className="text-sm text-gray-400 mt-1">Mutlu Müşteri</div></div>
-              <div><div className="text-3xl font-black text-[#F5A623]">10+</div><div className="text-sm text-gray-400 mt-1">Yıl Deneyim</div></div>
-              <div><div className="text-3xl font-black text-[#F5A623]">7/24</div><div className="text-sm text-gray-400 mt-1">Teknik Destek</div></div>
-            </div>
-          </div>
 
+        {/* Üst — tam genişlik başlık */}
+        <div className="mb-10">
+          <span className="text-[#F5A623] text-sm font-semibold tracking-widest uppercase">Neler Yapıyoruz?</span>
+          <div className="mt-4 grid lg:grid-cols-2 gap-8 items-end">
+            <h2 className="text-4xl xl:text-5xl font-extrabold leading-tight">
+              Destek ve <span className="text-gradient">Hizmetlerimiz</span>
+            </h2>
+            <p className="text-gray-400 leading-relaxed">
+              Kurumsal BT altyapınızı güçlendirmek ve dijital dönüşüm yolculuğunuzda yanınızda olmak için kapsamlı hizmetler sunuyoruz.
+            </p>
+          </div>
+        </div>
+
+        {/* Accordion'lar — 2 kolon */}
+        <div className="grid sm:grid-cols-2 gap-x-6">
           <div>
-            {items.map((item, i) => (
+            {items.slice(0, Math.ceil(items.length / 2)).map((item, i) => (
               <details key={i} className="acc-item" open={i === 0 || undefined}>
                 <summary>
                   <span>{item.title}</span>
@@ -63,7 +71,23 @@ export default function ServicesAccordion() {
               </details>
             ))}
           </div>
+          <div>
+            {items.slice(Math.ceil(items.length / 2)).map((item, i) => (
+              <details key={i} className="acc-item">
+                <summary>
+                  <span>{item.title}</span>
+                  <span className="acc-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </span>
+                </summary>
+                <div className="acc-body">{item.content}</div>
+              </details>
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

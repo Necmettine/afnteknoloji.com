@@ -1,11 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AnalyticsManager from "@/components/AnalyticsManager";
 import CookieBanner from "@/components/CookieBanner";
 import FloatingContact from "@/components/FloatingContact";
+import SchemaMarkup from "@/components/SchemaMarkup";
 import "./globals.css";
 
 const GTM_ID = "GTM-PQ4Q42NH";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0A0E1A",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://afnteknoloji.com"),
@@ -47,6 +55,7 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         <AnalyticsManager gtmId={GTM_ID} />
+        <SchemaMarkup />
       </head>
       <body className="bg-[#0A0E1A] text-white antialiased">
         {children}

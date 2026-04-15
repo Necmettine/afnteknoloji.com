@@ -3,7 +3,7 @@ import { join } from "path";
 
 export interface LeadRecord {
   id: string;
-  type: "contact" | "support";
+  type: "contact" | "support" | "career";
   source: string;
   createdAt: string;
   payload: Record<string, unknown>;
