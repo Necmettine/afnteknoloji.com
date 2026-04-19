@@ -7,7 +7,7 @@ export default function SchemaMarkup() {
     url: "https://afnteknoloji.com",
     logo: "https://afnteknoloji.com/logo.png",
     description:
-      "Kurumsal BT altyapisi, sistem guvenligi, Microsoft, Huawei, VMware, Veeam ve Fortinet cozumleri icin uzman danismanlik ve destek hizmetleri.",
+      "Kurumsal BT altyapısı, sistem güvenliği, Microsoft, Huawei, VMware, Veeam ve Fortinet çözümleri için uzman danışmanlık ve destek hizmetleri.",
     foundingDate: "2010",
     numberOfEmployees: {
       "@type": "QuantitativeValue",
@@ -16,9 +16,9 @@ export default function SchemaMarkup() {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Ataturk Mah. Ergun Cad. No:48",
-      addressLocality: "Atasehir",
-      addressRegion: "Istanbul",
+      streetAddress: "Atatürk Mah. Ergün Cad. No:48",
+      addressLocality: "Ataşehir",
+      addressRegion: "İstanbul",
       postalCode: "34758",
       addressCountry: "TR",
     },
@@ -85,9 +85,9 @@ export default function SchemaMarkup() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Ataturk Mah. Ergun Cad. No:48",
-      addressLocality: "Atasehir",
-      addressRegion: "Istanbul",
+      streetAddress: "Atatürk Mah. Ergün Cad. No:48",
+      addressLocality: "Ataşehir",
+      addressRegion: "İstanbul",
       postalCode: "34758",
       addressCountry: "TR",
     },
@@ -134,17 +134,17 @@ export default function SchemaMarkup() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Siber Guvenlik Cozumleri",
+            name: "Siber Güvenlik Çözümleri",
             description:
-              "Fortinet, firewall, IPS/IDS ve endpoint guvenlik cozumleri",
+              "Fortinet, firewall, IPS/IDS ve endpoint güvenlik çözümleri",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Bulut Bilisim",
-            description: "Microsoft 365, Azure ve hibrit bulut cozumleri",
+            name: "Bulut Bilişim",
+            description: "Microsoft 365, Azure ve hibrit bulut çözümleri",
           },
         },
         {
@@ -152,23 +152,23 @@ export default function SchemaMarkup() {
           itemOffered: {
             "@type": "Service",
             name: "Veri Yedekleme",
-            description: "Veeam ve felaket kurtarma cozumleri",
+            description: "Veeam ve felaket kurtarma çözümleri",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Network Altyapisi",
-            description: "Huawei switch, router ve network cozumleri",
+            name: "Network Altyapısı",
+            description: "Huawei switch, router ve network çözümleri",
           },
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Virtualizasyon",
-            description: "VMware vSphere ve sanallaştırma cozumleri",
+            name: "Sanallaştırma",
+            description: "VMware vSphere ve sanallaştırma çözümleri",
           },
         },
       ],
@@ -184,23 +184,23 @@ export default function SchemaMarkup() {
         name: "AFN Teknoloji hangi hizmetleri sunuyor?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "BT altyapi cozumleri, siber guvenlik, bulut bilisim, veri yedekleme, network guvenlik, Microsoft 365 lisanslama, VMware virtualizasyon ve 7/24 teknik destek hizmetleri sunuyoruz.",
+          text: "BT altyapı çözümleri, siber güvenlik, bulut bilişim, veri yedekleme, network güvenlik, Microsoft 365 lisanslama, VMware sanallaştırma ve 7/24 teknik destek hizmetleri sunuyoruz.",
         },
       },
       {
         "@type": "Question",
-        name: "Teknik destek hizmetiniz nasil calisir?",
+        name: "Teknik destek hizmetiniz nasıl çalışır?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "7/24 telefon, e-posta ve uzaktan baglanti ile destek sagliyoruz. Kritik sorunlarda 2 saat icinde mudahale garantisi veriyoruz.",
+          text: "7/24 telefon, e-posta ve uzaktan bağlantı ile destek sağlıyoruz. Kritik sorunlarda 2 saat içinde müdahale garantisi veriyoruz.",
         },
       },
       {
         "@type": "Question",
-        name: "ISO 27001 sertifikaniz var mi?",
+        name: "ISO 27001 sertifikanız var mı?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Evet, ISO 27001 Bilgi Guvenligi Yonetim Sistemi sertifikasina sahibiz. Tum sureclerimiz bu standartlara uygun sekilde yurutulmektedir.",
+          text: "Evet, ISO 27001 Bilgi Güvenliği Yönetim Sistemi sertifikasına sahibiz. Tüm süreçlerimiz bu standartlara uygun şekilde yürütülmektedir.",
         },
       },
     ],

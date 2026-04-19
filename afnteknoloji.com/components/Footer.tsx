@@ -4,33 +4,33 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const linksTr: Record<string, { label: string; href: string }[]> = {
-  "Site Haritasi": [
+  "Site Haritası": [
     { label: "Anasayfa", href: "/" },
-    { label: "Hakkimizda", href: "/hakkimizda" },
+    { label: "Hakkımızda", href: "/hakkimizda" },
     { label: "Hizmetlerimiz", href: "/hizmetlerimiz" },
-    { label: "Cozumlerimiz", href: "/cozumlerimiz" },
-    { label: "Referanslarimiz", href: "/referanslarimiz" },
+    { label: "Çözümlerimiz", href: "/cozumlerimiz" },
+    { label: "Referanslarımız", href: "/referanslarimiz" },
     { label: "Blog", href: "/blog" },
     { label: "Destek Talebi", href: "/destek" },
-    { label: "Iletisim", href: "/iletisim" },
+    { label: "İletişim", href: "/iletisim" },
   ],
-  Cozumlerimiz: [
-    { label: "Sanallastirma", href: "/cozumlerimiz/sanallastirma" },
+  Çözümlerimiz: [
+    { label: "Sanallaştırma", href: "/cozumlerimiz/sanallastirma" },
     { label: "Veri Yedekleme", href: "/cozumlerimiz/veri-yedekleme-cozumleri" },
-    { label: "Ag Guvenligi", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri" },
+    { label: "Ağ Güvenliği", href: "/cozumlerimiz/ag-ve-internet-guvenligi-cozumleri" },
     { label: "Felaket Koruma", href: "/cozumlerimiz/felaket-koruma-senaryolari" },
-    { label: "Veri Tekillestirme", href: "/cozumlerimiz/veri-tekillestirme" },
-    { label: "Mobil Cozumler", href: "/cozumlerimiz/mobil-cozumler" },
-    { label: "Zimbra Turkiye", href: "/zimbra" },
+    { label: "Veri Tekilleştirme", href: "/cozumlerimiz/veri-tekillestirme" },
+    { label: "Mobil Çözümler", href: "/cozumlerimiz/mobil-cozumler" },
+    { label: "Zimbra Türkiye", href: "/zimbra" },
     { label: "5651 Loglama", href: "/cozumlerimiz/5651-loglama" },
   ],
   Hizmetlerimiz: [
-    { label: "Sistem Danismanligi", href: "/hizmetlerimiz/sistem-danismanligi" },
-    { label: "BT Guvenlik", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek" },
+    { label: "Sistem Danışmanlığı", href: "/hizmetlerimiz/sistem-danismanligi" },
+    { label: "BT Güvenlik", href: "/hizmetlerimiz/bt-guvenlik-sistemleri-bakim-destek" },
     { label: "PC-Sunucu Destek", href: "/hizmetlerimiz/pc-sunucu-bakim-destek" },
-    { label: "Yardim Masasi", href: "/hizmetlerimiz/yardim-masasi" },
-    { label: "Ag Guvenligi", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi" },
-    { label: "Virus Koruma / EDR & XDR", href: "/guvenlik-yazilimlari" },
+    { label: "Yardım Masası", href: "/hizmetlerimiz/yardim-masasi" },
+    { label: "Ağ Güvenliği", href: "/hizmetlerimiz/ag-ve-guvenlik-danismanligi" },
+    { label: "Virüs Koruma / EDR & XDR", href: "/guvenlik-yazilimlari" },
   ],
 };
 
@@ -139,7 +139,7 @@ export default function Footer() {
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
               {isEn
                 ? "We deliver enterprise IT infrastructure, system security, and technology solutions with 10+ years of experience."
-                : "Kurumsal BT altyapisi, sistem guvenligi ve teknoloji cozumlerinde 10+ yillik deneyimle hizmetinizdeyiz."}
+                : "Kurumsal BT altyapısı, sistem güvenliği ve teknoloji çözümlerinde 10+ yıllık deneyimle hizmetinizdeyiz."}
             </p>
             <div className="space-y-3 mb-6">
               <a href="tel:+902165725040" className="flex items-center gap-3 text-gray-400 hover:text-[#F5A623] transition-colors text-sm">
@@ -149,7 +149,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-[#F5A623]" /> info@afnteknoloji.com
               </a>
               <div className="flex items-start gap-3 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4 text-[#F5A623] mt-0.5 flex-shrink-0" /> {isEn ? "Maltepe / Beylikduzu, Istanbul" : "Maltepe / Beylikduzu, Istanbul"}
+                <MapPin className="w-4 h-4 text-[#F5A623] mt-0.5 flex-shrink-0" /> {isEn ? "Maltepe / Beylikdüzü, İstanbul" : "Maltepe / Beylikdüzü, İstanbul"}
               </div>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -188,15 +188,15 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-600 text-sm">
-            {isEn ? "© 2026 AFN Technology. All rights reserved." : "© 2026 AFN Teknoloji. Tum haklari saklidir."}
+            {isEn ? "© 2026 AFN Technology. All rights reserved." : "© 2026 AFN Teknoloji. Tüm hakları saklıdır."}
           </p>
           <div className="flex items-center gap-4">
             <a href="/gizlilik-politikasi" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
-              {isEn ? "Privacy Policy" : "Gizlilik Politikasi"}
+              {isEn ? "Privacy Policy" : "Gizlilik Politikası"}
             </a>
             <div className="flex items-center gap-2 text-xs text-gray-700">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              {isEn ? "Contact and support channels active" : "Iletisim ve destek kanallari aktif"}
+              {isEn ? "Contact and support channels active" : "İletişim ve destek kanalları aktif"}
             </div>
           </div>
         </div>
