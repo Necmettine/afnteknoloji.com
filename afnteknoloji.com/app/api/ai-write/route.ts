@@ -44,8 +44,9 @@ Kurallar:
 - Emoji veya hashtag kullanma
 - AFN Teknoloji'nin 10+ yıllık deneyimini yansıt
 
-Yanıtı SADECE şu JSON formatında ver:
-{"title": "...", "content": "..."}`,
+Yanıtı SADECE aşağıdaki formatta ver, başka hiçbir şey yazma:
+<title>Başlık buraya</title>
+<content>Makale içeriği buraya</content>`,
           },
         ],
       }),
@@ -59,11 +60,16 @@ Yanıtı SADECE şu JSON formatında ver:
     const data = await res.json();
     const raw = data.choices?.[0]?.message?.content ?? "";
 
-    const jsonMatch = raw.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) throw new Error("Geçersiz yanıt formatı");
-    const result = JSON.parse(jsonMatch[0]);
+    const titleMatch = raw.match(/<title>([\s\S]*?)<\/title>/);
+    const contentMatch = raw.match(/<content>([\s\S]*?)<\/content>/);
 
-    return NextResponse.json({ success: true, title: result.title, content: result.content });
+    if (!titleMatch || !contentMatch) throw new Error("Geçersiz yanıt formatı");
+
+    return NextResponse.json({
+      success: true,
+      title: titleMatch[1].trim(),
+      content: contentMatch[1].trim(),
+    });
   } catch (err) {
     return NextResponse.json({ error: "AI hatası: " + String(err) }, { status: 500 });
   }
