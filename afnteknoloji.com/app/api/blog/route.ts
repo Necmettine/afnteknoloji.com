@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { kvGet, kvSet } from "@/lib/redis";
 
 const KV_KEY = "blog:posts";
 const KV_SCHEDULED = "blog:scheduled";
@@ -15,7 +15,7 @@ function escapeHtml(value: string) {
 
 async function getPosts(): Promise<object[]> {
   try {
-    const posts = await kv.get<object[]>(KV_KEY);
+    const posts = await kvGet<object[]>(KV_KEY);
     return posts ?? [];
   } catch {
     return [];
@@ -23,12 +23,12 @@ async function getPosts(): Promise<object[]> {
 }
 
 async function savePosts(posts: object[]) {
-  await kv.set(KV_KEY, posts);
+  await kvSet(KV_KEY, posts);
 }
 
 export async function getScheduled(): Promise<object[]> {
   try {
-    const posts = await kv.get<object[]>(KV_SCHEDULED);
+    const posts = await kvGet<object[]>(KV_SCHEDULED);
     return posts ?? [];
   } catch {
     return [];
@@ -36,7 +36,7 @@ export async function getScheduled(): Promise<object[]> {
 }
 
 export async function saveScheduled(posts: object[]) {
-  await kv.set(KV_SCHEDULED, posts);
+  await kvSet(KV_SCHEDULED, posts);
 }
 
 function slugify(text: string) {

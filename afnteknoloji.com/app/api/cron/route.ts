@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { kvGet, kvSet } from "@/lib/redis";
 
 const KV_KEY = "blog:posts";
 const KV_SCHEDULED = "blog:scheduled";
 
-// Vercel bu endpoint'i saatte bir çağırır (vercel.json'da tanımlı)
-// Güvenlik: CRON_SECRET header kontrolü
 export async function GET(req: NextRequest) {
   const secret = req.headers.get("authorization");
   if (secret !== `Bearer ${process.env.CRON_SECRET}`) {
@@ -13,7 +11,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const scheduled: any[] = (await kv.get<any[]>(KV_SCHEDULED)) ?? [];
+    const scheduled: any[] = (await kvGet<any[]>(KV_SCHEDULED)) ?? [];
     const now = new Date();
     const toPublish = scheduled.filter((p) => new Date(p.scheduledFor) <= now);
     const remaining = scheduled.filter((p) => new Date(p.scheduledFor) > now);
@@ -22,8 +20,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ success: true, published: 0 });
     }
 
-    // Planlanmış yazıları yayına al
-    const published: any[] = (await kv.get<any[]>(KV_KEY)) ?? [];
+    const published: any[] = (await kvGet<any[]>(KV_KEY)) ?? [];
     for (const post of toPublish) {
       const { scheduledFor, status, ...cleanPost } = post;
       published.unshift({
@@ -33,8 +30,8 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    await kv.set(KV_KEY, published);
-    await kv.set(KV_SCHEDULED, remaining);
+    await kvSet(KV_KEY, published);
+    await kvSet(KV_SCHEDULED, remaining);
 
     return NextResponse.json({ success: true, published: toPublish.length });
   } catch (err) {
