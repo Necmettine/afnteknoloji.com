@@ -1,13 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Send, CheckCircle, Trash2, LogOut, Eye, EyeOff, FileText, Plus, Clock, CalendarClock } from "lucide-react";
+import { Send, CheckCircle, Trash2, LogOut, Eye, EyeOff, FileText, Plus, Clock, CalendarClock, Sparkles, Loader2 } from "lucide-react";
 
 const CATEGORIES = ["LinkedIn", "BT Yönetimi", "Siber Güvenlik", "Microsoft", "Yedekleme", "Sanallaştırma", "Ağ & Altyapı", "Genel"];
 
 type Post = { id: string; slug: string; title: string; excerpt: string; category: string; date: string; readTime: string; };
 type Scheduled = { id: string; title: string; category: string; excerpt: string; scheduledFor: string; };
 
-// Yerel saati datetime-local input formatına çevir
 function toLocalDatetimeValue(date: Date) {
   const pad = (n: number) => String(n).padStart(2, "0");
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
@@ -17,7 +16,6 @@ function formatTR(iso: string) {
   return new Date(iso).toLocaleString("tr-TR", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
 }
 
-// Varsayılan: yarın sabah 09:00
 function defaultSchedule() {
   const d = new Date();
   d.setDate(d.getDate() + 1);
@@ -33,6 +31,13 @@ export default function AdminBlogPage() {
 
   const [mode, setMode] = useState<"now" | "schedule">("schedule");
   const [form, setForm] = useState({ title: "", content: "", category: "LinkedIn", author: "AFN Teknoloji", publishAt: defaultSchedule() });
+
+  // AI yazma
+  const [aiTopic, setAiTopic] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState("");
+  const [showAi, setShowAi] = useState(false);
+
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
@@ -56,6 +61,32 @@ export default function AdminBlogPage() {
   };
 
   useEffect(() => { if (loggedIn) load(); }, [loggedIn]);
+
+  // AI ile makale yaz
+  const handleAiWrite = async () => {
+    if (!aiTopic.trim()) return;
+    setAiLoading(true);
+    setAiError("");
+    try {
+      const res = await fetch("/api/ai-write", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-api-key": apiKey },
+        body: JSON.stringify({ topic: aiTopic, category: form.category }),
+      });
+      const data = await res.json();
+      if (res.ok && data.title && data.content) {
+        setForm((f) => ({ ...f, title: data.title, content: data.content }));
+        setShowAi(false);
+        setAiTopic("");
+      } else {
+        setAiError(data.error || "Hata oluştu.");
+      }
+    } catch {
+      setAiError("Sunucuya ulaşılamadı.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,10 +184,46 @@ export default function AdminBlogPage() {
 
         {/* YENİ YAZI */}
         <div className="bg-white/3 border border-white/8 rounded-2xl p-6">
-          <div className="flex items-center gap-2 mb-6">
-            <Plus className="w-5 h-5 text-[#F5A623]" />
-            <h2 className="font-bold text-lg">Yeni Yazı Ekle</h2>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <Plus className="w-5 h-5 text-[#F5A623]" />
+              <h2 className="font-bold text-lg">Yeni Yazı Ekle</h2>
+            </div>
+            {/* AI BUTONU */}
+            <button
+              onClick={() => setShowAi(!showAi)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 hover:bg-purple-500/20 transition-colors text-sm font-medium"
+            >
+              <Sparkles className="w-4 h-4" />
+              AI ile Yaz
+            </button>
           </div>
+
+          {/* AI PANEL */}
+          {showAi && (
+            <div className="mb-6 p-4 bg-purple-500/5 border border-purple-500/20 rounded-xl">
+              <p className="text-purple-300 text-sm font-medium mb-3">✨ Konu girin, Claude sizin için makale yazsın</p>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={aiTopic}
+                  onChange={(e) => setAiTopic(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleAiWrite()}
+                  placeholder="örn: Fidye yazılımlarından korunma yolları"
+                  className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-purple-500/50"
+                />
+                <button
+                  onClick={handleAiWrite}
+                  disabled={aiLoading || !aiTopic.trim()}
+                  className="flex items-center gap-2 px-4 py-2.5 bg-purple-600 text-white font-medium rounded-xl hover:bg-purple-700 transition-colors disabled:opacity-50 text-sm whitespace-nowrap"
+                >
+                  {aiLoading ? <><Loader2 className="w-4 h-4 animate-spin" /> Yazıyor...</> : <><Sparkles className="w-4 h-4" /> Yaz</>}
+                </button>
+              </div>
+              {aiError && <p className="text-red-400 text-xs mt-2">{aiError}</p>}
+              {aiLoading && <p className="text-purple-400 text-xs mt-2 animate-pulse">Claude makale hazırlıyor, birkaç saniye...</p>}
+            </div>
+          )}
 
           {/* MOD SEÇİCİ */}
           <div className="flex gap-2 mb-6">
@@ -190,7 +257,7 @@ export default function AdminBlogPage() {
                 type="text"
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
-                placeholder="LinkedIn postunuzun başlığı"
+                placeholder="Makale başlığı"
                 required
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#F5A623]/50"
               />
@@ -226,12 +293,12 @@ export default function AdminBlogPage() {
 
             <div>
               <label className="block text-sm text-gray-400 mb-1">
-                İçerik * <span className="text-gray-600">— LinkedIn postunu buraya yapıştırın</span>
+                İçerik * <span className="text-gray-600">— LinkedIn postunu yapıştırın veya AI ile yazın</span>
               </label>
               <textarea
                 value={form.content}
                 onChange={(e) => setForm({ ...form, content: e.target.value })}
-                placeholder="LinkedIn post içeriği..."
+                placeholder="İçerik buraya gelecek..."
                 required rows={10}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#F5A623]/50 resize-y"
               />
@@ -246,7 +313,7 @@ export default function AdminBlogPage() {
           </form>
         </div>
 
-        {/* PLANLANMIŞ YAZILAR */}
+        {/* PLANLANMIŞ */}
         {scheduled.length > 0 && (
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -264,9 +331,8 @@ export default function AdminBlogPage() {
                       </span>
                     </div>
                     <h3 className="text-white font-medium text-sm truncate">{p.title}</h3>
-                    <p className="text-gray-500 text-xs mt-0.5 line-clamp-1">{p.excerpt}</p>
                   </div>
-                  <button onClick={() => deletePost(p.id, "scheduled")} className="text-gray-600 hover:text-red-400 transition-colors" title="İptal et">
+                  <button onClick={() => deletePost(p.id, "scheduled")} className="text-gray-600 hover:text-red-400 transition-colors">
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
@@ -275,7 +341,7 @@ export default function AdminBlogPage() {
           </div>
         )}
 
-        {/* YAYINLANAN YAZILAR */}
+        {/* YAYINLANANLAR */}
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-bold text-lg">Yayınlananlar ({posts.length})</h2>
@@ -298,10 +364,10 @@ export default function AdminBlogPage() {
                     <p className="text-gray-500 text-xs mt-0.5 line-clamp-1">{p.excerpt}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <a href={`/blog/${p.slug}`} target="_blank" className="text-gray-500 hover:text-[#F5A623] transition-colors" title="Görüntüle">
+                    <a href={`/blog/${p.slug}`} target="_blank" className="text-gray-500 hover:text-[#F5A623] transition-colors">
                       <Eye className="w-4 h-4" />
                     </a>
-                    <button onClick={() => deletePost(p.id, "published")} className="text-gray-600 hover:text-red-400 transition-colors" title="Sil">
+                    <button onClick={() => deletePost(p.id, "published")} className="text-gray-600 hover:text-red-400 transition-colors">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
