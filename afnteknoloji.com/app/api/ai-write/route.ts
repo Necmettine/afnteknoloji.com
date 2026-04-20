@@ -10,11 +10,28 @@ export async function POST(req: NextRequest) {
     const { topic, category } = await req.json();
     if (!topic) return NextResponse.json({ error: "Konu gerekli" }, { status: 400 });
 
-    if (!process.env.GEMINI_API_KEY) {
-      return NextResponse.json({ error: "GEMINI_API_KEY tanımlı değil" }, { status: 503 });
+    if (!process.env.GROQ_API_KEY) {
+      return NextResponse.json({ error: "GROQ_API_KEY tanımlı değil" }, { status: 503 });
     }
 
-    const prompt = `AFN Teknoloji adına profesyonel bir BT blog makalesi yaz.
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        temperature: 0.7,
+        max_tokens: 1024,
+        messages: [
+          {
+            role: "system",
+            content: "Sen AFN Teknoloji adına profesyonel BT blog makaleleri yazan bir içerik uzmanısın. Türkçe, kurumsal ve akıcı yazıyorsun.",
+          },
+          {
+            role: "user",
+            content: `Aşağıdaki konu hakkında profesyonel bir BT blog makalesi yaz.
 
 Konu: ${topic}
 Kategori: ${category || "BT Yönetimi"}
@@ -22,33 +39,25 @@ Kategori: ${category || "BT Yönetimi"}
 Kurallar:
 - Türkçe yaz
 - Başlık: kısa ve dikkat çekici (maksimum 10 kelime)
-- İçerik: 300-500 kelime, kurumsal şirketlere hitap eden, profesyonel ton
+- İçerik: 300-500 kelime, kurumsal şirketlere hitap eden profesyonel ton
 - Giriş, 3-4 ana paragraf, sonuç bölümü olsun
 - Emoji veya hashtag kullanma
-- AFN Teknoloji'nin 10+ yıllık deneyimini ve uzmanlığını yansıt
+- AFN Teknoloji'nin 10+ yıllık deneyimini yansıt
 
-Yanıtı SADECE şu JSON formatında ver, başka hiçbir şey ekleme:
-{"title": "...", "content": "..."}`;
-
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
-        }),
-      }
-    );
+Yanıtı SADECE şu JSON formatında ver:
+{"title": "...", "content": "..."}`,
+          },
+        ],
+      }),
+    });
 
     if (!res.ok) {
       const err = await res.text();
-      return NextResponse.json({ error: "Gemini hatası: " + err }, { status: 500 });
+      return NextResponse.json({ error: "Groq hatası: " + err }, { status: 500 });
     }
 
     const data = await res.json();
-    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    const raw = data.choices?.[0]?.message?.content ?? "";
 
     const jsonMatch = raw.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error("Geçersiz yanıt formatı");
