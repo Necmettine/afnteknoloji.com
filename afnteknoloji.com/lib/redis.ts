@@ -4,10 +4,12 @@ let client: Redis | null = null;
 
 export function getRedis(): Redis {
   if (!client) {
-    client = new Redis(process.env.REDIS_URL!, {
+    const url = process.env.REDIS_URL!;
+    const useTls = url.startsWith("rediss://");
+    client = new Redis(url, {
       maxRetriesPerRequest: 3,
       lazyConnect: true,
-      tls: process.env.REDIS_URL?.includes("redislabs.com") ? {} : undefined,
+      tls: useTls ? {} : undefined,
     });
   }
   return client;
