@@ -27,26 +27,21 @@ export async function POST(req: NextRequest) {
         messages: [
           {
             role: "system",
-            content: "Sen AFN Teknoloji adına profesyonel BT blog makaleleri yazan bir içerik uzmanısın. Türkçe, kurumsal ve akıcı yazıyorsun.",
+            content: "Sen AFN Teknoloji adına profesyonel BT blog makaleleri yazan bir içerik uzmanısın. Türkçe, kurumsal ve akıcı yazıyorsun. Verilen formata kesinlikle uy.",
           },
           {
             role: "user",
-            content: `Aşağıdaki konu hakkında profesyonel bir BT blog makalesi yaz.
-
-Konu: ${topic}
+            content: `Konu: ${topic}
 Kategori: ${category || "BT Yönetimi"}
 
 Kurallar:
-- Türkçe yaz
-- Başlık: kısa ve dikkat çekici (maksimum 10 kelime)
-- İçerik: 300-500 kelime, kurumsal şirketlere hitap eden profesyonel ton
-- Giriş, 3-4 ana paragraf, sonuç bölümü olsun
+- Türkçe, kurumsal, 300-500 kelime
+- Giriş, 3-4 paragraf, sonuç
 - Emoji veya hashtag kullanma
-- AFN Teknoloji'nin 10+ yıllık deneyimini yansıt
+- AFN Teknoloji'nin 10+ yıllık uzmanlığını yansıt
 
-Yanıtı SADECE aşağıdaki formatta ver, başka hiçbir şey yazma:
-<title>Başlık buraya</title>
-<content>Makale içeriği buraya</content>`,
+BAŞLIK: [Buraya kısa başlık yaz]
+İÇERİK: [Buraya makale içeriğini yaz]`,
           },
         ],
       }),
@@ -54,22 +49,46 @@ Yanıtı SADECE aşağıdaki formatta ver, başka hiçbir şey yazma:
 
     if (!res.ok) {
       const err = await res.text();
-      return NextResponse.json({ error: "Groq hatası: " + err }, { status: 500 });
+      return NextResponse.json({ error: "Groq bağlantı hatası: " + err }, { status: 500 });
     }
 
     const data = await res.json();
-    const raw = data.choices?.[0]?.message?.content ?? "";
+    const raw: string = data.choices?.[0]?.message?.content ?? "";
 
-    const titleMatch = raw.match(/<title>([\s\S]*?)<\/title>/);
-    const contentMatch = raw.match(/<content>([\s\S]*?)<\/content>/);
+    if (!raw) {
+      return NextResponse.json({ error: "AI boş yanıt döndürdü" }, { status: 500 });
+    }
 
-    if (!titleMatch || !contentMatch) throw new Error("Geçersiz yanıt formatı");
+    // Çoklu parse stratejisi — hangisi çalışırsa
+    let title = "";
+    let content = "";
 
-    return NextResponse.json({
-      success: true,
-      title: titleMatch[1].trim(),
-      content: contentMatch[1].trim(),
-    });
+    // 1. BAŞLIK: / İÇERİK: formatı
+    const titleLine = raw.match(/BAŞLIK\s*:\s*(.+)/i);
+    const contentAfter = raw.match(/İÇERİK\s*:\s*([\s\S]+)/i);
+    if (titleLine) title = titleLine[1].trim();
+    if (contentAfter) content = contentAfter[1].trim();
+
+    // 2. XML etiket formatı (fallback)
+    if (!title || !content) {
+      const tMatch = raw.match(/<title>([\s\S]*?)<\/title>/i);
+      const cMatch = raw.match(/<content>([\s\S]*?)<\/content>/i);
+      if (tMatch) title = tMatch[1].trim();
+      if (cMatch) content = cMatch[1].trim();
+    }
+
+    // 3. İlk satır başlık, geri kalanı içerik (son fallback)
+    if (!title || !content) {
+      const lines = raw.split("\n").filter((l) => l.trim());
+      title = lines[0].replace(/^#+\s*/, "").trim();
+      content = lines.slice(1).join("\n").trim();
+    }
+
+    if (!title || !content) {
+      return NextResponse.json({ error: "Yanıt formatı anlaşılamadı, tekrar deneyin." }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true, title, content });
   } catch (err) {
     return NextResponse.json({ error: "AI hatası: " + String(err) }, { status: 500 });
   }
