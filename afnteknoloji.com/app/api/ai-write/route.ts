@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 
 export async function POST(req: NextRequest) {
   try {
@@ -11,15 +10,11 @@ export async function POST(req: NextRequest) {
     const { topic, category } = await req.json();
     if (!topic) return NextResponse.json({ error: "Konu gerekli" }, { status: 400 });
 
-    const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+    if (!process.env.GEMINI_API_KEY) {
+      return NextResponse.json({ error: "GEMINI_API_KEY tanımlı değil" }, { status: 503 });
+    }
 
-    const message = await client.messages.create({
-      model: "claude-opus-4-5",
-      max_tokens: 1024,
-      messages: [
-        {
-          role: "user",
-          content: `AFN Teknoloji adına profesyonel bir BT blog makalesi yaz.
+    const prompt = `AFN Teknoloji adına profesyonel bir BT blog makalesi yaz.
 
 Konu: ${topic}
 Kategori: ${category || "BT Yönetimi"}
@@ -27,19 +22,34 @@ Kategori: ${category || "BT Yönetimi"}
 Kurallar:
 - Türkçe yaz
 - Başlık: kısa ve dikkat çekici (maksimum 10 kelime)
-- İçerik: 300-500 kelime, kurumsal şirketlere hitap eden, LinkedIn'e uygun profesyonel ton
-- Giriş, 3-4 ana madde/paragraf, sonuç bölümü olsun
+- İçerik: 300-500 kelime, kurumsal şirketlere hitap eden, profesyonel ton
+- Giriş, 3-4 ana paragraf, sonuç bölümü olsun
 - Emoji veya hashtag kullanma
 - AFN Teknoloji'nin 10+ yıllık deneyimini ve uzmanlığını yansıt
 
 Yanıtı SADECE şu JSON formatında ver, başka hiçbir şey ekleme:
-{"title": "...", "content": "..."}`,
-        },
-      ],
-    });
+{"title": "...", "content": "..."}`;
 
-    const raw = (message.content[0] as { type: string; text: string }).text.trim();
-    // JSON parse
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.7, maxOutputTokens: 1024 },
+        }),
+      }
+    );
+
+    if (!res.ok) {
+      const err = await res.text();
+      return NextResponse.json({ error: "Gemini hatası: " + err }, { status: 500 });
+    }
+
+    const data = await res.json();
+    const raw = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+
     const jsonMatch = raw.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error("Geçersiz yanıt formatı");
     const result = JSON.parse(jsonMatch[0]);
