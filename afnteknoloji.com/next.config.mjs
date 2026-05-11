@@ -85,6 +85,17 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      // WordPress kategori URL'leri
+      {
+        source: "/category/genel/siber-guvenlk/:path*",
+        destination: "/guvenlik-yazilimlari",
+        permanent: true,
+      },
+      {
+        source: "/category/:path*",
+        destination: "/blog",
+        permanent: true,
+      },
     ];
   },
   async headers() {
