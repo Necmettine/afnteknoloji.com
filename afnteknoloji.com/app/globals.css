@@ -231,3 +231,123 @@ body {
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* ── TEMA GEÇİŞ ANİMASYONU ────────────────────────────── */
+body,
+body * {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
+}
+
+/* ── LIGHT (KAĞIT) MODU ───────────────────────────────── */
+html.light body {
+  background-color: #f0ece4;
+  color: #1a1a2e;
+}
+
+/* Ana arka plan renkleri */
+html.light [class*="0A0E1A"],
+html.light [class*="0a0e1a"] {
+  background-color: #f0ece4;
+}
+
+html.light [class*="0D1220"],
+html.light [class*="0d1220"],
+html.light [class*="0D1221"],
+html.light [class*="0d1221"] {
+  background-color: #f8f6f1;
+}
+
+html.light [class*="111827"] {
+  background-color: #ffffff;
+}
+
+/* Metin renkleri */
+html.light .text-white {
+  color: #1a1a2e;
+}
+
+html.light .text-gray-100,
+html.light .text-gray-200,
+html.light .text-gray-300 {
+  color: #374151;
+}
+
+html.light .text-gray-400 {
+  color: #6b7280;
+}
+
+html.light .text-gray-500,
+html.light .text-gray-600 {
+  color: #9ca3af;
+}
+
+/* Border renkleri */
+html.light [class*="border-white"] {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Yarı saydam arka planlar */
+html.light [class*="bg-white/"] {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Glass efekti */
+html.light .glass {
+  background: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient border */
+html.light .gradient-border {
+  background: linear-gradient(135deg, rgba(245, 166, 35, 0.1), rgba(245, 166, 35, 0.01));
+  border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+/* Hero arka plan */
+html.light .hero-tech {
+  background-color: #f0ece4;
+}
+
+/* Tech arka plan grid çizgileri - light modda daha soluk */
+html.light .tech-bg::before {
+  background-image:
+    linear-gradient(rgba(245, 166, 35, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 166, 35, 0.06) 1px, transparent 1px);
+}
+
+/* Header arka planı */
+html.light header {
+  background-color: #f8f6f1 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Mega menü dropdown */
+html.light [class*="bg-\[#0D1220\]"],
+html.light [class*="bg-\[#0d1220\]"] {
+  background-color: #ffffff;
+}
+
+/* Input alanları */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #1a1a2e;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Text gradient - light modda biraz daha koyu turuncu */
+html.light .text-gradient {
+  background: linear-gradient(135deg, #d4830a, #c97800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

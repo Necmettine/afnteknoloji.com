@@ -4,6 +4,7 @@ import AnalyticsManager from "@/components/AnalyticsManager";
 import CookieBanner from "@/components/CookieBanner";
 import FloatingContact from "@/components/FloatingContact";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 const GTM_ID = "GTM-PQ4Q42NH";
@@ -52,16 +53,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
+    <html lang="tr" suppressHydrationWarning>
       <head>
         <AnalyticsManager gtmId={GTM_ID} />
         <SchemaMarkup />
       </head>
-      <body className="bg-[#0A0E1A] text-white antialiased">
-        {children}
-        <FloatingContact />
-        <CookieBanner />
-        <SpeedInsights />
+      <body className="bg-[#0A0E1A] text-white antialiased" suppressHydrationWarning>
+        <ThemeProvider>
+          {children}
+          <FloatingContact />
+          <CookieBanner />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -2,9 +2,35 @@
 
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return <div className="h-9 w-9 rounded-lg" aria-hidden="true" />;
+  }
+
+  const isDark = theme === "dark";
+
+  return (
+    <button
+      type="button"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={isDark ? "Gündüz moduna geç" : "Gece moduna geç"}
+      title={isDark ? "Gündüz moduna geç" : "Gece moduna geç"}
+      className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-base transition-colors hover:border-[#F5A623]/40 hover:bg-[#F5A623]/10"
+    >
+      {isDark ? "☀️" : "🌙"}
+    </button>
+  );
+}
 
 const megaMenusTr = {
   kurumsal: {
@@ -375,12 +401,14 @@ export default function Header() {
                 {isEn ? "Contact" : "İletişim"}
               </a>
 
-              <div className="ml-2">
+              <div className="ml-2 flex items-center gap-1.5">
+                <ThemeToggle />
                 <LanguageSwitcher />
               </div>
             </nav>
 
             <div className="flex items-center gap-2 lg:hidden">
+              <ThemeToggle />
               <LanguageSwitcher />
               <label
                 htmlFor="hmb-toggle"
