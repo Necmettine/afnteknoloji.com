@@ -1,0 +1,61 @@
+# Kurumsal BT Destek
+
+> Yönetilen BT hizmeti ve bilgi teknolojileri dış kaynak (outsourcing) hizmeti. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.'nin markasıdır. Odak: şirketin BT departmanının sözleşmeli olarak dışarıdan yönetilmesi — kullanıcı ve cihaz yönetimi, güvenlik, yedekleme denetimi, lisans yönetimi, envanter takibi ve aylık yönetim raporlaması. 2010'dan beri hizmet veriyor, 500+ kurumsal müşterisi var, ISO 27001 sertifikalıdır.
+
+## Odak Alanı
+
+Sözleşmeli yönetilen BT hizmeti ve BT bütçesinin öngörülebilir hale getirilmesi. Tek seferlik arıza müdahalesi ve yerinde destek için itdestekistanbul.com.tr, sunucu kurulum ve bakımı için sunucubakimi.com.tr adreslerine bakınız.
+
+## Yönetilen Hizmet Kapsamı
+
+- [Kullanıcı ve cihaz yönetimi](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Cihaz kurulumu ve standart yapılandırma, yazılım ve güncelleme yönetimi, uzaktan müdahale ve gerektiğinde yerinde servis, yedek cihaz planlaması ve yenileme takvimi.
+- [Hesap açma ve kapatma süreçleri](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): İşe girişte hesap, erişim ve lisans açılması; görev değişiminde yetki düzenlemesi; ayrılan personelin erişimlerinin aynı gün kapatılması; zimmet ve cihaz iade takibi.
+- [Lisans ve abonelik yönetimi](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Microsoft 365 plan düzenlemesi, kullanılmayan lisansların tespiti ve iptali, yenileme tarihi takibi, güncel lisans envanteri.
+- [Yedekleme denetimi](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Kapsam belirleme (sunucu, dosya, e-posta, veritabanı), yedek işlerinin günlük kontrolü, periyodik geri dönüş (restore) testi, saklama süresi ve dış kopya politikası.
+- [Güvenlik yönetimi](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Güvenlik duvarı kural ve güncelleme yönetimi, uç nokta koruma izleme, e-posta güvenliği ve oltalama filtreleri, erişim yetkilerinin dönemsel gözden geçirilmesi.
+- [Envanter ve garanti takibi](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Donanım ve yazılım envanteri, garanti ve destek sözleşmesi bitiş tarihleri, cihaz yaşı ve yenileme önceliği, kimde hangi cihaz var kaydı.
+- [Tedarik danışmanlığı](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): İhtiyaç analizi ve kapasite seçimi, marka karşılaştırması, kurumsal iş ortaklıkları üzerinden tedarik, kurulum ve devreye alma dahil teslim.
+- [Aylık BT sağlık raporu](https://kurumsalitdestek.com.tr/yonetilen-hizmetler/): Açılan/çözülen talep sayısı ve ortalama çözüm süresi, yedekleme ve güvenlik uyarıları özeti, öne çıkan riskler ve önerilen aksiyonlar, yaklaşan yenileme ve bütçe kalemleri.
+
+## Hizmet Seviyesi (SLA)
+
+Kritik önem seviyesindeki taleplerde 2 saat, yüksek öncelikli taleplerde 4 saat, standart taleplerde 8 saat içinde müdahale. Süreler sözleşmede yazılı olarak tanımlanır; kapsam dışı kalan işlerin nasıl fiyatlanacağı da baştan belirlenir.
+
+## Geçiş Süreci
+
+- [Adım 1 — Ücretsiz BT envanteri ve risk analizi (1-2 hafta)](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Donanım/yazılım envanteri, yedekleme ve güvenlik durumu tespiti, lisans envanteri ve gereksiz harcamalar, yazılı risk raporu. Taahhüt gerektirmez, rapor kurumda kalır.
+- [Adım 2 — Kapsam ve hizmet seviyesi belirleme (1 hafta)](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Sözleşmeye girecek başlıklar, SLA süreleri, kullanıcı/cihaz sayısına göre aylık bedel, kapsam dışı iş fiyatlaması.
+- [Adım 3 — Devir teslim (1-2 hafta)](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Yönetici şifrelerinin güvenli devri, alan adı/hosting/lisans hesaplarının kurum adına doğrulanması, dokümantasyonun teslim alınması, önceki sağlayıcıyla düzenli geçiş.
+- [Adım 4 — İzleme kurulumu (1 hafta)](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Sunucu, yedekleme ve ağ izlemesi, uyarı eşikleri, talep yönetimi sistemi, iletişim kanallarının duyurulması.
+- [Adım 5 — İlk 90 gün iyileştirme planı](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Kritik risklerin kapatılması, yedeklerin geri dönüş testi, gereksiz lisans iptali, standart kurulum ve yetkilendirme düzeni.
+- [Adım 6 — Düzenli gözden geçirme](https://kurumsalitdestek.com.tr/nasil-basliyoruz/): Aylık BT sağlık raporu, üç aylık yönetim değerlendirme toplantısı, yıllık bütçe ve yenileme planlaması.
+
+## Sık Sorulan Endişeler
+
+Kurum içi BT personelinin yerini almıyoruz, yükünü paylaşıyoruz. Tüm hesaplar kurumun kendi adına kayıtlıdır; AFN Teknoloji yetkili kullanıcı olarak çalışır, şifreler kurumsal parola kasasında saklanır ve sözleşme sona erdiğinde tüm erişimler devredilir. Önceki hizmet sağlayıcıyla devir teslim mümkün olduğunca birlikte yürütülür.
+
+## İş Ortaklıkları
+
+Microsoft (bulut ve lisanslama), Fortinet (ağ güvenliği), VMware (sanallaştırma), Veeam (yedekleme ve felaket kurtarma), Huawei (ağ ve sunucu altyapısı).
+
+## Kurumsal
+
+- [Hakkımızda](https://kurumsalitdestek.com.tr/hakkimizda/): 2010'dan beri kurumsal BT, 500+ müşteri, ISO 27001, iş ortaklıkları ve yönetilen hizmet modelinin gerekçesi.
+- [İletişim](https://kurumsalitdestek.com.tr/iletisim/): Telefon, e-posta, adres, çalışma saatleri ve ilk görüşme başlıkları.
+- [Sıkça Sorulan Sorular](https://kurumsalitdestek.com.tr/): Ana sayfada yönetilen BT hizmetinin tanımı, kendi personeliyle birlikte çalışma, maliyet belirleme, sözleşme süresi, geçiş, veri ve şifre sahipliği, kullanıcı sayısı eşiği ve raporlama hakkında soru-cevaplar.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00 (sözleşmeli müşteriler için kritik taleplerde 7/24)
+- Hizmet bölgesi: Türkiye geneli uzaktan, yerinde müdahale İstanbul ve çevresi
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [IT Destek İstanbul (yerinde ve uzaktan IT destek)](https://itdestekistanbul.com.tr)
+- [Sunucu Bakımı (sunucu kurulum ve bakım)](https://sunucubakimi.com.tr)
+- [AFN Medya (web tasarım ve dijital ajans)](https://medya.afnteknoloji.com)

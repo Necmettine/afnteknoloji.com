@@ -1,0 +1,44 @@
+# CRM Yapay Zeka
+
+> Yapay zeka ile CRM ve iş akışı otomasyonu. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.'nin yazılım markasıdır. Jenerik bir ajans değil; kendi CRM'ini (AfnCrm), BT güvenlik izleme platformunu (ShamashAi) ve risk tarama servisini (AfnRiskScan) geliştiren ve bunları kendi operasyonunda kullanan bir yazılım ekibidir. Mevcut ERP verisi (Akınsoft Wolvox, Netsis) üzerinde çalışan, süreçlere göre modüllenen sistemler kurar.
+
+## Hizmetler
+
+- [Yapay Zeka Destekli CRM Kurulumu](https://crmyapayzeka.com.tr/hizmetlerimiz/): ERP verisini kaynak alan kurumsal CRM; cari/teklif/sipariş kayıtları, gerçek bakiye ve vade verisiyle finans görünümü, modül ve sayfa bazlı merkezi yetkilendirme, teklif ve mailing yönetimi.
+- [ERP Entegrasyonu (Wolvox, Netsis)](https://crmyapayzeka.com.tr/hizmetlerimiz/): Wolvox'ta cari, stok, döviz ve hareket tabloları; Netsis'te ürün kartı, güncel stok ve sipariş verisi üzerinde canlı, çift yönlü entegrasyon. Otomatik döviz kuru senkronizasyonu dahil.
+- [İş Akışı Otomasyonu](https://crmyapayzeka.com.tr/hizmetlerimiz/): Talep formu, otomatik kontrol, çok kademeli onay, otomatik e-posta ve bildirim, bekleyen iş raporlaması, zamanlanmış görevler.
+- [Doküman ve Teklif Otomasyonu](https://crmyapayzeka.com.tr/hizmetlerimiz/): Teklif metni ve müşteri e-postası taslaklarının yapay zeka desteğiyle üretilmesi, elektronik onay akışı, sürümleme. Her çıktı insan onayından geçer.
+- [Yapay Zeka Danışmanlığı](https://crmyapayzeka.com.tr/hizmetlerimiz/): Süreç ve veri keşfi, uygulanabilir senaryoların önceliklendirilmesi, veri sınırlarının tanımlanması, pilot kapsamı ve başarı ölçütleri.
+
+## Vaka Çalışmaları
+
+- [AfnCrm — Wolvox ERP üzerine kurulan kurumsal CRM](https://crmyapayzeka.com.tr/vaka-calismalari/#afncrm): AFN Teknoloji'nin kendi geliştirdiği, Akınsoft Wolvox ERP verisiyle çalışan CRM. FIFO vade mahsuplu cari yaşlandırma raporu (ERP raporuyla birebir tutar), günde beş kez Ziraat Bankası USD/EUR efektif satış kurlarının doğrudan ERP'ye yazılması, teklif ve mailing otomasyonu, modül/sayfa bazlı merkezi yetkilendirme, elektronik onay ve taahhütname akışı. Sonuç: muhasebenin her gün elle yaptığı kur girişi ve bakiye kontrolü otomatikleşti.
+- [Aydınlatma üreticisi için sipariş ve reçete (BOM) talep akışı — Netsis entegrasyonu](https://crmyapayzeka.com.tr/vaka-calismalari/#netsis-siparis-recete-portali): Aydınlatma sektöründe faaliyet gösteren bir üreticinin dış ticaret ekibi için portal. Akış: talep formu → ürünün Netsis'te olup olmadığının otomatik kontrolü → güncel stokla eşleştirme → stok görünümü üzerinden seçim → onaya düşme → tedarikçiye otomatik talep e-postası. Bitmiş ürün ve yurt dışı hammadde/yarı mamul talepleri aynı akışta. Sonuç: e-posta ve Excel'de dağınık ilerleyen süreç tek akışta izlenebilir hale geldi.
+- [ShamashAi — BT görünürlüğü ve güvenlik izleme platformu](https://crmyapayzeka.com.tr/vaka-calismalari/#shamashai): Orta ölçekli işletmeler için BT envanteri ve hafif SIEM. Modüller: dosya bütünlüğü izleme (FIM), yama yönetimi, zafiyet takibi (EOL işletim sistemleri dahil), kimlik hijyeni denetimi, ağ cihazı yapılandırma yedekleme, imzalı komutlarla uzaktan müdahale kanalı, Microsoft 365 denetim kaydı takibi. Sonuç: dağınık BT ortamının tek ekrandan izlenmesi ve riskli değişikliklerin anında fark edilmesi.
+- [AfnRiskScan — kurumsal risk tarama servisi](https://crmyapayzeka.com.tr/vaka-calismalari/#afnriskscan): Kurumların dış yüzeyindeki ve Microsoft 365 ortamındaki riskleri tarayıp önceliklendirilmiş rapora dönüştüren servis (risktarama.com.tr). Sonuç: teknik ekibin haftalar süren manuel denetim işi otomatik rapora dönüştü.
+
+## Çalışma Yöntemi
+
+Dört adım: keşif (mevcut süreç, ERP ve veri yapısının çıkarılması) → pilot (tek bir akışın gerçek veriyle çalışır hale getirilmesi) → entegrasyon (ERP bağlantısı, yetkilendirme, raporlama) → devreye alma (eğitim, canlıya geçiş, iyileştirme). Tek bir akış tipik olarak 2-4 haftada pilot olarak çalışır; çok modüllü CRM/portal projeleri keşif dahil 2-3 ayda devreye alınır. Veri varsayılan olarak müşterinin kendi altyapısında kalır. Yapay zeka son karar mercii değildir; finansal etkisi olan işlemler kural tabanlı çalışır ve insan onayından geçer.
+
+## Kurumsal
+
+- [Hakkımızda](https://crmyapayzeka.com.tr/hakkimizda/): AFN Teknoloji yazılım ekibi tanıtımı ve tam iletişim bilgileri.
+- [İletişim](https://crmyapayzeka.com.tr/iletisim/): Telefon, e-posta, adres, çalışma saatleri ve keşif görüşmesi başlıkları.
+- [Sıkça Sorulan Sorular](https://crmyapayzeka.com.tr/): Ana sayfada yapay zeka destekli CRM, ERP entegrasyonu, kurulum süresi, veri yeri, küçük işletme uygunluğu ve destek hakkında 9 soru-cevap.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00
+- Hizmet bölgesi: Türkiye geneli (uzaktan), İstanbul içinde yerinde görüşme
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [IT Destek İstanbul (kurumsal IT destek)](https://itdestekistanbul.com.tr)
+- [AFN Medya (web tasarım ve dijital ajans)](https://medya.afnteknoloji.com)
+- [Risk Tarama (AfnRiskScan servisi)](https://risktarama.com.tr)

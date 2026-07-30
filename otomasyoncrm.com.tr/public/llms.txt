@@ -1,0 +1,53 @@
+# Otomasyon CRM
+
+> Satış süreci ve CRM otomasyonu. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.'nin markasıdır. Odak: potansiyel müşteri kaydından tahsilat takibine kadar satış hattındaki (pipeline) tekrarlı işlerin CRM içinde otomatikleşmesi. Excel'de dağınık ilerleyen müşteri takibi, unutulan teklif takipleri ve elle hazırlanan raporlar ortadan kaldırılır.
+
+## Odak Alanı
+
+Satış operasyonu otomasyonu. Yapay zeka projeleri ve vaka çalışmaları için crmyapayzeka.com.tr, departman içi onay ve iş akışları için yapayzekaflow.com.tr, kurumsal BT destek için itdestekistanbul.com.tr adreslerine bakınız.
+
+## Otomasyon Senaryoları
+
+- [Potansiyel müşteri kaydının otomatik açılması](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Web formu, gelen e-posta veya santral çağrısı CRM'e potansiyel müşteri olarak düşer; kaynak etiketlenir, bölge/ürün grubuna göre temsilciye atanır, ilk temas görevi açılır.
+- [Teklif hazırlama ve gönderimi](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Fırsat teklif aşamasına geçtiğinde ürün ve fiyat kayıttan çekilir, kurumsal şablonla PDF üretilir, e-posta ile gönderilir, revizyon geçmişi izlenir.
+- [Teklif sonrası hatırlatma zinciri](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): 3. gün temsilciye, 7. gün müşteriye takip; geçerlilik bitimine 3 gün kalınca uyarı; yanıt gelmezse kayıp sebebi sorulur.
+- [Aşama değişiminde görev ve onay](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Aşamaya özel kontrol listesi, belirli tutar üzerindeki iskontoda yönetici onayı, onaysız sözleşme aşamasına geçiş engeli, onay kaydı.
+- [Sözleşme ve abonelik yenileme uyarısı](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): 60 ve 30 gün öncesinde yenileme görevi, geçmiş kullanım verisiyle birlikte; yenileme teklifi taslağı hazırlanır.
+- [Vade ve tahsilat hatırlatması](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Vadesi yaklaşan/geçen fatura bildirimi, gecikmede yeni sipariş onayının bekletilmesi, güncel yaşlandırma tablosu.
+- [ERP ile cari ve bakiye senkronu](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Cari kart, bakiye ve vade bilgisinin ERP'den düzenli okunması, farkların işaretlenmesi, çifte veri girişinin kaldırılması.
+- [Dönemsel satış raporunun otomatik gönderimi](https://otomasyoncrm.com.tr/otomasyon-senaryolari/): Satış hattı, kazanılan/kaybedilen fırsat ve hedef gerçekleşmesinin temsilci ve ürün kırılımıyla yönetime e-postalanması.
+
+## Entegrasyonlar
+
+- [Akınsoft Wolvox ERP](https://otomasyoncrm.com.tr/entegrasyonlar/): Cari, bakiye ve vade verisi CRM'e akar; sipariş ERP'ye yazılır; döviz kuru güncel uygulanır. AFN Teknoloji'nin kendi CRM'i (AfnCrm) bu entegrasyonun çalışan örneğidir.
+- [Logo Netsis ERP](https://otomasyoncrm.com.tr/entegrasyonlar/): Ürün ve stok bilgisi talep anında sorgulanır, teklif kalemleri gerçek stokla eşleştirilir, fiyat listesi tek kaynaktan okunur.
+- [Microsoft 365 e-posta ve takvim](https://otomasyoncrm.com.tr/entegrasyonlar/): Yazışma ilgili kayda bağlanır, teklif ve hatırlatmalar kurumsal adresten çıkar, randevular takvime yazılır.
+- [Web sitesi formları](https://otomasyoncrm.com.tr/entegrasyonlar/): Form başvuruları kaynak ve kampanya etiketiyle CRM'e düşer, yanıt süresi ölçülür.
+- [E-fatura ve muhasebe tarafı](https://otomasyoncrm.com.tr/entegrasyonlar/): Fatura ilgili fırsata bağlanır, tahsilat durumu satış ekranında görünür.
+- [Santral ve WhatsApp kayıtları](https://otomasyoncrm.com.tr/entegrasyonlar/): Gelen çağrı mevcut müşteriyle eşleştirilir, görüşme notu kayda işlenir, yanıtsız çağrı geri arama listesine düşer.
+
+## Yaklaşım
+
+Her veri alanı için yönün ayrı belirlenmesi (bakiye gibi muhasebe verisi CRM'e yalnızca okunur akar, sipariş gibi satış verisi ERP'ye yazılır), API varsa API üzerinden yoksa kontrollü veritabanı okuma katmanı, hata durumunda yeniden deneme ve sorumluya bildirim. Kurulum tek bir akışla pilot olarak başlar, sonuç ölçülür, sonra yaygınlaştırılır. Mevcut ERP değiştirilmez; üzerine entegre olunur.
+
+## Kurumsal
+
+- [Hakkımızda](https://otomasyoncrm.com.tr/hakkimizda/): 2010'dan beri kurumsal BT ve yazılım, 500+ müşteri, ISO 27001; satış otomasyonuna neden odaklandığımız ve çalışma yöntemi.
+- [İletişim](https://otomasyoncrm.com.tr/iletisim/): Telefon, e-posta, adres, çalışma saatleri ve ilk görüşme başlıkları.
+- [Sıkça Sorulan Sorular](https://otomasyoncrm.com.tr/): Ana sayfada CRM otomasyonunun kapsamı, mevcut CRM üzerine kurulum, ERP entegrasyonu, kullanıcı sayısı, kurulum süresi, eğitim, veri yeri ve Excel aktarımı hakkında soru-cevaplar.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00
+- Hizmet bölgesi: Türkiye geneli (uzaktan), İstanbul içinde yerinde görüşme
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [CRM Yapay Zeka (yapay zeka projeleri ve vaka çalışmaları)](https://crmyapayzeka.com.tr)
+- [Yapay Zeka Flow (departman iş akışları ve onay süreçleri)](https://yapayzekaflow.com.tr)
+- [IT Destek İstanbul (kurumsal IT destek)](https://itdestekistanbul.com.tr)

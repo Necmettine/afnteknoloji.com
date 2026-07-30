@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #15171C;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .text-gold-gradient {
+    background: linear-gradient(120deg, #E0AE45, #EFDCB4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Kurumsal his için ince yatay çizgi dokusu (kardeş sitelerin kare grid'inden ayrışır) */
+  .hero-rule-bg {
+    background-image: linear-gradient(
+      rgba(224, 174, 69, 0.07) 1px,
+      transparent 1px
+    );
+    background-size: 100% 34px;
+  }
+  .hero-warm-glow {
+    background: radial-gradient(
+      ellipse 65% 55% at 50% 0%,
+      rgba(192, 138, 43, 0.16) 0%,
+      transparent 68%
+    );
+  }
+  .rule-accent {
+    background: linear-gradient(90deg, #C08A2B, rgba(192, 138, 43, 0));
+  }
+}

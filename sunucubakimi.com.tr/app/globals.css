@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #12171E;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .text-gradient {
+    background: linear-gradient(120deg, #FBBF24, #F1DFBC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  /* Sunucu rack'i çağrıştıran yatay U-şerit deseni */
+  .rack-bg {
+    background-image: repeating-linear-gradient(
+      180deg,
+      rgba(245, 158, 11, 0.055) 0px,
+      rgba(245, 158, 11, 0.055) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+  }
+  .hero-glow {
+    background: radial-gradient(ellipse 65% 55% at 50% 0%, rgba(245, 158, 11, 0.14) 0%, transparent 68%);
+  }
+  .amber-rule {
+    background: linear-gradient(90deg, #F59E0B, rgba(245, 158, 11, 0));
+  }
+}

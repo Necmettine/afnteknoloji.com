@@ -1,0 +1,50 @@
+# Yapay Zeka Flow
+
+> Departmanlar arası iş akışı ve onay süreci otomasyonu. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.'nin markasıdır. Odak: şirket içi operasyonda talep → onay → aksiyon zincirlerinin, doküman akışlarının ve sistemler arası veri köprülerinin otomatikleştirilmesi. Yeni bir program satmak değil, mevcut sistemlerin arasına izlenebilir bir işleyiş katmanı koymak.
+
+## Odak Alanı
+
+Şirket içi iş akışları ve onay süreçleri. Satış hattı ve teklif takibi otomasyonu için otomasyoncrm.com.tr, yapay zeka projeleri ve vaka çalışmaları için crmyapayzeka.com.tr, kurumsal BT destek için itdestekistanbul.com.tr adreslerine bakınız.
+
+## Akış Örnekleri
+
+- [Satın alma talebi ve onay zinciri](https://yapayzekaflow.com.tr/akis-ornekleri/#satin-alma): Talep bütçe kalemiyle kaydedilir, tutara göre onay kademesi otomatik belirlenir (birim yöneticisi → mali işler → genel müdür), onaylanan talep satın almaya gider, teslim ve fatura eşleştirmesi aynı kayıttan izlenir.
+- [İzin ve masraf onayı](https://yapayzekaflow.com.tr/akis-ornekleri/#izin-masraf): Kalan izin hakkı ve çakışma kontrolü, masraf belgesi doğrulaması, yönetici onayı, bordro/muhasebeye iletim, aylık özet rapor.
+- [Yeni personel giriş ve çıkış akışı](https://yapayzekaflow.com.tr/akis-ornekleri/#personel-giris-cikis): Göreve göre gereken hesap, lisans ve erişim listesi; BT görevleri; zimmet kaydı; çıkışta erişim kapatma, cihaz iadesi ve lisans iptalinin aynı liste üzerinden tersine işlemesi.
+- [Sipariş ve reçete (BOM) talebinin ERP ile kontrolü](https://yapayzekaflow.com.tr/akis-ornekleri/#siparis-recete): Talep edilen ürünün ERP'de tanımlı olup olmadığının otomatik sorgulanması, güncel stokla eşleştirme, tanımsızsa ürün açma talebinin yönlendirilmesi, onay sonrası tedarikçiye ürün kodu ve açıklamasıyla otomatik talep e-postası. Aydınlatma sektöründe faaliyet gösteren bir üreticide devrededir.
+- [Gelen fatura ve irsaliyenin okunup kayda bağlanması](https://yapayzekaflow.com.tr/akis-ornekleri/#gelen-belge): Belgeden tedarikçi, tarih, tutar ve belge numarasının çıkarılması, sipariş/cari kayıtla eşleştirme, tutar farkı veya eksik bilginin işaretlenmesi.
+- [Servis ve arıza talebinin yönlendirilmesi](https://yapayzekaflow.com.tr/akis-ornekleri/#servis-talebi): Konuya göre sınıflandırma ve önceliklendirme, ekibe atama, süre taahhüdü, aşımda üst kademeye yükseltme, kapanışta çözüm notu.
+- [Sözleşme ve belge yenileme takibi](https://yapayzekaflow.com.tr/akis-ornekleri/#sozlesme-belge): Sözleşme, sigorta, lisans ve sertifika bitiş tarihlerinin izlenmesi, 60/30/7 gün hatırlatmaları, yenilemenin onay akışı olarak açılması.
+- [Periyodik rapor üretimi](https://yapayzekaflow.com.tr/akis-ornekleri/#periyodik-rapor): Farklı sistemlerden veri toplanıp şablona göre tablo ve özet hazırlanması, yöneticilere gönderim, aralık dışı değerlerin uyarı olarak işaretlenmesi.
+
+## Nasıl Çalışır
+
+- [Bağlantı yöntemleri](https://yapayzekaflow.com.tr/nasil-calisir/): Öncelik API; API yoksa yalnızca okuma yetkili sınırlı veritabanı katmanı (doğrudan tabloya yazma yapılmaz); e-posta eki ve paylaşılan klasör gibi kaynakların da akışa dahil edilmesi.
+- [Tetikleyici türleri](https://yapayzekaflow.com.tr/nasil-calisir/): Form gönderimi, gelen e-posta, zamanlayıcı (belirli gün/saat veya tarih yaklaşması), sistem olayı (ERP'de kayıt değişimi, stok düşüşü, durum güncellemesi).
+- [Onay ve yetkilendirme](https://yapayzekaflow.com.tr/nasil-calisir/): Yetki kişiye değil role bağlanır; tutar veya risk eşiklerine göre onay kademesi otomatik değişir.
+- [Denetim kaydı](https://yapayzekaflow.com.tr/nasil-calisir/): Hangi kaydı kimin ne zaman değiştirdiği, hangi onayın kim tarafından verildiği ve akışın hangi kolundan geçtiği kayıt altındadır.
+- [Hata yönetimi](https://yapayzekaflow.com.tr/nasil-calisir/): Başarısız adım sessizce kaybolmaz; yeniden denenir, çözülemezse sorumluya bildirim gider ve kayıt bekleyen işler listesinde kalır.
+- [Yapay zekanın rolü](https://yapayzekaflow.com.tr/nasil-calisir/): Belgeden bilgi çıkarma, serbest metinli talebi doğru ekibe yönlendirme, uzun yazışmadan özet çıkarma, eksik/tutarsız bilgiyi işaretleyip insana sorma. Onay gerektiren ve finansal etkisi olan adımlar kural tabanlı çalışır, karar insandadır.
+- [Devreye alma adımları](https://yapayzekaflow.com.tr/nasil-calisir/): Keşif → akış tasarımı (yazılı tanım ve müşteri onayı) → pilot (tek departman, gerçek veri, eski yöntem paralel) → yaygınlaştırma (eğitim ve izleme).
+
+## Kurumsal
+
+- [Hakkımızda](https://yapayzekaflow.com.tr/hakkimizda/): 2010'dan beri kurumsal BT ve yazılım, 500+ müşteri, ISO 27001; iş akışlarına odaklanma nedeni ve çalışma ilkeleri.
+- [İletişim](https://yapayzekaflow.com.tr/iletisim/): Telefon, e-posta, adres, çalışma saatleri ve ilk görüşme başlıkları.
+- [Sıkça Sorulan Sorular](https://yapayzekaflow.com.tr/): Ana sayfada iş akışı otomasyonunun kapsamı, ERP/e-posta uyumu, devreye alma süresi, onay adımlarının esnekliği, hata durumu, izlenebilirlik, yapay zekanın rolü ve küçük ekipler için uygunluk hakkında soru-cevaplar.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00
+- Hizmet bölgesi: Türkiye geneli (uzaktan), İstanbul içinde yerinde görüşme
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [CRM Yapay Zeka (yapay zeka projeleri ve vaka çalışmaları)](https://crmyapayzeka.com.tr)
+- [Otomasyon CRM (satış süreci otomasyonu)](https://otomasyoncrm.com.tr)
+- [IT Destek İstanbul (kurumsal IT destek)](https://itdestekistanbul.com.tr)

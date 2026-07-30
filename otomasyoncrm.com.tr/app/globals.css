@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #07211A;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .panel {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(52, 211, 153, 0.14);
+  }
+  .text-gradient {
+    background: linear-gradient(120deg, #34D399, #C4EEDB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-lines-bg {
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        rgba(52, 211, 153, 0.07) 0px,
+        rgba(52, 211, 153, 0.07) 1px,
+        transparent 1px,
+        transparent 72px
+      );
+  }
+  .hero-glow {
+    background: radial-gradient(ellipse 65% 55% at 50% 0%, rgba(14, 159, 110, 0.22) 0%, transparent 68%);
+  }
+  .stage-rail {
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.5), rgba(52, 211, 153, 0.05));
+  }
+}

@@ -1,0 +1,29 @@
+# Sunucu Bakımı
+
+> Kurumsal sunucu kurulumu, periyodik bakımı ve yönetimi. Fiziksel sunucu donanımı (Dell PowerEdge, HPE ProLiant, Lenovo ThinkSystem, Huawei FusionServer), VMware vSphere sanallaştırma, Veeam yedekleme ve felaket kurtarma, RAID ve depolama yönetimi, Windows Server ile Linux işletimi, 7/24 izleme ve kapasite planlama. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti. markasıdır; 2010'dan beri faaliyette, Maltepe/İstanbul merkezli. Kritik sunucu arızalarında 2 saat müdahale.
+
+## Hizmetler
+
+- [Sunucu Hizmetlerimiz](https://sunucubakimi.com.tr/hizmetlerimiz/): Sunucu kurulumu ve göç (donanım ölçekleme, kabin montajı, iDRAC/iLO yapılandırması, P2V/V2V dönüşüm, Active Directory rol devri), sanallaştırma (VMware vSphere/ESXi, vCenter, HA-DRS kümesi, vMotion), yedekleme ve felaket kurtarma (Veeam Backup & Replication, 3-2-1 mimarisi, immutable depolama, SureBackup doğrulaması, RPO/RTO hedefleri), depolama ve RAID (RAID seviyesi tasarımı, hot spare, SMART ve SSD aşınma takibi, SAN/NAS ve iSCSI), işletim sistemi ve güncelleme yönetimi (Windows Server 2016-2025, Ubuntu, RHEL, Debian, yama ve firmware yönetimi), izleme ve kapasite planlama (CPU/RAM/IOPS eşik alarmları, donanım sağlığı, aylık trend raporu).
+- [Bakım Paketleri](https://sunucubakimi.com.tr/bakim-paketleri/): Periyodik bakım kapsamı — donanım sağlık kontrolü, firmware ve BIOS güncelleme, yedek doğrulama testi, disk ve RAID durumu, log ve kaynak analizi, kapasite raporu. Müdahale süreleri: kritik 2 saat, yüksek 4 saat, standart 8 saat. Bakım takvimi: sürekli izleme, aylık kontrol, üç aylık firmware ve kapasite, yıllık fiziksel bakım ile felaket kurtarma tatbikatı. Uzaktan ve yerinde destek birlikte verilir. Liste fiyatı yayımlanmaz; kapsam ve fiyat ihtiyaca göre teklif edilir.
+
+## Kurumsal
+
+- [Hakkımızda](https://sunucubakimi.com.tr/hakkimizda/): AFN Teknoloji tanıtımı, çalışma ilkeleri ve tam iletişim bilgileri.
+- [İletişim](https://sunucubakimi.com.tr/iletisim/): Telefon, e-posta, adres, çalışma saatleri, arıza bildiriminde hazır olması gereken bilgiler.
+- [Sıkça Sorulan Sorular](https://sunucubakimi.com.tr/): Ana sayfada bakım sıklığı, bakım sırasında kesinti, sunucu göçü, yedek doğrulama, fiziksel sunucu ve sanallaştırma karşılaştırması, müdahale süresi, Windows Server lisansı, uzaktan/yerinde destek, sunucu ömrü ve sunucu odası koşulları hakkında 10 soru-cevap.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00 (bakım anlaşmalı müşterilerde kritik sunucu arızaları için mesai dışı destek)
+- Hizmet bölgesi: Yerinde destek İstanbul geneli, uzaktan sunucu yönetimi Türkiye geneli
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [IT Destek İstanbul (kurumsal IT destek ve bakım anlaşması)](https://itdestekistanbul.com.tr)
+- [AFN Medya (web tasarım ve dijital ajans)](https://medya.afnteknoloji.com)

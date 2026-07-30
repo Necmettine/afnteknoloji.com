@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #08131A;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  /* --- Zemin dokuları --- */
+  .flow-glow {
+    background: radial-gradient(ellipse 75% 55% at 50% 0%, rgba(34, 211, 238, 0.16) 0%, transparent 68%);
+  }
+
+  /* Noktalı ızgara — devre kartı / akış tuvali hissi */
+  .flow-dots {
+    background-image: radial-gradient(rgba(56, 189, 248, 0.18) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  /* Yatay akış çizgileri */
+  .flow-rails {
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    background-size: 100% 56px, 56px 100%;
+  }
+
+  /* --- Metin --- */
+  .text-flow-gradient {
+    background: linear-gradient(120deg, #22D3EE 0%, #38BDF8 45%, #5EEAD4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* --- Kart yüzeyleri --- */
+  .flow-card {
+    background: linear-gradient(160deg, rgba(16, 39, 52, 0.9) 0%, rgba(13, 30, 40, 0.9) 100%);
+    border: 1px solid rgba(27, 62, 79, 1);
+  }
+  .flow-card-hover {
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .flow-card-hover:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+    transform: translateY(-2px);
+  }
+
+  /* Kartın sol kenarında akış şeridi */
+  .flow-edge {
+    position: relative;
+    overflow: hidden;
+  }
+  .flow-edge::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, #22D3EE 25%, #38BDF8 75%, transparent);
+    opacity: 0.55;
+  }
+
+  /* --- Adım zinciri (dikey) --- */
+  /* <ol class="flow-chain"><li>...</li></ol> */
+  .flow-chain > li {
+    position: relative;
+    padding-left: 2.75rem;
+    padding-bottom: 2rem;
+  }
+  .flow-chain > li:last-child {
+    padding-bottom: 0;
+  }
+  /* Düğüm noktası */
+  .flow-chain > li::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.4rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: #08131A;
+    border: 2px solid #22D3EE;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
+  }
+  /* Düğümleri birleştiren dikey çizgi */
+  .flow-chain > li::after {
+    content: "";
+    position: absolute;
+    left: 0.84rem;
+    top: 1.4rem;
+    bottom: 0.2rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.55), rgba(34, 211, 238, 0.12));
+  }
+  .flow-chain > li:last-child::after {
+    display: none;
+  }
+
+  /* --- Yatay adım şeridi (masaüstü) --- */
+  .flow-track {
+    position: relative;
+  }
+  .flow-track::before {
+    content: "";
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: 1.55rem;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(34, 211, 238, 0.5) 12%,
+      rgba(56, 189, 248, 0.5) 88%,
+      transparent
+    );
+  }
+  @media (max-width: 767px) {
+    .flow-track::before {
+      display: none;
+    }
+  }
+
+  /* Adımlar arası ok — küçük ekranda gizli */
+  .flow-arrow::after {
+    content: "";
+    position: absolute;
+    right: -0.55rem;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: 1px solid rgba(34, 211, 238, 0.7);
+    border-right: 1px solid rgba(34, 211, 238, 0.7);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  /* --- Etiket rozeti --- */
+  .flow-badge {
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    background: rgba(34, 211, 238, 0.08);
+    color: #A9DDEA;
+  }
+
+  /* --- Ayırıcı --- */
+  .flow-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(34, 211, 238, 0.35),
+      transparent
+    );
+  }
+}
