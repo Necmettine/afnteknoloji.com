@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A1428;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #5FA8F5, #BBD4F2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(rgba(95, 168, 245, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(95, 168, 245, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-glow {
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(47, 125, 225, 0.18) 0%, transparent 65%);
+  }
+}

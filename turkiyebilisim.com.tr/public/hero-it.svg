@@ -1,0 +1,305 @@
+<svg viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0A0E1A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="280" cy="280" r="240" fill="url(#bgGlow)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.08" stroke="#06B6D4" stroke-width="0.5">
+    <line x1="80" y1="100" x2="480" y2="100"/><line x1="80" y1="150" x2="480" y2="150"/>
+    <line x1="80" y1="200" x2="480" y2="200"/><line x1="80" y1="250" x2="480" y2="250"/>
+    <line x1="80" y1="300" x2="480" y2="300"/><line x1="80" y1="350" x2="480" y2="350"/>
+    <line x1="80" y1="400" x2="480" y2="400"/><line x1="80" y1="450" x2="480" y2="450"/>
+    <line x1="100" y1="80" x2="100" y2="480"/><line x1="150" y1="80" x2="150" y2="480"/>
+    <line x1="200" y1="80" x2="200" y2="480"/><line x1="250" y1="80" x2="250" y2="480"/>
+    <line x1="300" y1="80" x2="300" y2="480"/><line x1="350" y1="80" x2="350" y2="480"/>
+    <line x1="400" y1="80" x2="400" y2="480"/><line x1="450" y1="80" x2="450" y2="480"/>
+  </g>
+
+  <!-- Server Rack Cabinet -->
+  <rect x="170" y="100" width="220" height="360" rx="8" ry="8" fill="url(#rackGrad)" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- Cabinet top panel -->
+  <rect x="170" y="100" width="220" height="24" rx="8" ry="8" fill="#1e293b"/>
+  <rect x="170" y="112" width="220" height="12" fill="#1e293b"/>
+  <!-- Cabinet screws -->
+  <circle cx="182" cy="112" r="3" fill="#334155"/>
+  <circle cx="378" cy="112" r="3" fill="#334155"/>
+  <!-- Front door frame -->
+  <rect x="178" y="130" width="204" height="320" rx="4" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+
+  <!-- Server Units -->
+  <!-- Server 1 - Active (blue LED) -->
+  <rect x="186" y="140" width="188" height="36" rx="3" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <rect x="190" y="144" width="120" height="28" rx="2" fill="#0f172a"/>
+  <!-- HDD slots -->
+  <rect x="194" y="150" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="218" y="150" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="242" y="150" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="266" y="150" width="20" height="16" rx="1" fill="#152038"/>
+  <rect x="290" y="150" width="20" height="16" rx="1" fill="#1a2744"/>
+  <!-- Status LEDs -->
+  <circle cx="322" cy="152" r="3" fill="#06B6D4" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="333" cy="152" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="344" cy="152" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <!-- Power button -->
+  <circle cx="355" cy="158" r="7" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <circle cx="355" cy="158" r="4" fill="#06B6D4" opacity="0.6"/>
+  <!-- Activity bar -->
+  <rect x="318" y="160" width="52" height="2" rx="1" fill="#06B6D4" opacity="0.4"/>
+  <rect x="318" y="160" width="32" height="2" rx="1" fill="#06B6D4" filter="url(#glow)"/>
+
+  <!-- Server 2 -->
+  <rect x="186" y="182" width="188" height="36" rx="3" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <rect x="190" y="186" width="120" height="28" rx="2" fill="#0f172a"/>
+  <rect x="194" y="192" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="218" y="192" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="242" y="192" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="266" y="192" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="290" y="192" width="20" height="16" rx="1" fill="#1a2744"/>
+  <circle cx="322" cy="194" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="333" cy="194" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="344" cy="194" r="3" fill="#f59e0b" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="355" cy="200" r="7" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <circle cx="355" cy="200" r="4" fill="#22c55e" opacity="0.6"/>
+  <rect x="318" y="202" width="52" height="2" rx="1" fill="#22c55e" opacity="0.4"/>
+  <rect x="318" y="202" width="44" height="2" rx="1" fill="#22c55e" filter="url(#glow)"/>
+
+  <!-- Server 3 -->
+  <rect x="186" y="224" width="188" height="36" rx="3" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <rect x="190" y="228" width="120" height="28" rx="2" fill="#0f172a"/>
+  <rect x="194" y="234" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="218" y="234" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="242" y="234" width="20" height="16" rx="1" fill="#152038"/>
+  <rect x="266" y="234" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="290" y="234" width="20" height="16" rx="1" fill="#1a2744"/>
+  <circle cx="322" cy="236" r="3" fill="#06B6D4" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="333" cy="236" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="344" cy="236" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="355" cy="242" r="7" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <circle cx="355" cy="242" r="4" fill="#06B6D4" opacity="0.6"/>
+  <rect x="318" y="244" width="52" height="2" rx="1" fill="#06B6D4" opacity="0.4"/>
+  <rect x="318" y="244" width="20" height="2" rx="1" fill="#06B6D4" filter="url(#glow)"/>
+
+  <!-- Network Switch -->
+  <rect x="186" y="266" width="188" height="24" rx="3" fill="#162032" stroke="#1e3a5f" stroke-width="1"/>
+  <!-- Port indicators -->
+  <g fill="#334155">
+    <rect x="192" y="272" width="8" height="10" rx="1"/>
+    <rect x="204" y="272" width="8" height="10" rx="1"/>
+    <rect x="216" y="272" width="8" height="10" rx="1"/>
+    <rect x="228" y="272" width="8" height="10" rx="1"/>
+    <rect x="240" y="272" width="8" height="10" rx="1"/>
+    <rect x="252" y="272" width="8" height="10" rx="1"/>
+    <rect x="264" y="272" width="8" height="10" rx="1"/>
+    <rect x="276" y="272" width="8" height="10" rx="1"/>
+  </g>
+  <!-- Active ports -->
+  <rect x="192" y="272" width="8" height="10" rx="1" fill="#06B6D4" opacity="0.7" filter="url(#glow)"/>
+  <rect x="204" y="272" width="8" height="10" rx="1" fill="#06B6D4" opacity="0.7" filter="url(#glow)"/>
+  <rect x="216" y="272" width="8" height="10" rx="1" fill="#22c55e" opacity="0.7" filter="url(#glow)"/>
+  <rect x="240" y="272" width="8" height="10" rx="1" fill="#22c55e" opacity="0.7" filter="url(#glow)"/>
+  <rect x="264" y="272" width="8" height="10" rx="1" fill="#06B6D4" opacity="0.7" filter="url(#glow)"/>
+  <!-- Switch label -->
+  <rect x="298" y="272" width="40" height="10" rx="2" fill="#1e293b" stroke="#2d4a6b" stroke-width="0.5"/>
+  <text x="318" y="280" text-anchor="middle" fill="#64748b" font-size="5" font-family="monospace">SWITCH</text>
+  <circle cx="350" cy="277" r="3" fill="#22c55e" filter="url(#glow)"/>
+  <circle cx="362" cy="277" r="3" fill="#06B6D4" filter="url(#glow)"/>
+
+  <!-- Server 4 -->
+  <rect x="186" y="296" width="188" height="36" rx="3" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <rect x="190" y="300" width="120" height="28" rx="2" fill="#0f172a"/>
+  <rect x="194" y="306" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="218" y="306" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="242" y="306" width="20" height="16" rx="1" fill="#1a2744"/>
+  <rect x="266" y="306" width="20" height="16" rx="1" fill="#152038"/>
+  <rect x="290" y="306" width="20" height="16" rx="1" fill="#1a2744"/>
+  <circle cx="322" cy="308" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="333" cy="308" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="344" cy="308" r="3" fill="#22c55e" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="355" cy="314" r="7" fill="#1e293b" stroke="#2d4a6b" stroke-width="1"/>
+  <circle cx="355" cy="314" r="4" fill="#22c55e" opacity="0.6"/>
+  <rect x="318" y="316" width="52" height="2" rx="1" fill="#22c55e" opacity="0.4"/>
+  <rect x="318" y="316" width="40" height="2" rx="1" fill="#22c55e" filter="url(#glow)"/>
+
+  <!-- Server 5 - UPS/Power -->
+  <rect x="186" y="338" width="188" height="50" rx="3" fill="#12203a" stroke="#1e3a5f" stroke-width="1"/>
+  <text x="280" y="355" text-anchor="middle" fill="#475569" font-size="7" font-family="monospace" letter-spacing="2">UPS POWER</text>
+  <!-- Battery bars -->
+  <rect x="200" y="360" width="160" height="14" rx="2" fill="#0f172a" stroke="#1e3a5f" stroke-width="0.5"/>
+  <rect x="202" y="362" width="132" height="10" rx="1" fill="#06B6D4" opacity="0.7" filter="url(#glow)"/>
+  <text x="374" y="370" text-anchor="middle" fill="#06B6D4" font-size="7" font-family="monospace">84%</text>
+
+  <!-- Firewall Device -->
+  <rect x="186" y="394" width="188" height="24" rx="3" fill="#1a1230" stroke="#3d2a7a" stroke-width="1"/>
+  <text x="220" y="408" fill="#7c3aed" font-size="6" font-family="monospace" letter-spacing="1">FIREWALL</text>
+  <circle cx="340" cy="406" r="3" fill="#7c3aed" filter="url(#glow)"/>
+  <circle cx="352" cy="406" r="3" fill="#22c55e" filter="url(#glow)"/>
+  <circle cx="364" cy="406" r="3" fill="#22c55e" filter="url(#glow)"/>
+  <!-- Firewall shield icon -->
+  <path d="M310 400 L310 412 C310 412 316 415 316 412 L316 400 Z" fill="none" stroke="#7c3aed" stroke-width="1.2" filter="url(#glow)"/>
+
+  <!-- Empty slots -->
+  <rect x="186" y="424" width="188" height="14" rx="2" fill="#0a1020" stroke="#1a2030" stroke-width="0.5"/>
+  <rect x="186" y="442" width="188" height="8" rx="2" fill="#080d18" stroke="#141e2e" stroke-width="0.5"/>
+
+  <!-- Cable Management Panel -->
+  <rect x="178" y="456" width="204" height="14" rx="3" fill="#0a0f1f" stroke="#1e3a5f" stroke-width="1"/>
+  <g fill="#1e3a5f">
+    <rect x="184" y="459" width="4" height="8" rx="1"/>
+    <rect x="192" y="459" width="4" height="8" rx="1"/>
+    <rect x="200" y="459" width="4" height="8" rx="1"/>
+    <rect x="208" y="459" width="4" height="8" rx="1"/>
+    <rect x="216" y="459" width="4" height="8" rx="1"/>
+    <rect x="224" y="459" width="4" height="8" rx="1"/>
+    <rect x="232" y="459" width="4" height="8" rx="1"/>
+    <rect x="240" y="459" width="4" height="8" rx="1"/>
+    <rect x="248" y="459" width="4" height="8" rx="1"/>
+    <rect x="256" y="459" width="4" height="8" rx="1"/>
+    <rect x="264" y="459" width="4" height="8" rx="1"/>
+    <rect x="272" y="459" width="4" height="8" rx="1"/>
+    <rect x="280" y="459" width="4" height="8" rx="1"/>
+    <rect x="288" y="459" width="4" height="8" rx="1"/>
+    <rect x="296" y="459" width="4" height="8" rx="1"/>
+    <rect x="304" y="459" width="4" height="8" rx="1"/>
+    <rect x="312" y="459" width="4" height="8" rx="1"/>
+    <rect x="320" y="459" width="4" height="8" rx="1"/>
+    <rect x="328" y="459" width="4" height="8" rx="1"/>
+    <rect x="336" y="459" width="4" height="8" rx="1"/>
+    <rect x="344" y="459" width="4" height="8" rx="1"/>
+    <rect x="352" y="459" width="4" height="8" rx="1"/>
+    <rect x="360" y="459" width="4" height="8" rx="1"/>
+    <rect x="368" y="459" width="4" height="8" rx="1"/>
+  </g>
+
+  <!-- Cabinet legs -->
+  <rect x="185" y="460" width="16" height="16" rx="2" fill="#0f172a"/>
+  <rect x="359" y="460" width="16" height="16" rx="2" fill="#0f172a"/>
+
+  <!-- Floating nodes around rack -->
+  <!-- Node 1 - top left -->
+  <g filter="url(#softGlow)">
+    <circle cx="110" cy="180" r="22" fill="#0f172a" stroke="#06B6D4" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="110" cy="180" r="16" fill="#0a1020" stroke="#06B6D4" stroke-width="0.5" stroke-opacity="0.3"/>
+    <!-- CPU icon -->
+    <rect x="103" y="173" width="14" height="14" rx="1" fill="none" stroke="#06B6D4" stroke-width="1.2"/>
+    <rect x="106" y="176" width="8" height="8" rx="0.5" fill="#06B6D4" opacity="0.5"/>
+    <!-- CPU pins -->
+    <line x1="105" y1="170" x2="105" y2="173" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="110" y1="170" x2="110" y2="173" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="115" y1="170" x2="115" y2="173" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="105" y1="187" x2="105" y2="190" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="110" y1="187" x2="110" y2="190" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="115" y1="187" x2="115" y2="190" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="100" y1="175" x2="103" y2="175" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="100" y1="180" x2="103" y2="180" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="100" y1="185" x2="103" y2="185" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="117" y1="175" x2="120" y2="175" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="117" y1="180" x2="120" y2="180" stroke="#06B6D4" stroke-width="0.8"/>
+    <line x1="117" y1="185" x2="120" y2="185" stroke="#06B6D4" stroke-width="0.8"/>
+  </g>
+  <!-- Connection line node1 to rack -->
+  <line x1="132" y1="180" x2="170" y2="195" stroke="#06B6D4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <circle cx="132" cy="180" r="2" fill="#06B6D4" opacity="0.8"/>
+
+  <!-- Node 2 - top right (Shield) -->
+  <g filter="url(#softGlow)">
+    <circle cx="450" cy="160" r="22" fill="#0f172a" stroke="#7c3aed" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="450" cy="160" r="16" fill="#0a1020" stroke="#7c3aed" stroke-width="0.5" stroke-opacity="0.3"/>
+    <!-- Shield icon -->
+    <path d="M450 148 L443 152 L443 162 C443 167 450 171 450 171 C450 171 457 167 457 162 L457 152 Z" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+    <path d="M447 161 L449 163 L453 158" stroke="#7c3aed" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Connection line node2 to rack -->
+  <line x1="428" y1="160" x2="390" y2="185" stroke="#7c3aed" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <circle cx="428" cy="160" r="2" fill="#7c3aed" opacity="0.8"/>
+
+  <!-- Node 3 - bottom left (Cloud) -->
+  <g filter="url(#softGlow)">
+    <circle cx="105" cy="380" r="22" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="105" cy="380" r="16" fill="#0a1020" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.3"/>
+    <!-- Cloud icon -->
+    <path d="M97 385 Q97 380 102 380 Q103 376 108 377 Q111 374 114 377 Q118 377 118 381 Q121 382 120 386 Z" fill="none" stroke="#06b6d4" stroke-width="1.3"/>
+  </g>
+  <!-- Connection line node3 to rack -->
+  <line x1="127" y1="374" x2="170" y2="360" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <circle cx="127" cy="374" r="2" fill="#06b6d4" opacity="0.8"/>
+
+  <!-- Node 4 - bottom right (Network) -->
+  <g filter="url(#softGlow)">
+    <circle cx="455" cy="370" r="22" fill="#0f172a" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="455" cy="370" r="16" fill="#0a1020" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.3"/>
+    <!-- Network/wifi icon -->
+    <circle cx="455" cy="373" r="2.5" fill="#22c55e"/>
+    <path d="M449 369 Q452 365 458 365 Q461 365 462 369" fill="none" stroke="#22c55e" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M446 366 Q452 360 458 360 Q465 360 465 366" fill="none" stroke="#22c55e" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- Connection line node4 to rack -->
+  <line x1="433" y1="362" x2="390" y2="345" stroke="#22c55e" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="4,3"/>
+  <circle cx="433" cy="362" r="2" fill="#22c55e" opacity="0.8"/>
+
+  <!-- Data flow lines (animated) -->
+  <line x1="170" y1="158" x2="80" y2="130" stroke="url(#blueGlow)" stroke-width="1" opacity="0.3"/>
+  <line x1="390" y1="200" x2="480" y2="140" stroke="url(#blueGlow)" stroke-width="1" opacity="0.3"/>
+  <line x1="170" y1="320" x2="80" y2="360" stroke="url(#cyanGlow)" stroke-width="1" opacity="0.3"/>
+  <line x1="390" y1="300" x2="480" y2="380" stroke="url(#blueGlow)" stroke-width="1" opacity="0.3"/>
+
+  <!-- Scanning line effect on rack -->
+  <rect x="178" y="130" width="204" height="3" rx="1" fill="url(#blueGlow)" opacity="0.15">
+    <animate attributeName="y" from="130" to="450" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.2;0.2;0" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Small floating particles -->
+  <circle cx="140" cy="240" r="2" fill="#06B6D4" opacity="0.5">
+    <animate attributeName="cy" values="240;230;240" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="425" cy="260" r="2" fill="#06b6d4" opacity="0.5">
+    <animate attributeName="cy" values="260;250;260" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="300" r="1.5" fill="#7c3aed" opacity="0.6">
+    <animate attributeName="cy" values="300;292;300" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="460" cy="280" r="1.5" fill="#22c55e" opacity="0.6">
+    <animate attributeName="cy" values="280;272;280" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Status bar at bottom -->
+  <rect x="120" y="490" width="320" height="28" rx="14" fill="#0f172a" stroke="#1e3a5f" stroke-width="1"/>
+  <!-- Green dot -->
+  <circle cx="140" cy="504" r="4" fill="#22c55e" filter="url(#glow)"/>
+  <text x="152" y="508" fill="#475569" font-size="8" font-family="monospace">Tüm sistemler aktif</text>
+  <!-- Right side indicators -->
+  <circle cx="380" cy="504" r="3" fill="#06B6D4" opacity="0.8"/>
+  <circle cx="394" cy="504" r="3" fill="#22c55e" opacity="0.8"/>
+  <circle cx="408" cy="504" r="3" fill="#22c55e" opacity="0.8"/>
+  <text x="422" y="508" fill="#334155" font-size="7" font-family="monospace">7/24</text>
+</svg>

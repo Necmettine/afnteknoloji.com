@@ -1,4 +1,4 @@
-export default function SchemaMarkup() {
+﻿export default function SchemaMarkup() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -16,16 +16,16 @@ export default function SchemaMarkup() {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Atatürk Mah. Ergün Cad. No:48",
-      addressLocality: "Ataşehir",
+      streetAddress: "Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6",
+      addressLocality: "Maltepe",
       addressRegion: "İstanbul",
-      postalCode: "34758",
+      postalCode: "34852",
       addressCountry: "TR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.9926,
-      longitude: 29.1274,
+      latitude: 40.9358,
+      longitude: 29.1394,
     },
     contactPoint: [
       {
@@ -58,7 +58,7 @@ export default function SchemaMarkup() {
       },
     ],
     sameAs: [
-      "https://www.linkedin.com/company/afnteknoloji",
+      "https://www.linkedin.com/company/afn-teknoloji-bili%C5%9Fim-destek-ve-dan%C4%B1%C5%9Fmanl%C4%B1k-hizmetleri/",
       "https://twitter.com/afnteknoloji",
       "https://www.facebook.com/afnteknoloji",
     ],
@@ -85,16 +85,16 @@ export default function SchemaMarkup() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Atatürk Mah. Ergün Cad. No:48",
-      addressLocality: "Ataşehir",
+      streetAddress: "Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6",
+      addressLocality: "Maltepe",
       addressRegion: "İstanbul",
-      postalCode: "34758",
+      postalCode: "34852",
       addressCountry: "TR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.9926,
-      longitude: 29.1274,
+      latitude: 40.9358,
+      longitude: 29.1394,
     },
     openingHoursSpecification: [
       {
@@ -171,39 +171,40 @@ export default function SchemaMarkup() {
             description: "VMware vSphere ve sanallaştırma çözümleri",
           },
         },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Sunucu ve Depolama",
+            description: "Dell, HPE, IBM/Lenovo, Huawei kurumsal sunucu ve depolama çözümleri",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Ağ Altyapısı ve Kablosuz Ağ",
+            description: "Cisco, Zyxel, Aruba switch, router ve Wi-Fi çözümleri",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Yazılım Lisanslama",
+            description: "Adobe Creative Cloud, AutoCAD, Zimbra kurumsal yazılım lisans satışı",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Endpoint Güvenlik",
+            description: "Sophos, Kaspersky endpoint güvenlik, XDR ve antivirus çözümleri",
+          },
+        },
       ],
     },
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "AFN Teknoloji hangi hizmetleri sunuyor?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "BT altyapı çözümleri, siber güvenlik, bulut bilişim, veri yedekleme, network güvenlik, Microsoft 365 lisanslama, VMware sanallaştırma ve 7/24 teknik destek hizmetleri sunuyoruz.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Teknik destek hizmetiniz nasıl çalışır?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "7/24 telefon, e-posta ve uzaktan bağlantı ile destek sağlıyoruz. Kritik sorunlarda 2 saat içinde müdahale garantisi veriyoruz.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "ISO 27001 sertifikanız var mı?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Evet, ISO 27001 Bilgi Güvenliği Yönetim Sistemi sertifikasına sahibiz. Tüm süreçlerimiz bu standartlara uygun şekilde yürütülmektedir.",
-        },
-      },
-    ],
   };
 
   const websiteSchema = {
@@ -211,14 +212,6 @@ export default function SchemaMarkup() {
     "@type": "WebSite",
     name: "AFN Teknoloji",
     url: "https://afnteknoloji.com",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://afnteknoloji.com/arama?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (
@@ -239,12 +232,6 @@ export default function SchemaMarkup() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
         }}
       />
       <script

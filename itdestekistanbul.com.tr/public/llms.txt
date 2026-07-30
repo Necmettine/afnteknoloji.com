@@ -1,0 +1,28 @@
+# IT Destek İstanbul
+
+> İstanbul genelinde kurumsal IT destek hizmetleri: yerinde teknik destek, uzaktan destek, IT bakım anlaşması, sunucu ve network yönetimi. AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti. markasıdır; 2010'dan beri faaliyette, 500'den fazla müşteri, ISO 27001 sertifikalı, 7/24 destek ve İstanbul içi 2 saat yerinde müdahale SLA'sı.
+
+## Hizmetler
+
+- [IT Destek Hizmetleri](https://itdestekistanbul.com.tr/hizmetler/): Yerinde IT destek, uzaktan destek, sunucu kurulumu ve yönetimi (Windows Server, VMware, Hyper-V), network altyapısı ve güvenlik (Fortinet firewall, VLAN, kurumsal Wi-Fi), güvenlik ve yedekleme (Veeam, antivirüs/EDR), Microsoft 365 ve bulut geçişleri.
+- [IT Bakım Anlaşması](https://itdestekistanbul.com.tr/bakim-anlasmasi/): Sabit aylık ücretle sınırsız uzaktan destek, planlı yerinde bakım ziyaretleri, 7/24 sunucu ve network izleme, yedekleme kontrolü, güncelleme/yama yönetimi, envanter ve aylık raporlama. Kritik arızalarda 2 saat yerinde müdahale SLA'sı.
+
+## Kurumsal
+
+- [Hakkımızda](https://itdestekistanbul.com.tr/hakkimizda/): AFN Teknoloji tanıtımı ve tam iletişim bilgileri.
+- [İletişim](https://itdestekistanbul.com.tr/iletisim/): Telefon, e-posta, adres ve yol tarifi.
+- [Sıkça Sorulan Sorular](https://itdestekistanbul.com.tr/): Ana sayfada fiyatlandırma, hizmet bölgesi (İstanbul'un tüm ilçeleri), bakım anlaşması kapsamı ve SLA hakkında 9 soru-cevap.
+
+## İletişim Bilgileri (NAP)
+
+- Unvan: AFN Teknoloji Bilişim Destek ve Danışmanlık Hizmetleri Tic. Ltd. Şti.
+- Adres: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe/İstanbul 34852, Türkiye
+- Telefon: +90 216 572 50 40
+- E-posta: info@afnteknoloji.com
+- Çalışma saatleri: Hafta içi 09:00–18:00 (bakım anlaşmalı müşteriler için 7/24 destek)
+
+## Bağlantılı Siteler
+
+- [AFN Teknoloji (ana kurumsal site)](https://afnteknoloji.com)
+- [AFN Medya (web tasarım ve dijital ajans)](https://medya.afnteknoloji.com)
+- [Türkiye Bilişim](https://turkiyebilisim.com.tr)

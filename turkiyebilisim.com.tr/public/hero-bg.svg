@@ -1,0 +1,353 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="glow1" cx="70%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="10%" cy="80%" r="35%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <filter id="nodeglow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="textglow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softblur">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#06B6D4" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#06B6D4" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </linearGradient>
+
+    <style>
+      .pulse1 { animation: pulse 3s ease-in-out infinite; }
+      .pulse2 { animation: pulse 4s ease-in-out infinite 1s; }
+      .pulse3 { animation: pulse 5s ease-in-out infinite 2s; }
+      .pulse4 { animation: pulse 3.5s ease-in-out infinite 0.5s; }
+      .pulse5 { animation: pulse 4.5s ease-in-out infinite 1.5s; }
+      .flow1  { animation: flow 4s linear infinite; }
+      .flow2  { animation: flow 6s linear infinite 1s; }
+      .flow3  { animation: flow 5s linear infinite 2s; }
+      .flow4  { animation: flow 7s linear infinite 0.5s; }
+      .flow5  { animation: flow 4.5s linear infinite 3s; }
+      .flow6  { animation: flow 5.5s linear infinite 1.5s; }
+      .scanmove { animation: scan 10s linear infinite; }
+      .floatText1 { animation: floatUp 20s linear infinite; }
+      .floatText2 { animation: floatUp 25s linear infinite 5s; }
+      .floatText3 { animation: floatUp 18s linear infinite 10s; }
+      .rotateSlow { animation: rotateSlow 40s linear infinite; }
+      .rotateSlow2 { animation: rotateSlow 60s linear infinite reverse; }
+      .particle1 { animation: particleFade 6s ease-in-out infinite; }
+      .particle2 { animation: particleFade 8s ease-in-out infinite 2s; }
+      .particle3 { animation: particleFade 7s ease-in-out infinite 4s; }
+      .particle4 { animation: particleFade 5s ease-in-out infinite 1s; }
+      .particle5 { animation: particleFade 9s ease-in-out infinite 3s; }
+      .hexPulse { animation: hexPulse 4s ease-in-out infinite; }
+      .hexPulse2 { animation: hexPulse 6s ease-in-out infinite 2s; }
+      .dataStream { animation: dataStream 3s steps(1) infinite; }
+
+      @keyframes pulse {
+        0%,100% { opacity: 0.5; r: 5; }
+        50%      { opacity: 1;   r: 8; }
+      }
+      @keyframes flow {
+        0%   { stroke-dashoffset: 300; opacity: 0; }
+        10%  { opacity: 1; }
+        90%  { opacity: 1; }
+        100% { stroke-dashoffset: 0;   opacity: 0; }
+      }
+      @keyframes scan {
+        0%   { transform: translateY(-20px); opacity:0; }
+        5%   { opacity: 0.6; }
+        95%  { opacity: 0.6; }
+        100% { transform: translateY(920px); opacity:0; }
+      }
+      @keyframes floatUp {
+        0%   { transform: translateY(0px);   opacity: 0; }
+        5%   { opacity: 1; }
+        95%  { opacity: 0.8; }
+        100% { transform: translateY(-900px); opacity: 0; }
+      }
+      @keyframes rotateSlow {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+      @keyframes particleFade {
+        0%,100% { opacity: 0; transform: scale(0.5); }
+        50%     { opacity: 0.9; transform: scale(1.2); }
+      }
+      @keyframes hexPulse {
+        0%,100% { opacity: 0.04; }
+        50%     { opacity: 0.12; }
+      }
+      @keyframes dataStream {
+        0%  { opacity: 0.8; }
+        33% { opacity: 0.3; }
+        66% { opacity: 0.6; }
+        100%{ opacity: 0.8; }
+      }
+    </style>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="1440" height="900" fill="#0A0E1A"/>
+
+  <!-- Glow alanları -->
+  <rect width="1440" height="900" fill="url(#glow1)"/>
+  <rect width="1440" height="900" fill="url(#glow2)"/>
+  <rect width="1440" height="900" fill="url(#glowCenter)"/>
+
+  <!-- === CREATIVE WATERMARK METİNLER === -->
+  <!-- Ana büyük arka plan metni - sol -->
+  <text x="-40" y="340" font-family="Arial Black, Arial, sans-serif" font-size="200" font-weight="900"
+    fill="none" stroke="#06B6D4" stroke-width="0.5" opacity="0.04" letter-spacing="8"
+    style="text-transform: uppercase;">BILISIM</text>
+
+  <!-- Ana büyük arka plan metni - sağ alt -->
+  <text x="400" y="820" font-family="Arial Black, Arial, sans-serif" font-size="180" font-weight="900"
+    fill="none" stroke="#06B6D4" stroke-width="0.5" opacity="0.04" letter-spacing="6">SECURITY</text>
+
+  <!-- Orta watermark -->
+  <text x="200" y="580" font-family="Arial Black, Arial, sans-serif" font-size="160" font-weight="900"
+    fill="none" stroke="#06B6D4" stroke-width="0.5" opacity="0.05" letter-spacing="4">NETWORK</text>
+
+  <!-- Yatay band metin - üst -->
+  <rect x="0" y="128" width="1440" height="42" fill="url(#textGrad)" opacity="0.5"/>
+  <text x="50" y="157" font-family="'Courier New', Courier, monospace" font-size="11" fill="#06B6D4" opacity="0.35" letter-spacing="12">
+    SİSTEM  ·  GÜVENLİK  ·  YEDEKLEME  ·  DESTEK  ·  SİSTEM  ·  GÜVENLİK  ·  YEDEKLEME  ·  DESTEK  ·  SİSTEM  ·  GÜVENLİK  ·  YEDEKLEME
+  </text>
+
+  <!-- Yatay band metin - alt -->
+  <rect x="0" y="760" width="1440" height="38" fill="url(#textGrad)" opacity="0.4"/>
+  <text x="50" y="785" font-family="'Courier New', Courier, monospace" font-size="10" fill="#06B6D4" opacity="0.30" letter-spacing="10">
+    TECHNOLOGY  ·  SECURITY  ·  NETWORK  ·  CLOUD  ·  TECHNOLOGY  ·  SECURITY  ·  NETWORK  ·  CLOUD  ·  TECHNOLOGY  ·  SECURITY  ·  NETWORK
+  </text>
+
+  <!-- Dikey metin - sol kenar -->
+  <text x="22" y="850" font-family="'Courier New', Courier, monospace" font-size="10" fill="#06B6D4" opacity="0.20"
+    letter-spacing="6" transform="rotate(-90, 22, 450)">
+    TRUSTED · TECHNOLOGY · PARTNER · SINCE · 2014 · TRUSTED · TECHNOLOGY · PARTNER
+  </text>
+
+  <!-- Dikey metin - sağ kenar -->
+  <text x="1420" y="100" font-family="'Courier New', Courier, monospace" font-size="10" fill="#06B6D4" opacity="0.20"
+    letter-spacing="6" transform="rotate(90, 1420, 450)">
+    KURUMSAL · BİLİŞİM · ÇÖZÜMLERI · ENTERPRISE · IT · SOLUTIONS · KURUMSAL
+  </text>
+
+  <!-- Köşegen yaratıcı metin - sağ üst -->
+  <text x="900" y="80" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900"
+    fill="none" stroke="#06B6D4" stroke-width="0.4" opacity="0.06" transform="rotate(-15, 1100, 200)">FIREWALL</text>
+
+  <!-- Orta sağ diagonal metin -->
+  <text x="1050" y="600" font-family="Arial Black, Arial, sans-serif" font-size="60" font-weight="900"
+    fill="none" stroke="#06B6D4" stroke-width="0.4" opacity="0.05" transform="rotate(-20, 1150, 550)">DATACENTER</text>
+
+  <!-- === HEX GRID PATTERN === -->
+  <g opacity="0.04" stroke="#06B6D4" stroke-width="0.8" fill="none">
+    <!-- Hex row 1 -->
+    <polygon points="1050,50 1080,68 1080,104 1050,122 1020,104 1020,68" class="hexPulse"/>
+    <polygon points="1110,50 1140,68 1140,104 1110,122 1080,104 1080,68" class="hexPulse2"/>
+    <polygon points="1170,50 1200,68 1200,104 1170,122 1140,104 1140,68" class="hexPulse"/>
+    <polygon points="1230,50 1260,68 1260,104 1230,122 1200,104 1200,68" class="hexPulse2"/>
+    <polygon points="1290,50 1320,68 1320,104 1290,122 1260,104 1260,68" class="hexPulse"/>
+    <polygon points="1350,50 1380,68 1380,104 1350,122 1320,104 1320,68" class="hexPulse2"/>
+    <!-- Hex row 2 -->
+    <polygon points="1080,104 1110,122 1110,158 1080,176 1050,158 1050,122" class="hexPulse2"/>
+    <polygon points="1140,104 1170,122 1170,158 1140,176 1110,158 1110,122" class="hexPulse"/>
+    <polygon points="1200,104 1230,122 1230,158 1200,176 1170,158 1170,122" class="hexPulse2"/>
+    <polygon points="1260,104 1290,122 1290,158 1260,176 1230,158 1230,122" class="hexPulse"/>
+    <polygon points="1320,104 1350,122 1350,158 1320,176 1290,158 1290,122" class="hexPulse2"/>
+    <polygon points="1380,104 1410,122 1410,158 1380,176 1350,158 1350,122" class="hexPulse"/>
+    <!-- Hex row 3 -->
+    <polygon points="1050,158 1080,176 1080,212 1050,230 1020,212 1020,176" class="hexPulse"/>
+    <polygon points="1110,158 1140,176 1140,212 1110,230 1080,212 1080,176" class="hexPulse2"/>
+    <polygon points="1170,158 1200,176 1200,212 1170,230 1140,212 1140,176" class="hexPulse"/>
+    <polygon points="1230,158 1260,176 1260,212 1230,230 1200,212 1200,176" class="hexPulse2"/>
+  </g>
+
+  <!-- === DÖNEN TEKNOLOJİ HALKALARı === -->
+  <g transform="translate(1300, 650)" opacity="0.08">
+    <circle r="100" fill="none" stroke="#06B6D4" stroke-width="0.6" stroke-dasharray="8 4" class="rotateSlow"/>
+    <circle r="75"  fill="none" stroke="#06B6D4" stroke-width="0.8" stroke-dasharray="4 8" class="rotateSlow2"/>
+    <circle r="50"  fill="none" stroke="#06B6D4" stroke-width="0.6" stroke-dasharray="6 6" class="rotateSlow"/>
+    <circle r="25"  fill="none" stroke="#06B6D4" stroke-width="1.0" class="rotateSlow2"/>
+    <!-- merkez nokta -->
+    <circle r="4" fill="#06B6D4" opacity="0.6" class="pulse1"/>
+    <!-- işaret noktaları -->
+    <circle cx="100" cy="0" r="3" fill="#06B6D4" opacity="0.5" class="pulse2"/>
+    <circle cx="-100" cy="0" r="3" fill="#06B6D4" opacity="0.5" class="pulse3"/>
+    <circle cx="0" cy="100" r="3" fill="#06B6D4" opacity="0.5" class="pulse4"/>
+    <circle cx="0" cy="-100" r="3" fill="#06B6D4" opacity="0.5" class="pulse5"/>
+  </g>
+
+  <!-- === Sol alt teknoloji halkası === -->
+  <g transform="translate(120, 750)" opacity="0.06">
+    <circle r="80"  fill="none" stroke="#06B6D4" stroke-width="0.6" stroke-dasharray="6 4" class="rotateSlow2"/>
+    <circle r="55"  fill="none" stroke="#06B6D4" stroke-width="0.8" stroke-dasharray="4 6" class="rotateSlow"/>
+    <circle r="30"  fill="none" stroke="#06B6D4" stroke-width="0.6" class="rotateSlow2"/>
+    <circle r="5"   fill="#06B6D4" opacity="0.5" class="pulse2"/>
+  </g>
+
+  <!-- === FLOATING DATA PARTICLES === -->
+  <g filter="url(#softblur)">
+    <circle cx="200" cy="600" r="3" fill="#06B6D4" opacity="0" class="particle1"/>
+    <circle cx="450" cy="400" r="2" fill="#06B6D4" opacity="0" class="particle2"/>
+    <circle cx="780" cy="200" r="3" fill="#06B6D4" opacity="0" class="particle3"/>
+    <circle cx="1050" cy="500" r="2" fill="#06B6D4" opacity="0" class="particle4"/>
+    <circle cx="1300" cy="300" r="3" fill="#06B6D4" opacity="0" class="particle5"/>
+    <circle cx="350" cy="750" r="2" fill="#06B6D4" opacity="0" class="particle1"/>
+    <circle cx="900" cy="650" r="3" fill="#06B6D4" opacity="0" class="particle3"/>
+  </g>
+
+  <!-- === DATA MATRIX BLOK - Sağ üst köşe === -->
+  <g font-family="'Courier New', monospace" font-size="9" fill="#06B6D4" opacity="0.08">
+    <text x="1380" y="250" class="dataStream">01</text>
+    <text x="1395" y="265" class="dataStream">10</text>
+    <text x="1380" y="280" class="dataStream">11</text>
+    <text x="1395" y="295" class="dataStream">00</text>
+    <text x="1380" y="310" class="dataStream">01</text>
+    <text x="1395" y="325" class="dataStream">11</text>
+    <text x="1380" y="340" class="dataStream">10</text>
+    <text x="1395" y="355" class="dataStream">01</text>
+    <text x="1380" y="370" class="dataStream">00</text>
+    <text x="1395" y="385" class="dataStream">11</text>
+    <text x="1380" y="400" class="dataStream">01</text>
+    <text x="1360" y="265" class="dataStream">11</text>
+    <text x="1360" y="295" class="dataStream">00</text>
+    <text x="1360" y="325" class="dataStream">10</text>
+    <text x="1360" y="355" class="dataStream">01</text>
+    <text x="1360" y="385" class="dataStream">11</text>
+  </g>
+
+  <!-- === DATA MATRIX BLOK - Sol üst köşe === -->
+  <g font-family="'Courier New', monospace" font-size="9" fill="#06B6D4" opacity="0.07">
+    <text x="10" y="200" class="dataStream">10</text>
+    <text x="25" y="215" class="dataStream">01</text>
+    <text x="10" y="230" class="dataStream">11</text>
+    <text x="25" y="245" class="dataStream">00</text>
+    <text x="10" y="260" class="dataStream">10</text>
+    <text x="25" y="275" class="dataStream">01</text>
+    <text x="10" y="290" class="dataStream">11</text>
+    <text x="25" y="305" class="dataStream">00</text>
+  </g>
+
+  <!-- Grid -->
+  <g stroke="rgba(245,166,35,0.05)" stroke-width="1">
+    <line x1="0" y1="100" x2="1440" y2="100"/>
+    <line x1="0" y1="200" x2="1440" y2="200"/>
+    <line x1="0" y1="300" x2="1440" y2="300"/>
+    <line x1="0" y1="400" x2="1440" y2="400"/>
+    <line x1="0" y1="500" x2="1440" y2="500"/>
+    <line x1="0" y1="600" x2="1440" y2="600"/>
+    <line x1="0" y1="700" x2="1440" y2="700"/>
+    <line x1="0" y1="800" x2="1440" y2="800"/>
+    <line x1="180" y1="0" x2="180" y2="900"/>
+    <line x1="360" y1="0" x2="360" y2="900"/>
+    <line x1="540" y1="0" x2="540" y2="900"/>
+    <line x1="720" y1="0" x2="720" y2="900"/>
+    <line x1="900" y1="0" x2="900" y2="900"/>
+    <line x1="1080" y1="0" x2="1080" y2="900"/>
+    <line x1="1260" y1="0" x2="1260" y2="900"/>
+  </g>
+
+  <!-- Devre kartı yolları -->
+  <g stroke="rgba(245,166,35,0.18)" stroke-width="1.5" fill="none">
+    <polyline points="0,150 120,150 120,250 300,250 300,200 500,200"/>
+    <polyline points="0,320 80,320 80,400 200,400 200,350 380,350 380,450 600,450"/>
+    <polyline points="180,0 180,180 260,180 260,300 420,300"/>
+    <polyline points="1440,280 1300,280 1300,180 1100,180 1100,250 950,250"/>
+    <polyline points="1440,500 1360,500 1360,420 1200,420 1200,350 1020,350"/>
+    <polyline points="1260,0 1260,120 1150,120 1150,220 980,220"/>
+    <polyline points="0,700 150,700 150,650 350,650 350,720 550,720"/>
+    <polyline points="400,900 400,800 600,800 600,750 800,750"/>
+    <polyline points="1440,750 1280,750 1280,680 1100,680 1100,730 900,730"/>
+    <polyline points="540,450 540,550 700,550 700,500 860,500"/>
+    <polyline points="720,300 720,400 820,400 820,480 1000,480"/>
+  </g>
+
+  <!-- Devre kartı bağlantı noktaları -->
+  <g filter="url(#nodeglow)">
+    <circle cx="300" cy="250" r="6" fill="#06B6D4" opacity="0.9" class="pulse1"/>
+    <circle cx="500" cy="200" r="5" fill="#06B6D4" opacity="0.85" class="pulse2"/>
+    <circle cx="200" cy="400" r="6" fill="#06B6D4" opacity="0.9" class="pulse3"/>
+    <circle cx="600" cy="450" r="5" fill="#06B6D4" opacity="0.8" class="pulse4"/>
+    <circle cx="1100" cy="180" r="6" fill="#06B6D4" opacity="0.9" class="pulse2"/>
+    <circle cx="950" cy="250" r="5" fill="#06B6D4" opacity="0.85" class="pulse1"/>
+    <circle cx="1200" cy="420" r="6" fill="#06B6D4" opacity="0.9" class="pulse5"/>
+    <circle cx="1020" cy="350" r="5" fill="#06B6D4" opacity="0.8" class="pulse3"/>
+    <circle cx="350" cy="650" r="6" fill="#06B6D4" opacity="0.9" class="pulse4"/>
+    <circle cx="550" cy="720" r="5" fill="#06B6D4" opacity="0.85" class="pulse1"/>
+    <circle cx="800" cy="750" r="6" fill="#06B6D4" opacity="0.9" class="pulse2"/>
+    <circle cx="900" cy="730" r="5" fill="#06B6D4" opacity="0.8" class="pulse5"/>
+    <circle cx="700" cy="550" r="6" fill="#06B6D4" opacity="0.9" class="pulse3"/>
+    <circle cx="860" cy="500" r="5" fill="#06B6D4" opacity="0.85" class="pulse4"/>
+    <circle cx="120" cy="250" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse2"/>
+    <circle cx="80"  cy="400" r="3"   fill="#06B6D4" opacity="0.65" class="pulse3"/>
+    <circle cx="420" cy="300" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse1"/>
+    <circle cx="380" cy="350" r="3"   fill="#06B6D4" opacity="0.65" class="pulse4"/>
+    <circle cx="1300" cy="280" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse5"/>
+    <circle cx="1360" cy="500" r="3"   fill="#06B6D4" opacity="0.65" class="pulse2"/>
+    <circle cx="1280" cy="680" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse1"/>
+    <circle cx="1100" cy="730" r="3"   fill="#06B6D4" opacity="0.65" class="pulse3"/>
+    <circle cx="540"  cy="550" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse4"/>
+    <circle cx="820"  cy="480" r="3"   fill="#06B6D4" opacity="0.65" class="pulse2"/>
+    <circle cx="150"  cy="700" r="3.5" fill="#06B6D4" opacity="0.7" class="pulse5"/>
+    <circle cx="600"  cy="800" r="3"   fill="#06B6D4" opacity="0.65" class="pulse1"/>
+  </g>
+
+  <!-- Kayan ışık parçacıkları -->
+  <g stroke="#06B6D4" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line x1="0" y1="150" x2="500" y2="150" stroke-dasharray="60 300" class="flow1" opacity="0.8"/>
+    <line x1="1440" y1="280" x2="950" y2="280" stroke-dasharray="50 300" class="flow2" opacity="0.75"/>
+    <line x1="0" y1="700" x2="550" y2="700" stroke-dasharray="70 300" class="flow3" opacity="0.8"/>
+    <line x1="1440" y1="750" x2="900" y2="750" stroke-dasharray="55 300" class="flow4" opacity="0.75"/>
+    <line x1="180" y1="0" x2="180" y2="400" stroke-dasharray="60 300" class="flow5" opacity="0.8"/>
+    <line x1="1260" y1="0" x2="1260" y2="350" stroke-dasharray="65 300" class="flow6" opacity="0.75"/>
+  </g>
+
+  <!-- === KREATİF ÜST BANT === -->
+  <!-- İnce turuncu çizgi üst -->
+  <line x1="0" y1="128" x2="1440" y2="128" stroke="url(#lineGrad1)" stroke-width="1" opacity="0.5"/>
+  <!-- İnce turuncu çizgi alt -->
+  <line x1="0" y1="760" x2="1440" y2="760" stroke="url(#lineGrad1)" stroke-width="1" opacity="0.4"/>
+
+  <!-- === KÖŞEGEn GEOMETRIK ŞEKIL - Sol üst === -->
+  <polygon points="0,0 280,0 0,160" fill="#06B6D4" opacity="0.025"/>
+  <polygon points="0,0 200,0 0,110" fill="#06B6D4" opacity="0.02"/>
+
+  <!-- === KÖŞEGEn GEOMETRIK ŞEKIL - Sağ alt === -->
+  <polygon points="1440,900 1160,900 1440,740" fill="#06B6D4" opacity="0.025"/>
+  <polygon points="1440,900 1240,900 1440,800" fill="#06B6D4" opacity="0.02"/>
+
+  <!-- Tarama çizgisi -->
+  <rect x="0" y="0" width="1440" height="2" fill="rgba(245,166,35,0.25)" class="scanmove"/>
+
+  <!-- İnce radyal ışık sağ üst -->
+  <circle cx="1100" cy="150" r="220" fill="none" stroke="rgba(245,166,35,0.05)" stroke-width="1"/>
+  <circle cx="1100" cy="150" r="150" fill="none" stroke="rgba(245,166,35,0.07)" stroke-width="1"/>
+  <circle cx="1100" cy="150" r="80"  fill="none" stroke="rgba(245,166,35,0.10)" stroke-width="1"/>
+
+  <!-- İnce radyal ışık sol alt -->
+  <circle cx="200" cy="800" r="180" fill="none" stroke="rgba(6,182,212,0.05)" stroke-width="1"/>
+  <circle cx="200" cy="800" r="120" fill="none" stroke="rgba(6,182,212,0.06)" stroke-width="1"/>
+</svg>

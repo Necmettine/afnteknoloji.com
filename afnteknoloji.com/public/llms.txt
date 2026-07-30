@@ -1,0 +1,42 @@
+# AFN Teknoloji
+
+> AFN Teknoloji is an Istanbul-based IT company specializing in corporate IT infrastructure, cybersecurity, server and storage solutions, networking, and software services. The company is an authorized reseller and service partner for global brands including Fortinet, Huawei, Dell, HPE, Cisco, VMware, Veeam, and Microsoft.
+
+AFN Teknoloji provides enterprise clients with servers, network infrastructure, firewalls, backup systems, virtualization, and cloud solutions — along with installation, configuration, and ongoing technical support services.
+
+## Core Services
+
+- [Services](https://afnteknoloji.com/hizmetlerimiz): IT consulting, cybersecurity maintenance, PC/server support, network installation, software development, web design
+- [Solutions](https://afnteknoloji.com/cozumlerimiz): Virtualization, data backup, data storage, cybersecurity, structured cabling, cloud solutions
+- [Security Software](https://afnteknoloji.com/guvenlik-yazilimlari): Fortinet, Sophos, Kaspersky product and license sales
+
+## Technology Partners
+
+- [Fortinet](https://afnteknoloji.com/fortinet): Next-gen firewall, SD-WAN, and unified security platform
+- [Huawei](https://afnteknoloji.com/huawei): Enterprise networking, switches, routers, wireless LAN solutions
+- [Dell](https://afnteknoloji.com/dell): PowerEdge servers, PowerStore storage, OptiPlex workstations
+- [HPE](https://afnteknoloji.com/hpe): ProLiant servers, Nimble/Primera storage, Aruba networking
+- [Cisco](https://afnteknoloji.com/cisco): Catalyst switches, ASA/Firepower security, Meraki cloud networking
+- [VMware](https://afnteknoloji.com/vmware): vSphere, vCenter, NSX virtualization platforms
+- [Veeam](https://afnteknoloji.com/veeam): Backup, disaster recovery, and cloud data protection
+- [Microsoft 365](https://afnteknoloji.com/microsoft-365): Corporate licensing, Exchange, Teams, SharePoint
+- [IBM & Lenovo](https://afnteknoloji.com/ibm-lenovo): Enterprise servers and workstations
+- [Sophos](https://afnteknoloji.com/sophos): Endpoint security, XDR, next-gen firewall
+- [Zyxel](https://afnteknoloji.com/zyxel): SMB switches, firewalls, and wireless networking
+- [Aruba (HPE)](https://afnteknoloji.com/aruba): Enterprise Wi-Fi, campus networking, 802.1X security
+- [Adobe](https://afnteknoloji.com/adobe): Creative Cloud and Acrobat corporate licensing
+- [AutoCAD](https://afnteknoloji.com/autocad): Autodesk engineering and design software
+
+## Company Information
+
+- [About Us](https://afnteknoloji.com/hakkimizda): Company history, mission, vision
+- [References](https://afnteknoloji.com/referanslarimiz): Completed projects and client references
+- [Contact](https://afnteknoloji.com/iletisim): Maltepe/Istanbul office, +90 216 572 50 40, info@afnteknoloji.com
+- [Blog](https://afnteknoloji.com/blog): IT and cybersecurity articles
+
+## Contact
+
+- Headquarters: Zümrütevler Mah. Hanımeli Cad. Tuna İş Merkezi No:13 K:3 D:6, Maltepe / Istanbul 34852, Turkey
+- Phone: +90 216 572 50 40
+- Email: info@afnteknoloji.com
+- Website: https://afnteknoloji.com

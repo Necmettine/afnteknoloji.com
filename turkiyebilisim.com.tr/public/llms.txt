@@ -1,0 +1,49 @@
+# Türkiye Bilişim
+
+> Türkiye'nin güvenilir kurumsal BT çözüm ortağı. Sistem danışmanlığı, BT güvenliği, veri yedekleme ve ağ altyapısı alanlarında 10+ yıllık deneyim.
+
+## Hakkımızda
+
+Türkiye Bilişim, kurumsal firmalara Microsoft, Huawei, VMware, Veeam ve Fortinet teknolojileri üzerine danışmanlık, kurulum ve teknik destek hizmetleri sunmaktadır. 500+ mutlu müşteri ve 7/24 teknik destek ekibiyle Türkiye'nin önde gelen BT çözüm ortaklarından biriyiz.
+
+## Hizmetlerimiz
+
+- Sistem Danışmanlığı: Sunucu, depolama ve ağ altyapısı tasarımı ve kurulumu
+- BT Güvenlik Sistemleri: Firewall, VPN, endpoint güvenlik çözümleri
+- Veri Yedekleme ve Felaket Kurtarma: Veeam, backup stratejileri
+- Ağ Altyapısı: LAN/WAN tasarımı, Huawei ağ çözümleri
+- Microsoft 365: Lisanslama, kurulum ve destek
+- Sanallaştırma: VMware vSphere, vCenter çözümleri
+- PC/Sunucu Bakım ve Destek: Donanım servis hizmetleri
+- 7/24 Teknik Destek: Kesintisiz BT operasyon desteği
+
+## Teknoloji Partnerlikleri
+
+- Microsoft Silver Partner
+- Huawei Yetkili Çözüm Ortağı
+- Fortinet Solution Partner
+- Veeam Partner
+- VMware Partner
+- Dell, HP, Lenovo yetkili servis
+
+## İletişim
+
+- Web: https://turkiyebilisim.com.tr
+- İletişim: https://turkiyebilisim.com.tr/iletisim
+- Destek: https://turkiyebilisim.com.tr/destek
+
+## Sayfalar
+
+- [Anasayfa](https://turkiyebilisim.com.tr/)
+- [Hizmetlerimiz](https://turkiyebilisim.com.tr/hizmetlerimiz)
+- [Çözümlerimiz](https://turkiyebilisim.com.tr/cozumlerimiz)
+- [Hakkımızda](https://turkiyebilisim.com.tr/hakkimizda)
+- [Referanslarımız](https://turkiyebilisim.com.tr/referanslarimiz)
+- [Blog](https://turkiyebilisim.com.tr/blog)
+- [İletişim](https://turkiyebilisim.com.tr/iletisim)
+- [Destek](https://turkiyebilisim.com.tr/destek)
+- [Fortinet](https://turkiyebilisim.com.tr/fortinet)
+- [Huawei](https://turkiyebilisim.com.tr/huawei)
+- [Microsoft 365](https://turkiyebilisim.com.tr/microsoft-365)
+- [Veeam](https://turkiyebilisim.com.tr/veeam)
+- [VMware](https://turkiyebilisim.com.tr/vmware)

@@ -1,0 +1,44 @@
+# AFN Medya — Web, Yazilim ve Growth Studio
+
+> AFN Medya is a Turkish creative technology and digital studio specializing in web design, custom software development, and social media management. We help businesses build a strong, trust-inspiring digital presence that generates leads and drives growth.
+
+## Company
+
+- **Name:** AFN Medya (a brand of AFN Teknoloji)
+- **Type:** Digital agency / Creative technology studio
+- **Location:** Turkey
+- **Website:** https://medya.afnteknoloji.com
+- **Contact:** https://medya.afnteknoloji.com/iletisim/
+- **Languages:** Turkish (primary), English
+
+## Services
+
+- **Web Design & Corporate Websites:** Modern, conversion-focused websites that reflect brand identity and inspire trust. Fast, mobile-first, lead-generating.
+- **Custom Software Development:** Tailored management panels, workflow automation, and bespoke software solutions aligned with business processes.
+- **Social Media Management:** Brand voice strategy, content planning, advertising support, and reporting to build audience and visibility.
+
+## Key Pages
+
+- [Home](https://medya.afnteknoloji.com/)
+- [Services Overview](https://medya.afnteknoloji.com/hizmetlerimiz/)
+- [Web Design](https://medya.afnteknoloji.com/hizmetlerimiz/web-tasarim/)
+- [Software Development](https://medya.afnteknoloji.com/hizmetlerimiz/yazilim-gelistirme/)
+- [Social Media Management](https://medya.afnteknoloji.com/hizmetlerimiz/sosyal-medya-yonetimi/)
+- [About Us](https://medya.afnteknoloji.com/hakkimizda/)
+- [Contact / Get a Quote](https://medya.afnteknoloji.com/iletisim/)
+- [Blog](https://medya.afnteknoloji.com/blog/)
+
+## Positioning
+
+AFN Medya believes digital presence should be clear, not cluttered. Rather than offering disconnected services, we build cohesive digital systems — combining strategy, design, and execution under one roof. The result is not just a good-looking site, but one that builds trust and converts visitors into clients.
+
+---
+
+## Turkce / Turkish
+
+**AFN Medya**, web tasarim, ozel yazilim gelistirme ve sosyal medya yonetimi alanlarinda uzmanlasmis, Turkiye merkezli bir kreatif teknoloji ve dijital studyodur. Sirketlerin dijital varliklarini guclendirerek teklif ve musteri kazanmalarini hedefleriz.
+
+### Hizmetler
+- **Web Tasarim:** Markayi yansitan, guven veren ve donusum odakli kurumsal web siteleri.
+- **Yazilim Gelistirme:** Is akisina ozel yonetim panelleri, otomasyon araclari ve yazilim cozumleri.
+- **Sosyal Medya Yonetimi:** Marka dili olusturma, icerik planlamasi, reklam destegi ve raporlama.

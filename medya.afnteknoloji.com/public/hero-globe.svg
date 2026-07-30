@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <radialGradient id="globeGrad" cx="40%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#1a2540"/>
+      <stop offset="100%" stop-color="#060a12"/>
+    </radialGradient>
+    <radialGradient id="glowOrange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F5A623" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="circleClip">
+      <circle cx="300" cy="300" r="240"/>
+    </clipPath>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bigGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .ring1 { animation: spin1 18s linear infinite; transform-origin: 300px 300px; }
+      .ring2 { animation: spin2 24s linear infinite; transform-origin: 300px 300px; }
+      .ring3 { animation: spin1 30s linear infinite; transform-origin: 300px 300px; }
+      .node  { animation: blink 2s ease-in-out infinite; }
+      .node2 { animation: blink 3s ease-in-out infinite 0.7s; }
+      .node3 { animation: blink 2.5s ease-in-out infinite 1.4s; }
+      .node4 { animation: blink 3.5s ease-in-out infinite 0.3s; }
+      .node5 { animation: blink 2s ease-in-out infinite 2s; }
+      .beam1 { animation: beam 4s ease-in-out infinite; }
+      .beam2 { animation: beam 5s ease-in-out infinite 1s; }
+      .beam3 { animation: beam 3.5s ease-in-out infinite 2s; }
+      .beam4 { animation: beam 4.5s ease-in-out infinite 0.5s; }
+      .beam5 { animation: beam 3s ease-in-out infinite 1.5s; }
+      .outerring { animation: pulse-ring 4s ease-out infinite; transform-origin: 300px 300px; }
+      .outerring2 { animation: pulse-ring 4s ease-out infinite 2s; transform-origin: 300px 300px; }
+      .float { animation: floatY 6s ease-in-out infinite; }
+      @keyframes spin1 { to { transform: rotate(360deg); } }
+      @keyframes spin2 { to { transform: rotate(-360deg); } }
+      @keyframes blink {
+        0%,100% { opacity: 0.5; r: 5; }
+        50%      { opacity: 1;   r: 8; }
+      }
+      @keyframes beam {
+        0%,100% { opacity: 0.15; }
+        50%      { opacity: 0.9; }
+      }
+      @keyframes pulse-ring {
+        0%   { transform: scale(1);   opacity: 0.6; }
+        100% { transform: scale(1.4); opacity: 0; }
+      }
+      @keyframes floatY {
+        0%,100% { transform: translateY(0); }
+        50%      { transform: translateY(-12px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Dış glow -->
+  <circle cx="300" cy="300" r="270" fill="url(#glowBlue)"/>
+  <circle cx="300" cy="300" r="240" fill="url(#glowOrange)" opacity="0.4"/>
+
+  <!-- Küre gövdesi -->
+  <circle cx="300" cy="300" r="240" fill="url(#globeGrad)" stroke="rgba(245,166,35,0.2)" stroke-width="1.5"/>
+
+  <!-- Küre grid çizgileri -->
+  <g clip-path="url(#circleClip)" stroke="rgba(245,166,35,0.12)" stroke-width="1" fill="none">
+    <!-- Enlemler -->
+    <ellipse cx="300" cy="300" rx="240" ry="50"/>
+    <ellipse cx="300" cy="300" rx="240" ry="120"/>
+    <ellipse cx="300" cy="300" rx="240" ry="190"/>
+    <line x1="60" y1="300" x2="540" y2="300"/>
+    <ellipse cx="300" cy="220" rx="240" ry="40"/>
+    <ellipse cx="300" cy="380" rx="240" ry="40"/>
+    <!-- Boylamlar -->
+    <ellipse cx="300" cy="300" rx="50"  ry="240"/>
+    <ellipse cx="300" cy="300" rx="120" ry="240"/>
+    <ellipse cx="300" cy="300" rx="190" ry="240"/>
+    <line x1="300" y1="60" x2="300" y2="540"/>
+  </g>
+
+  <!-- Kıta şekilleri (basitleştirilmiş) -->
+  <g clip-path="url(#circleClip)" fill="rgba(245,166,35,0.08)" stroke="rgba(245,166,35,0.15)" stroke-width="1">
+    <!-- Kuzey Amerika -->
+    <path d="M 130 180 Q 150 160 190 155 Q 220 145 235 165 Q 240 185 225 210 Q 210 235 195 250 Q 175 265 155 255 Q 130 240 125 215 Z"/>
+    <!-- Güney Amerika -->
+    <path d="M 185 290 Q 205 275 225 280 Q 240 295 238 325 Q 235 355 220 375 Q 205 390 190 380 Q 175 365 173 340 Q 170 310 185 290 Z"/>
+    <!-- Avrupa -->
+    <path d="M 290 155 Q 320 145 350 150 Q 370 160 368 178 Q 365 195 350 200 Q 330 208 310 205 Q 290 200 285 185 Q 280 168 290 155 Z"/>
+    <!-- Afrika -->
+    <path d="M 305 220 Q 335 210 358 220 Q 375 235 373 265 Q 370 300 360 325 Q 345 345 325 348 Q 305 348 292 330 Q 278 308 278 278 Q 278 245 305 220 Z"/>
+    <!-- Asya -->
+    <path d="M 370 145 Q 420 130 460 140 Q 490 150 500 175 Q 505 200 490 220 Q 470 240 445 245 Q 415 248 390 235 Q 365 220 360 195 Q 355 168 370 145 Z"/>
+    <!-- Avustralya -->
+    <path d="M 435 310 Q 460 298 480 305 Q 495 315 492 335 Q 488 355 470 362 Q 450 368 435 357 Q 422 344 422 328 Q 422 315 435 310 Z"/>
+  </g>
+
+  <!-- Dönen orbit halkalar -->
+  <g class="ring1">
+    <ellipse cx="300" cy="300" rx="270" ry="80" fill="none" stroke="rgba(245,166,35,0.15)" stroke-width="1.5" stroke-dasharray="8 12"/>
+  </g>
+  <g class="ring2">
+    <ellipse cx="300" cy="300" rx="80" ry="270" fill="none" stroke="rgba(59,130,246,0.12)" stroke-width="1.5" stroke-dasharray="6 14"/>
+  </g>
+  <g class="ring3">
+    <ellipse cx="300" cy="300" rx="200" ry="55" fill="none" stroke="rgba(245,166,35,0.10)" stroke-width="1" stroke-dasharray="4 16" transform="rotate(35,300,300)"/>
+  </g>
+
+  <!-- Bağlantı ışınları -->
+  <g filter="url(#glow)" stroke-width="1.5" fill="none">
+    <line x1="175" y1="205" x2="325" y2="165" stroke="#F5A623" class="beam1"/>
+    <line x1="325" y1="165" x2="430" y2="190" stroke="#F5A623" class="beam2"/>
+    <line x1="430" y1="190" x2="470" y2="230" stroke="#F5A623" class="beam3"/>
+    <line x1="175" y1="205" x2="215" y2="310" stroke="#F5A623" class="beam4"/>
+    <line x1="215" y1="310" x2="325" y2="165" stroke="rgba(245,166,35,0.6)" class="beam5"/>
+    <line x1="325" y1="280" x2="430" y2="190" stroke="rgba(245,166,35,0.5)" class="beam1"/>
+    <line x1="325" y1="280" x2="215" y2="310" stroke="rgba(245,166,35,0.4)" class="beam2"/>
+    <line x1="430" y1="190" x2="455" y2="315" stroke="rgba(245,166,35,0.5)" class="beam3"/>
+    <line x1="325" y1="280" x2="455" y2="315" stroke="rgba(245,166,35,0.4)" class="beam4"/>
+    <line x1="175" y1="205" x2="300" y2="300" stroke="rgba(59,130,246,0.4)" class="beam5"/>
+    <line x1="300" y1="300" x2="430" y2="190" stroke="rgba(59,130,246,0.3)" class="beam1"/>
+  </g>
+
+  <!-- Şehir/düğüm noktaları -->
+  <g filter="url(#bigGlow)">
+    <!-- İstanbul -->
+    <circle cx="345" cy="168" r="5" fill="#F5A623" class="node"/>
+    <circle cx="345" cy="168" r="12" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.4"/>
+    <!-- New York -->
+    <circle cx="175" cy="205" r="5" fill="#F5A623" class="node2"/>
+    <circle cx="175" cy="205" r="12" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.4"/>
+    <!-- Dubai -->
+    <circle cx="430" cy="190" r="5" fill="#F5A623" class="node3"/>
+    <circle cx="430" cy="190" r="12" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.4"/>
+    <!-- Tokyo -->
+    <circle cx="470" cy="230" r="5" fill="#F5A623" class="node4"/>
+    <circle cx="470" cy="230" r="12" fill="none" stroke="#F5A623" stroke-width="1" opacity="0.4"/>
+    <!-- Londra -->
+    <circle cx="295" cy="160" r="4" fill="#F5A623" class="node5"/>
+    <!-- São Paulo -->
+    <circle cx="215" cy="310" r="4" fill="#F5A623" class="node"/>
+    <!-- Singapur -->
+    <circle cx="455" cy="315" r="4" fill="#F5A623" class="node2"/>
+    <!-- Lagos -->
+    <circle cx="310" cy="282" r="4" fill="#F5A623" class="node3"/>
+    <!-- Merkez -->
+    <circle cx="325" cy="280" r="6" fill="#F5A623" class="node4"/>
+    <circle cx="325" cy="280" r="16" fill="none" stroke="#F5A623" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Pulse halkalar (dışarı yayılan) -->
+  <circle cx="300" cy="300" r="245" fill="none" stroke="rgba(245,166,35,0.4)" stroke-width="1.5" class="outerring"/>
+  <circle cx="300" cy="300" r="245" fill="none" stroke="rgba(245,166,35,0.3)" stroke-width="1" class="outerring2"/>
+
+  <!-- Etiket metinleri -->
+  <g font-family="monospace" font-size="9" fill="rgba(245,166,35,0.7)">
+    <text x="350" y="162">İSTANBUL</text>
+    <text x="135" y="200">NEW YORK</text>
+    <text x="434" y="186">DUBAI</text>
+    <text x="474" y="226">TOKYO</text>
+    <text x="220" y="318">SÃO PAULO</text>
+    <text x="458" y="326">SINGAPORE</text>
+  </g>
+</svg>

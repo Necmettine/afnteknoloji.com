@@ -1,4 +1,7 @@
 # AFN Next.js
+**/node_modules/
+**/.next/
+**/.vercel/
 afn-nextjs/.next/
 afn-nextjs/node_modules/
 afn-nextjs/.env*.local
@@ -25,6 +28,8 @@ istanbuldesignfactory/
 
 # Geçici dosyalar
 *.txt
+# Site kök dosyaları istisna (robots/llms Vercel'e ve git'e girmeli)
+!**/public/*.txt
 *.log
 *.xlsx
 *.pdf
@@ -37,3 +42,5 @@ app_output.txt
 bass*.txt
 debug_out.txt
 publish_log.txt
+
+.vercel
