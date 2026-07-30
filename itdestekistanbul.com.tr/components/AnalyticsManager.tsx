@@ -7,10 +7,10 @@ const CONSENT_KEY = "itdestek-cookie-consent";
 const CONSENT_EVENT = "itdestek-cookie-consent-changed";
 
 interface AnalyticsManagerProps {
-  gtmId: string;
+  measurementId: string;
 }
 
-export default function AnalyticsManager({ gtmId }: AnalyticsManagerProps) {
+export default function AnalyticsManager({ measurementId }: AnalyticsManagerProps) {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
@@ -28,18 +28,22 @@ export default function AnalyticsManager({ gtmId }: AnalyticsManagerProps) {
     };
   }, []);
 
-  // GTM kimliği tanımlanana kadar veya onay verilmeden hiçbir şey yükleme
-  if (!enabled || !gtmId || gtmId === "GTM-XXXXXXX") {
+  if (!enabled || !measurementId) {
     return null;
   }
 
   return (
-    <Script id="gtm" strategy="afterInteractive">{`
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','${gtmId}');
-    `}</Script>
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="ga4" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${measurementId}');
+      `}</Script>
+    </>
   );
 }

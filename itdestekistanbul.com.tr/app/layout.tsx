@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Yayına alınmadan önce gerçek GTM container kimliğiyle değiştirin
-const GTM_ID = "GTM-XXXXXXX";
+const GA_MEASUREMENT_ID = "G-F5Q60D696R";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
-        <AnalyticsManager gtmId={GTM_ID} />
+        <AnalyticsManager measurementId={GA_MEASUREMENT_ID} />
         <SchemaMarkup />
       </head>
       <body className="bg-it-navy text-white antialiased">
