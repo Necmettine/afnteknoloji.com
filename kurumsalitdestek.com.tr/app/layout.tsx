@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 // Yayına alınmadan önce gerçek GA4 ölçüm kimliğiyle değiştirin
-const GA_MEASUREMENT_ID = "GA_PLACEHOLDER";
+const GA_MEASUREMENT_ID = "G-CQ84QN6WQJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
