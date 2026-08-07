@@ -88,11 +88,11 @@ export default function HakkimizdaPage() {
             sistemler her gün kendi operasyonumuzda çalışıyor.
           </p>
           <p>
-            Müşteri projelerinde de aynı yaklaşımı izliyoruz. Aydınlatma
-            sektöründe faaliyet gösteren bir üretici için dış ticaret ekibinin
-            sipariş ve reçete taleplerini Netsis ERP ile entegre şekilde yöneten
-            bir portal kurduk. Hazır bir paketi zorlamak yerine, ekibin fiilen
-            yaptığı işi yazılıma taşıdık.
+            Müşteri projelerinde de aynı yaklaşımı izliyoruz: üretici firmalar
+            için dış ticaret, satın alma ve üretimin ortak kullandığı, sipariş
+            ve alt reçete taleplerini Netsis ERP ile entegre yöneten portalları
+            bu yapı taşları üzerine kuruyoruz. Hazır bir paketi zorlamak yerine
+            ekibin fiilen yaptığı işi yazılıma taşıyoruz.
           </p>
           <p>
             Yapay zekayı bir pazarlama etiketi olarak değil, belirli işleri

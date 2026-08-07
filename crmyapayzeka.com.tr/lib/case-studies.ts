@@ -48,24 +48,31 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "netsis-siparis-recete-portali",
-    short: "Netsis Sipariş Portalı",
+    short: "Sipariş & BOM Portalı",
     title:
-      "Aydınlatma üreticisi için sipariş ve reçete (BOM) talep akışı — Netsis entegrasyonu",
-    tag: "Müşteri projesi · Netsis ERP",
+      "Üretici firmalar için sipariş ve reçete (BOM) talep portalı — Netsis/ERP entegrasyonu",
+    tag: "Çözüm kapsamımız · Netsis / ERP",
     summary:
-      "Dış ticaret ekibinin sipariş ve alt reçete taleplerini yönettiği portal. Talep → Netsis kontrolü → stok eşleşmesi → onay → tedarikçiye otomatik e-posta.",
+      "Üretim yapan firmalarda dış ticaret, satın alma ve üretimin ortak kullandığı talep portalı: talep → ERP ürün ve stok kontrolü → reçete kırılımı → onay kademesi → tedarikçiye otomatik e-posta → termin ve evrak takibi.",
     intro:
-      "Aydınlatma sektöründe faaliyet gösteren bir üretici için, dış ticaret ekibinin sipariş ve alt reçete (BOM) taleplerini uçtan uca yönettiği bir portal geliştirdik. Talepler daha önce e-posta ve Excel dosyaları arasında ilerliyordu; kimin neyi ne zaman istediği ve talebin hangi aşamada olduğu takip edilemiyordu.",
+      "Üretim yapan firmalarda sipariş ve alt reçete (BOM) talepleri çoğunlukla e-posta ve Excel dosyaları arasında yürür: kimin neyi ne zaman istediği, talebin hangi aşamada olduğu ve ERP'de gerçekten karşılığı olup olmadığı takip edilemez. Bu süreci uçtan uca yöneten portalı kuruyoruz. AfnCrm'de yıllardır çalıştırdığımız yapı taşlarını — ERP veritabanı üzerinde canlı çalışma, çok kademeli onay, otomatik e-posta, SharePoint dosya düzeni, rol bazlı yetkilendirme ve denetim izi — Netsis tarafına uyarlıyoruz. Aşağıda böyle bir portalın kapsayabildiği başlıklar var; hangilerinin devreye alınacağı keşif çalışmasında birlikte belirlenir.",
     highlights: [
-      "Talep formu: Dış ticaret ekibi sipariş veya alt reçete talebini tek bir form üzerinden açar.",
-      "Netsis kontrolü: Talep edilen ürünün Netsis ERP'de tanımlı olup olmadığı otomatik olarak kontrol edilir; tanımlı değilse süreç ürün kartı açılışına yönlendirilir.",
-      "Güncel stokla eşleştirme: Ürün, Netsis'teki güncel stok bilgisiyle eşleştirilir ve talep sahibi stok görünümü üzerinden seçim yapar.",
-      "Onay akışı: Talep ilgili yöneticinin onayına düşer; onay ve ret adımları kayıt altındadır.",
-      "Tedarikçiye otomatik e-posta: Onaylanan talep için tedarikçiye otomatik talep e-postası oluşturulur ve gönderilir.",
-      "Tek akışta iki tür talep: Hem bitmiş ürün siparişleri hem de yurt dışından hammadde/yarı mamul talepleri aynı akışta yönetilir.",
+      "Tek talep formu: Dış ticaret veya satın alma; bitmiş ürün, hammadde ve yarı mamul talebini aynı formdan açar. Ürün kodu, adet, hedef termin ve serbest metinli teknik açıklama tek yerde toplanır.",
+      "ERP ürün kartı doğrulama: Talep edilen kalemin Netsis'te tanımlı olup olmadığı anında sorgulanır. Tanımlı değilse süreç ürün kartı açma talebine dallanır; mükerrer kart açılmasının ve kod standardının bozulmasının önüne geçilir.",
+      "Güncel stokla eşleştirme: Kalem, ERP'deki güncel stok bakiyesiyle eşleştirilir; talep sahibi stok görünümü üzerinden seçim yapar. Stok yeterliyse rezerve edilir, yetersiz kalan miktar tedarik talebine dönüşür.",
+      "Üretici kodu ↔ ERP stok kodu eşleştirme: Üreticinin kendi ürün kodları ve detaylı ürün açıklamaları, firmanın ERP stok kodlarıyla eşleştirilir. Kesin eşleşme bulunamadığında yakın adaylar listelenir ve doğru kart insana seçtirilir.",
+      "Alt reçete (BOM) kırılımı: Üretilecek ürünün ağacı açılır; hangi bileşenin stoktan karşılanacağı, hangisinin dışarıdan tedarik edileceği talep anında görünür hale gelir.",
+      "Yurt içi ve yurt dışı sipariş ayrımı: Para birimi, teslim şekli ve gereken evrak farkları akışa gömülür; ithalat talebi ile yurt içi tedarik talebi aynı hatta, kendi kurallarıyla yürür.",
+      "Çok kademeli onay: Talep tutara, kaleme veya birime göre belirlenen onay kademelerine düşer. Onay ve ret gerekçesiyle birlikte kayıt altına alınır; yetki kişiye değil role bağlanır.",
+      "Tedarikçiye otomatik talep e-postası: Onaylanan talep için ürün kodu, adet ve teknik açıklamayı içeren e-posta kurumsal hesaptan otomatik oluşturulup gönderilir; gönderim kaydı talebe iliştirilir.",
+      "Termin, teslim ve evrak takibi: Tedarikçi dönüşü, teslim tarihi ve ilgili belgeler talebin üzerinde toplanır. Dosyalar SharePoint'te sipariş bazlı klasör düzeninde saklanır.",
+      "Fatura ve sipariş eşleştirme: Gelen faturanın hangi talep ve siparişe ait olduğu eşleştirilir; tutar ve miktar farkları işaretlenip sorumluya bildirilir.",
+      "Rol bazlı yetkilendirme ve denetim izi: Kim talep açar, kim onaylar, kim yalnız görüntüler ayrı ayrı tanımlanır. Hangi kaydı kimin ne zaman değiştirdiği ve talebin hangi koldan geçtiği izlenebilir kalır.",
+      "Microsoft 365 entegrasyonu: Kurumsal hesapla oturum açma, Outlook üzerinden bildirim ve SharePoint dosya yönetimi; ayrı bir kullanıcı/şifre yönetimi gerekmez.",
+      "Yapay zeka desteği: Serbest metinli talebin doğru ürün grubuna yönlendirilmesi, tedarikçiden gelen belge ve proforma içeriğinin okunup kaleme bağlanması, eksik veya tutarsız bilginin işaretlenip insana sorulması. Onay ve finansal etkisi olan adımlar kural tabanlı çalışır; karar insanda kalır.",
     ],
     outcome:
-      "E-posta ve Excel'de dağınık ilerleyen talep süreci tek akışta izlenebilir hale geldi; her talebin hangi aşamada olduğu ve kimin onayında beklediği anlık olarak görülüyor.",
+      "Hedef: e-posta ve Excel'de dağınık ilerleyen talep sürecinin tek akışa taşınması; her talebin hangi aşamada olduğunun, kimin onayında beklediğinin ve ERP'de gerçek karşılığı bulunup bulunmadığının anlık görülmesi.",
   },
   {
     slug: "shamashai",

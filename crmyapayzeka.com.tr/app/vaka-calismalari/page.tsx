@@ -11,9 +11,9 @@ import { caseStudies } from "@/lib/case-studies";
 import { NAP, PARENT_SITE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Vaka Çalışmaları | AfnCrm, Netsis Sipariş Portalı, ShamashAi",
+  title: "Vaka Çalışmaları | AfnCrm, Sipariş & BOM Portalı, ShamashAi",
   description:
-    "Canlı ortamda çalışan projelerimiz: Wolvox ERP üzerine kurulan AfnCrm, aydınlatma üreticisi için Netsis entegre sipariş ve reçete talep portalı, ShamashAi BT izleme platformu ve AfnRiskScan risk tarama servisi.",
+    "Canlı ortamda çalışan projelerimiz: Wolvox ERP üzerine kurulan AfnCrm, ShamashAi BT izleme platformu, AfnRiskScan risk tarama servisi ve üretici firmalar için Netsis/ERP entegre sipariş ve reçete (BOM) talep portalı kapsamımız.",
   alternates: {
     canonical: `${SITE_URL}/vaka-calismalari/`,
   },
@@ -67,9 +67,10 @@ export default function VakaCalismalariPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-16 text-center">
           <h1 className="text-4xl font-extrabold">Vaka Çalışmaları</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
-            Aşağıdaki dört sistem canlı ortamda çalışıyor. Üçünü kendi
-            ihtiyacımız için geliştirdik ve her gün kullanıyoruz; biri müşteri
-            projesi olarak devreye alındı.
+            Aşağıdaki üç sistem canlı ortamda çalışıyor; hepsini kendi
+            ihtiyacımız için geliştirdik ve her gün kullanıyoruz. Dördüncü
+            başlık ise üretici firmalar için kurduğumuz sipariş ve reçete
+            portalının kapsamıdır — aynı yapı taşları üzerine inşa edilir.
           </p>
           <nav aria-label="Vaka listesi" className="mt-8 flex flex-wrap justify-center gap-3">
             {caseStudies.map((item) => (
