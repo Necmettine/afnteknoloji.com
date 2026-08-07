@@ -7,6 +7,11 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
+    question: "Yapay zeka el yazısı servis formunu okuyabilir mi?",
+    answer:
+      "Evet, bunu kendi CRM'imizde (AfnCrm) çalışır halde kullanıyoruz. Teknisyen sahada kağıt ziyaret/iş takip formunu doldurup fotoğrafını sisteme yüklüyor; görüntü modeli formu okuyup ziyaret tarihini, giriş ve çıkış saatlerini ve yapılan iş açıklamasını çıkarıyor, kayıt otomatik oluşuyor. Soluk, sararmış veya el yazısı formlar da okunabiliyor. Model 'emin olmadığın alanı boş bırak' talimatıyla çalıştığı için uydurma veri üretmiyor; okunamayan alan boş kalıyor ve o alanı insan tamamlıyor.",
+  },
+  {
     question: "Yapay zeka ile CRM ne işe yarar?",
     answer:
       "Yapay zeka destekli bir CRM, sadece müşteri kaydı tutmaz; ERP'nizdeki gerçek veriyi işleyerek bakiye, vade, teklif ve sipariş durumunu anlamlandırır. Teklif metni ve müşteri e-postası taslağı üretir, riskli cari hesapları öne çıkarır, tekrar eden veri girişini ortadan kaldırır. Kısacası ekibinizin ekrana bakıp elle yaptığı işlerin önemli bölümünü sistem üstlenir; insan yalnızca karar verir ve onaylar.",

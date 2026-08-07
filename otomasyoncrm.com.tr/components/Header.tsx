@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Phone, Workflow } from "lucide-react";
+import { Phone } from "lucide-react";
 import { NAP } from "@/lib/site";
 
 const navItems = [
@@ -15,9 +16,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-ops-border/70 bg-ops-base/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ops-emerald/15 text-ops-mint">
-            <Workflow className="h-5 w-5" aria-hidden="true" />
-          </span>
+          <Image
+            src="/logo.png"
+            alt="AFN Teknoloji"
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9 rounded-lg object-contain"
+          />
           <span className="text-base font-bold leading-tight text-white">
             Otomasyon <span className="text-ops-mint">CRM</span>
           </span>

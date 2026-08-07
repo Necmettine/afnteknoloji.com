@@ -62,11 +62,10 @@ export default function HakkimizdaPage() {
               </p>
               <p>
                 Bu boşluğu kapatmak için akış katmanı kurmaya başladık. Örneğin
-                aydınlatma sektöründe faaliyet gösteren bir üreticide, dış
-                ticaret ekibinin ürün ve alt reçete taleplerini ERP stoğuyla
-                kontrol edip onay sonrası tedarikçiye otomatik ileten bir akış
-                kurdurduk. Daha önce aynı süreç e-posta ve Excel arasında
-                yürüyordu.
+                üretim yapan bir sanayi kuruluşunda, dış ticaret ekibinin ürün
+                ve alt reçete taleplerini ERP stoğuyla kontrol edip onay sonrası
+                tedarikçiye otomatik ileten bir akış kurduk. Daha önce aynı
+                süreç e-posta ve Excel dosyaları arasında yürüyordu.
               </p>
               <p>
                 Kendi işimizde de aynı yaklaşımı uyguluyoruz: geliştirdiğimiz

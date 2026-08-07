@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Briefcase, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { NAP } from "@/lib/site";
 
 const navItems = [
@@ -15,9 +16,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-mit-border bg-mit-graphite/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center border border-mit-gold/40 bg-mit-gold/10 text-mit-amber">
-            <Briefcase className="h-4 w-4" aria-hidden="true" />
-          </span>
+          <Image
+            src="/logo.png"
+            alt="AFN Teknoloji"
+            width={36}
+            height={36}
+            priority
+            className="h-9 w-9 rounded-lg object-contain"
+          />
           <span className="text-base font-bold leading-tight tracking-tight text-white">
             Kurumsal <span className="text-mit-amber">BT Destek</span>
           </span>
